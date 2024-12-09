@@ -4,7 +4,6 @@
 import { HiChartBar } from "react-icons/hi2";
 import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
-import { useState } from "react";
 import { useNightMode } from "../context/NightModeContext";
 import { useLenguage } from "../context/LenguageContext";
 
@@ -22,40 +21,29 @@ export const Header = () => {
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
+        if (element) element.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
-        <div className={`pt-3 ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
-            <div className="flex justify-between items-center w-[80%] mx-auto my-auto py-5">
+        <div className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
+            <div className="flex justify-between items-center w-[80%] mx-auto my-auto py-5 ">
                 <div className="flex gap-2">
                     <HiChartBar size={55} className="text-zinc-500"/>
                     <div className="flex flex-col">    
-                        <h1 className="text-2xl">As You Need</h1>
+                        <h1 className='text-2xl'>As You Need</h1>
                         <h2 className="text-zinc-500 text-sm">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
                     </div>
                 </div>
                 <div className="flex gap-10 items-center">
-                    <p 
-                        onClick={() => scrollToSection('philosophy')}
-                        className="text-xl cursor-pointer hover:scale-105 duration-200"
-                    >
-                        {spanish ? 'Nuestra Filosofia' : 'Our Philosophy'}
-                    </p>
-                    <p 
-                        onClick={() => scrollToSection('work')}
-                        className="text-xl cursor-pointer hover:scale-105 duration-200"
-                    >
-                        {spanish ? 'Nuestro Trabajo' : 'Our Work'}
-                    </p>
-                    <p 
-                        onClick={() => scrollToSection('start')}
-                        className="text-xl cursor-pointer hover:scale-105 duration-200"
-                    >
-                        {spanish ? 'Empezar Ya' : 'Start Now'}
-                    </p>
+                    {tabs.map((tab) => (
+                        <p 
+                            key={tab.id}
+                            onClick={() => scrollToSection(tab.section)}
+                            className="text-xl cursor-pointer hover:scale-105 duration-200"
+                        >
+                            {spanish ? tab.titleSpanish : tab.titleEnglish}
+                        </p>    
+                    ))}
                     <div
                         className="cursor-pointer"
                         onClick={() => setNightMode(!nightMode)}
@@ -84,3 +72,24 @@ export const Header = () => {
         </div>
     )
 }
+
+const tabs = [
+    {
+        id: 1,
+        titleSpanish: 'Nuestra Filosofia',
+        titleEnglish: 'Our Philosophy',
+        section: 'philosophy'
+    },
+    {
+        id: 2,
+        titleSpanish: 'Nuestro Trabajo',
+        titleEnglish: 'Our Work',
+        section: 'work'
+    },
+    {
+        id: 3,
+        titleSpanish: 'Empezar Ya',
+        titleEnglish: 'Start Now',
+        section: 'start'
+    }
+]

@@ -7,7 +7,13 @@ import { Founders } from "./components/Founders";
 import { StartNow } from "./components/StartNow";
 import { Footer } from "./components/Footer";
 import { LineSeparator } from './components/LineSeparator';
+import { BackToTop } from "./components/BackToTop";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "As You Need",
+    description: "En As You Need tenes la posibilidad de llevar tu negocio al siguiente nivel. Conocé más sobre nosotros y empezá a trabajar en tu proyecto.",
+}
 
 export default function HomePage() {
     return (
@@ -23,6 +29,7 @@ export default function HomePage() {
             <LineSeparator />
             <StartNow />
             <Footer />
+            <BackToTop />
         </>
     )
 }
