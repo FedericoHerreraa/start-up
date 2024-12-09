@@ -1,4 +1,5 @@
 
+'use client'
 
 
 import { useLenguage } from "../context/LenguageContext";

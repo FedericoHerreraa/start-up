@@ -1,3 +1,4 @@
+'use client'
 
 
 import { useNightMode } from "../context/NightModeContext"

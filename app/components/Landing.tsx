@@ -1,3 +1,4 @@
+'use client'
 
 
 import { HiCursorArrowRays } from "react-icons/hi2";

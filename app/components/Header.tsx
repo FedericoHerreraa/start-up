@@ -1,3 +1,4 @@
+'use client'
 
 
 import { HiChartBar } from "react-icons/hi2";
@@ -19,7 +20,7 @@ export const Header = () => {
     const { nightMode, setNightMode } = useNightMode()
     const { spanish, setSpanish } = useLenguage()
 
-    const scrollToSection = (sectionId) => {
+    const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
