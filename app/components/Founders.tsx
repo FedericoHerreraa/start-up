@@ -15,7 +15,7 @@ export const Founders = () => {
     return (
         <div className={`${nightMode ? 'bg-black' : '' } h-[80vh]`}>
             <p className="text-zinc-500 text-center mb-3 text-xl">{spanish ? 'Los que llevan la magia adelante.' : 'Those who bring the magic to life.'}</p>
-            <h1 className={`text-6xl font-semibold text-center ${nightMode ? 'text-white' : ''}`}>
+            <h1 className={`text-6xl font-semibold text-center ${nightMode ? 'text-white' : ' '}`}>
                 {spanish ? 'Conoce a Nuestros ' : 'Meet Our'} <span className="bg-gradient-to-r from-violet-400 to-violet-800 bg-clip-text text-transparent">{spanish ? 'Fundadores.' : 'Founders.'}</span>
             </h1>
 
@@ -36,7 +36,7 @@ export const Founders = () => {
                     <div className={`text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} w-2/3`}>
                         {spanish
                             ? <p>Mi nombre es <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span> y soy programador Full Stack. Actualmente estudiando para la licenciatura en sistemas en la "Universidad Argentina de la Empresa" y trabajando en proyectos de software en As You Need como <span className="font-bold">Co-Fundador.</span></p>
-                            : <p>My name is <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span>, and I am a Full Stack Developer. Currently, I am pursuing a Bachelor’s degree in Computer Science at the "Argentine University of Enterprise" and working on software projects at As You Need as a <span className="font-bold">Co-Founder.</span></p>
+                            : <p>My name is <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span>, and I am a Full Stack Developer. Currently, I&#39;m pursuing a Bachelor&#39;s degree in Computer Science at the "Argentine University of Enterprise" and working on software projects at As You Need as a <span className="font-bold">Co-Founder.</span></p>
                         }
                     </div>
                     <ImArrowRight2 color="gray" size={25} className="w-1/6 animate-pulse rotate-180"/>
