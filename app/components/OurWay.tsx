@@ -3,9 +3,7 @@
 
 import { useLenguage } from "../context/LenguageContext";
 import { useNightMode } from "../context/NightModeContext"
-import { CustomSeparator } from "./CustomSeparator";
 import { BsArrowReturnRight } from "react-icons/bs";
-
 
 
 export const OurWay = () => {
