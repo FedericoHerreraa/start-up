@@ -29,7 +29,6 @@ export const Founders = () => {
                         />
                     </div>
                     <ImArrowRight2 color="gray" size={25} className="w-1/6 animate-pulse"/>
-                    Mi nombre es  
                     <div className={`text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} w-2/3`}>
                         {spanish
                             ? <p>Mi nombre es <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Camila Aznar</span> y soy desarrolladora Front-end. Actualmente, me dedico a crear soluciones visuales innovadoras, aportando creatividad y diseño a cada proyecto. Hoy trabajo en As You Need como <span className="font-bold">Co-Fundadora</span>, desarrollando ideas que conectan con las necesidades de nuestros clientes.</p>
