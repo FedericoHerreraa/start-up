@@ -22,14 +22,14 @@ export const OurWay = () => {
 
             <div className="mt-20">
                 <section>
-                    <div className="flex items-center gap-5 w-[40%] mx-auto">
+                    <div className="flex items-center gap-5 md:w-[40%] w-[70%] mx-auto">
                         <p className={`border border-green-700 rounded-full px-4 py-2 ${nightMode ? 'text-zinc-300' : 'text-zinc-600'} text-2xl`}>1</p>
                         <h2 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-600'} text-3xl font-semibold`}>
                             {spanish ? 'Desarrollo Móvil y Web.' : 'Mobile and Web Development.'}
                         </h2>
                     </div>
                     <div className="flex flex-col gap-10 mt-10 items-center text-white">
-                        <div className="flex gap-5 w-[35%] mx-auto">
+                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
                             <BsArrowReturnRight size={30} color="gray"/>
                             <div className="flex flex-col items-start ">
                                 <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
@@ -43,7 +43,7 @@ export const OurWay = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex gap-5 w-[35%] mx-auto">
+                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
                             <BsArrowReturnRight size={30} color="gray"/>    
                             <div className="flex flex-col items-start">
                                 <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
@@ -57,7 +57,7 @@ export const OurWay = () => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex gap-5 w-[35%] mx-auto">
+                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
                             <BsArrowReturnRight size={30} color="gray"/>    
                             <div className="flex flex-col items-start">
                                 <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
@@ -75,14 +75,14 @@ export const OurWay = () => {
                 </section>
 
                 <section className="mt-20">
-                    <div className="flex items-center gap-5 w-[40%] mx-auto">
+                    <div className="flex items-center gap-5 md:w-[40%] w-[70%] mx-auto">
                         <p className={`border border-green-700 rounded-full px-4 py-2 ${nightMode ? 'text-zinc-300' : 'text-zinc-600'} text-2xl`}>2</p>
                         <h2 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-600'} text-3xl font-semibold`}>
                             {spanish ? 'Redes Sociales.' : 'Social Media.'}
                         </h2>
                     </div>
                     <div className="flex flex-col gap-10 mt-10 items-center text-white">
-                        <div className="flex gap-5 w-[35%] mx-auto">
+                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
                             <BsArrowReturnRight size={22} color="gray"/>
                             <div className="flex flex-col items-start">
                                 <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
