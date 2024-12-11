@@ -1,10 +1,12 @@
 'use client'
 
 import { useNightMode } from "../context/NightModeContext"
+import { useLenguage } from "../context/LenguageContext";
+
 import imageFede from "../img/fede.jpg"
 import imageCami from "../img/cami.jpeg"
+
 import { ImArrowRight2 } from "react-icons/im";
-import { useLenguage } from "../context/LenguageContext";
 import Image from "next/image";
 
 
@@ -40,7 +42,7 @@ export const Founders = () => {
                 <div className="mx-10 flex items-center">
                     <div className={`text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} w-2/3`}>
                         {spanish
-                            ? <p>Mi nombre es <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span> y soy programador Full Stack. Actualmente estudiando para la licenciatura en sistemas en la "Universidad Argentina de la Empresa" y trabajando en proyectos de software en As You Need como <span className="font-bold">Co-Fundador.</span></p>
+                            ? <p>Mi nombre es <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span> y soy programador Full Stack. Con conocimientos profesionales adquiridos de la Licenciatura en Sistemas en la "Universidad Argentina de la Empresa" y trabajando en proyectos de software en As You Need como <span className="font-bold">Co-Fundador.</span></p>
                             : <p>My name is <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Federico Herrera</span>, and I am a Full Stack Developer. Currently, I&#39;m pursuing a Bachelor&#39;s degree in Computer Science at the "Argentine University of Enterprise" and working on software projects at As You Need as a <span className="font-bold">Co-Founder.</span></p>
                         }
                     </div>

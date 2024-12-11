@@ -4,8 +4,12 @@
 import { HiChartBar } from "react-icons/hi2";
 import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
-import { useNightMode } from "../context/NightModeContext";
-import { useLenguage } from "../context/LenguageContext";
+import { HiQueueList } from "react-icons/hi2";
+
+
+import { useNightMode } from "@/app/context/NightModeContext";
+import { useLenguage } from "@/app/context/LenguageContext";
+import { useMobileView } from "@/app/context/MobileViewContext";
 
 import {
     Select,
@@ -13,11 +17,29 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "../components/ui/select"  
+} from "@/app/components/ui/select"  
+
+import {
+    Sheet,
+    SheetContent,
+    SheetDescription,
+    SheetHeader,
+    SheetTitle,
+    SheetTrigger,
+} from "@/app/components/ui/sheet"
+
+interface TabProps {
+    scrollToSection: (sectionId: string) => void
+    spanish: boolean
+    nightMode: boolean
+    setNightMode: (value: boolean) => void
+    setSpanish: (value: boolean) => void
+}
 
 export const Header = () => {
     const { nightMode, setNightMode } = useNightMode()
     const { spanish, setSpanish } = useLenguage()
+    const { isMobile } = useMobileView()
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -26,20 +48,105 @@ export const Header = () => {
 
     return (
         <div className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
-            <div className="flex justify-between items-center w-[80%] mx-auto my-auto py-5 ">
+            <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-5 py-8 ">
                 <div className="flex gap-2">
-                    <HiChartBar size={55} className="text-zinc-500"/>
+                    <HiChartBar size={isMobile ? 60 : 55} className="text-zinc-500"/>
                     <div className="flex flex-col">    
-                        <h1 className='text-2xl'>As You Need</h1>
-                        <h2 className="text-zinc-500 text-sm">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
+                        <h1 className='md:text-2xl text-3xl'>As You Need</h1>
+                        <h2 className="text-zinc-500 md:text-sm">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
                     </div>
                 </div>
                 <div className="flex gap-10 items-center">
+                    {isMobile ? (
+                        tabsMobileView({
+                            scrollToSection,
+                            setNightMode,
+                            setSpanish,
+                            spanish,
+                            nightMode
+                        })
+                    ) : (
+                        tabsDesktopView({
+                            scrollToSection,
+                            setNightMode,
+                            setSpanish,
+                            spanish,
+                            nightMode
+                        })
+                    )}
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const tabsDesktopView = ({ 
+    scrollToSection,
+    setNightMode,
+    setSpanish,
+    spanish,
+    nightMode 
+} : TabProps ) => {
+    return (
+        <>
+            {tabs.map((tab) => (
+                <p 
+                    key={tab.id}
+                    onClick={() => scrollToSection(tab.section)}
+                    className="text-xl cursor-pointer hover:scale-105 duration-200"
+                >
+                    {spanish ? tab.titleSpanish : tab.titleEnglish}
+                </p>    
+            ))}
+            <div
+                className="cursor-pointer"
+                onClick={() => setNightMode(!nightMode)}
+            >
+                {nightMode 
+                    ? <MdWbSunny size={20}/> 
+                    : <MdNightlight size={20}/>}
+            </div>
+            <div>
+                <Select onValueChange={(value) => setSpanish(value === "spanish")}>
+                    <SelectTrigger 
+                        className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                    >
+                        <SelectValue placeholder={spanish ? "Español" : "Inglés"} />
+                    </SelectTrigger>
+                    <SelectContent 
+                        className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
+                    >
+                        <SelectItem value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
+                        <SelectItem value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                    </SelectContent>
+                </Select>
+            </div>
+        </>
+    )
+}
+
+
+const tabsMobileView = ({ 
+    scrollToSection,
+    setNightMode,
+    setSpanish,
+    spanish,
+    nightMode 
+} : TabProps ) => {
+    return (
+        <Sheet>
+            <SheetTrigger>
+                <HiQueueList size={40}/>
+            </SheetTrigger>
+            <SheetContent className={`${nightMode ? 'bg-black border-zinc-700 pt-10' : '' }`}>
+                <SheetHeader>
+                <SheetTitle className="text-zinc-200 text-4xl mb-10">As You Need</SheetTitle>
+                <SheetDescription className="flex flex-col gap-5">
                     {tabs.map((tab) => (
                         <p 
                             key={tab.id}
                             onClick={() => scrollToSection(tab.section)}
-                            className="text-xl cursor-pointer hover:scale-105 duration-200"
+                            className="text-2xl"
                         >
                             {spanish ? tab.titleSpanish : tab.titleEnglish}
                         </p>    
@@ -49,15 +156,15 @@ export const Header = () => {
                         onClick={() => setNightMode(!nightMode)}
                     >
                         {nightMode 
-                            ? <MdWbSunny size={20}/> 
+                            ? <p className="flex gap-2 items-center text-2xl border border-zinc-400 rounded-lg px-3 py-1 w-fit mt-7">Change <MdWbSunny size={20}/> </p>
                             : <MdNightlight size={20}/>}
                     </div>
                     <div>
                         <Select onValueChange={(value) => setSpanish(value === "spanish")}>
                             <SelectTrigger 
-                                className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                className={`w-[150px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
                             >
-                                <SelectValue placeholder={spanish ? "Español" : "Inglés"} />
+                                <SelectValue className="placeholder-" placeholder={spanish ? "Español" : "Inglés"} />
                             </SelectTrigger>
                             <SelectContent 
                                 className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
@@ -67,9 +174,10 @@ export const Header = () => {
                             </SelectContent>
                         </Select>
                     </div>
-                </div>
-            </div>
-        </div>
+                </SheetDescription>
+                </SheetHeader>
+            </SheetContent>
+        </Sheet>
     )
 }
 
