@@ -11,7 +11,7 @@ import { BackToTop } from "./components/BackToTop";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "As You Need",
+    title: "Home | As You Need",
     description: "En As You Need tenes la posibilidad de llevar tu negocio al siguiente nivel. Conocé más sobre nosotros y empezá a trabajar en tu proyecto.",
 }
 

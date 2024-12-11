@@ -1,14 +1,16 @@
 'use client'
 
-
 import { HiCursorArrowRays } from "react-icons/hi2";
-import { useNightMode } from '../context/NightModeContext'
-import { useLenguage } from '../context/LenguageContext';
+
+import { useNightMode } from '@/app/context/NightModeContext'
+import { useLenguage } from '@/app/context/LenguageContext';
+import { useMobileView } from "@/app/context/MobileViewContext";
 
 
 export const LandingInfo = () => {
     const { nightMode } = useNightMode();
     const { spanish } = useLenguage()
+    const { isMobile } = useMobileView()
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -19,15 +21,16 @@ export const LandingInfo = () => {
 
     return (
         <div className={nightMode ? 'text-white bg-black' : ''}>
-            <div className="pt-48 h-screen">
+            <div className="pt-48 md:h-screen h-[70vh]">
                 <div className="w-[80%] mx-auto flex justify-between gap-10">
-                    <div className="flex flex-col gap-10 w-1/2">
-                        <h1 className="text-6xl font-semibold">{spanish ? 'Comienza Tu' : 'Start Your Own'} {' '}
+                    <div className="flex flex-col md:gap-10 gap-16 md:w-1/2 md:items-start items-center">
+                        <h1 className="md:text-6xl text-7xl md:text-left text-center font-semibold">{spanish ? 'Comienza Tu' : 'Start Your Own'} {' '}
                             <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                                 {spanish ? 'Negocio' : 'Digital'} {' '}
                             </span>
-                        {spanish ? 'Digital.' : 'Business.'}</h1>
-                        <p className={`text-xl ${nightMode ? 'text-zinc-400' : 'text-zinc-700'} `}>
+                            {spanish ? 'Digital.' : 'Business.'}
+                        </h1>
+                        <p className={`md:text-xl text-2xl md:text-left text-center ${nightMode ? 'text-zinc-400' : 'text-zinc-700'} `}>
                             {spanish 
                                 ? 'En As You Need, transformamos tus ideas en realidad digital. Diseñamos y desarrollamos aplicaciones móviles, plataformas web y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
                                 : 'At As You Need, we turn your ideas into digital reality. We design and develop mobile applications, web platforms, and social media, fully customized to meet your business needs.'
@@ -43,10 +46,12 @@ export const LandingInfo = () => {
                             </div>
                         </button>
                     </div>
-                    <div className="w-1/2 flex">
-                        <div className="bg-zinc-200 rounded-3xl w-full h-full flex items-end animate-pulse shadow-2xl duration-1000">
+                    {!isMobile && (
+                        <div className="w-1/2 flex">
+                            <div className="bg-zinc-200 rounded-3xl w-full h-full flex items-end animate-pulse shadow-2xl duration-1000">
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </div>
