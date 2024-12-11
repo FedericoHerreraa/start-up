@@ -29,7 +29,13 @@ export const Founders = () => {
                         />
                     </div>
                     <ImArrowRight2 color="gray" size={25} className="w-1/6 animate-pulse"/>
-                    <p className={`text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} w-2/3`}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem unde asperiores quas itaque delectus dolor qui dignissimos ipsam optio dolores, exercitationem illo beatae alias accusamus et nesciunt iste repellendus quod!</p>
+                    Mi nombre es  
+                    <div className={`text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} w-2/3`}>
+                        {spanish
+                            ? <p>Mi nombre es <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Camila Aznar</span> y soy desarrolladora Front-end. Actualmente, me dedico a crear soluciones visuales innovadoras, aportando creatividad y diseño a cada proyecto. Hoy trabajo en As You Need como <span className="font-bold">Co-Fundadora</span>, desarrollando ideas que conectan con las necesidades de nuestros clientes.</p>
+                            : <p>My name is <span className={`font-bold bg-gradient-to-r ${nightMode ? 'from-blue-500 to-blue-200' : 'from-blue-700 to-blue-400'} bg-clip-text text-transparent`}>Camila Aznar</span>, and I am a Front-end Developer. I specialize in creating innovative visual solutions, bringing creativity and design to every project. Currently, I work at As You Need as a <span className="font-bold">Co-Founder</span>, developing ideas that align with the needs of our clients.</p>
+                        }
+                    </div>
                 </div>
 
                 <div className="mx-10 flex items-center">
