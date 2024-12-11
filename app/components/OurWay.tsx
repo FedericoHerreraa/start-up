@@ -29,48 +29,22 @@ export const OurWay = () => {
                         </h2>
                     </div>
                     <div className="flex flex-col gap-10 mt-10 items-center text-white">
-                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
-                            <BsArrowReturnRight size={30} color="gray"/>
-                            <div className="flex flex-col items-start ">
-                                <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
-                                    {spanish ? 'Soluciones innovadoras.' : 'Innovative Solutions.'}
-                                </h1>
-                                <p className="text-lg text-zinc-500">
-                                    {spanish 
-                                        ? 'Desarrollamos aplicaciones y sitios web modernos, adaptados a tus necesidades y objetivos.' 
-                                        : 'We develop modern applications and websites tailored to your needs and goals.'
-                                    }
-                                </p>
+                        {arrowsInfo.map((arrow, index) => (
+                            <div key={index} className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
+                                <BsArrowReturnRight size={30} color="gray"/>
+                                <div className="flex flex-col items-start ">
+                                    <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
+                                        {spanish ? arrow.titleSpanish : arrow.titleEnglish}
+                                    </h1>
+                                    <p className="text-lg text-zinc-500">
+                                        {spanish 
+                                            ? arrow.spanish
+                                            : arrow.english
+                                        }
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
-                            <BsArrowReturnRight size={30} color="gray"/>    
-                            <div className="flex flex-col items-start">
-                                <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
-                                    {spanish ? 'Experiencia de usuario.' : 'User Experience.'}
-                                </h1>
-                                <p className="text-lg text-zinc-500">
-                                    {spanish 
-                                        ? 'Optimizamos la experiencia de usuario con diseños intuitivos y funcionales, garantizando satisfacción.' 
-                                        : 'We optimize user experience with intuitive and functional designs, ensuring satisfaction.'
-                                    }
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex gap-5 md:w-[35%] w-[60%] mx-auto">
-                            <BsArrowReturnRight size={30} color="gray"/>    
-                            <div className="flex flex-col items-start">
-                                <h1 className={`text-xl font-semibold ${nightMode ? 'text-zinc-300' : 'text-zinc-600'}`}>
-                                    {spanish ? 'Soporte continuo.' : 'Continuous Support.'}
-                                </h1>
-                                <p className="text-lg text-zinc-500">
-                                    {spanish 
-                                        ? 'Acompañamos a nuestros clientes con soporte técnico y actualizaciones para mantener sus proyectos al día.' 
-                                        : 'We provide ongoing technical support and updates to keep projects up-to-date.'
-                                    }
-                                </p>
-                            </div>
-                        </div>
+                        ))}
                     </div>
                 </section>
 
@@ -108,3 +82,25 @@ export const OurWay = () => {
         </div>
     )
 }
+
+
+const arrowsInfo = [
+    {
+        titleSpanish: 'Soluciones innovadoras.',
+        titleEnglish: 'Innovative Solutions.',
+        spanish: 'Desarrollamos aplicaciones y sitios web modernos, adaptados a tus necesidades y objetivos.',
+        english: 'We develop modern applications and websites tailored to your needs and goals.'
+    },
+    {
+        titleSpanish: 'Experiencia de usuario.',
+        titleEnglish: 'User Experience.',
+        spanish: 'Optimizamos la experiencia de usuario con diseños intuitivos y funcionales, garantizando satisfacción.',
+        english: 'We optimize user experience with intuitive and functional designs, ensuring satisfaction.'
+    },
+    {
+        titleSpanish: 'Soporte continuo.',
+        titleEnglish: 'Continuous Support.',
+        spanish: 'Acompañamos a nuestros clientes con soporte técnico y actualizaciones para mantener sus proyectos al día.',
+        english: 'We provide ongoing technical support and updates to keep projects up-to-date.'
+    }
+]
