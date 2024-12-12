@@ -1,7 +1,7 @@
 'use client'
 
 
-import { useNightMode } from "../context/NightModeContext"
+import { useNightMode } from "@/app/context/NightModeContext"
 
 
 export const LineSeparator = () => {

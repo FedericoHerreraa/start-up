@@ -2,8 +2,8 @@
 'use client'
 
 
-import { useLenguage } from "../context/LenguageContext";
-import { useNightMode } from "../context/NightModeContext"
+import { useLenguage } from "@/app/context/LenguageContext";
+import { useNightMode } from "@/app/context/NightModeContext"
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 

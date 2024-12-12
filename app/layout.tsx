@@ -1,8 +1,8 @@
 
 import "./globals.css";
-import { LenguageProvider } from "./context/LenguageContext";
-import { NightModeProvider } from "./context/NightModeContext";
-import { MobileViewProvider } from "./context/MobileViewContext";
+import { LenguageProvider } from "@/app/context/LenguageContext";
+import { NightModeProvider } from "@/app/context/NightModeContext";
+import { MobileViewProvider } from "@/app/context/MobileViewContext";
 
 export default function RootLayout({
   children,

@@ -1,13 +1,13 @@
-import { OurWay } from "./components/OurWay";
-import { Header } from "./components/Header"
-import { LandingInfo } from "./components/Landing"
-import { OurWork } from "./components/OurWork";
-import { CustomSeparator } from "./components/CustomSeparator";
-import { Founders } from "./components/Founders";
-import { StartNow } from "./components/StartNow";
-import { Footer } from "./components/Footer";
-import { LineSeparator } from './components/LineSeparator';
-import { BackToTop } from "./components/BackToTop";
+import { OurWay } from "@/app/components/OurWay";
+import { Header } from "@/app/components/Header"
+import { LandingInfo } from "@/app/components/Landing"
+import { OurWork } from "@/app/components/OurWork";
+import { CustomSeparator } from "@/app/components/CustomSeparator";
+import { Founders } from "@/app/components/Founders";
+import { StartNow } from "@/app/components/StartNow";
+import { Footer } from "@/app/components/Footer";
+import { LineSeparator } from '@/app/components/LineSeparator';
+import { BackToTop } from "@/app/components/BackToTop";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

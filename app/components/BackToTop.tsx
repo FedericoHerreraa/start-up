@@ -1,7 +1,7 @@
 'use client'
 
 import { IoArrowUp } from "react-icons/io5";
-import { useNightMode } from "../context/NightModeContext";
+import { useNightMode } from "@/app/context/NightModeContext";
 
 export const BackToTop = () => {
     const { nightMode } = useNightMode();

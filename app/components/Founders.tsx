@@ -1,10 +1,10 @@
 'use client'
 
-import { useNightMode } from "../context/NightModeContext"
-import { useLenguage } from "../context/LenguageContext";
+import { useNightMode } from "@/app/context/NightModeContext"
+import { useLenguage } from "@/app/context/LenguageContext";
 
-import imageFede from "../img/fede.jpg"
-import imageCami from "../img/cami.jpeg"
+import imageFede from "@/app/img/fede.jpg"
+import imageCami from "@/app/img/cami.jpeg"
 
 import { ImArrowRight2 } from "react-icons/im";
 import Image from "next/image";
