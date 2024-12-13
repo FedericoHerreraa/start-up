@@ -19,7 +19,7 @@ export const Founders = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`${nightMode ? 'bg-black' : '' } md:h-[80vh] h-[120vh]`}>
+        <div className={`${nightMode ? 'bg-black' : '' } md:h-[80vh] h-[150vh]`}>
             <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Los que llevan la magia adelante.' : 'Those who bring the magic to life.'}</p>
             <h1 className={`md:text-6xl text-4xl font-semibold text-center ${nightMode ? 'text-white' : ' '}`}>
                 {spanish ? 'Conoce a Nuestros ' : 'Meet Our'} <span className="bg-gradient-to-r from-violet-400 to-violet-800 bg-clip-text text-transparent">{spanish ? 'Fundadores.' : 'Founders.'}</span>
