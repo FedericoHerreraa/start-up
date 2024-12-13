@@ -19,7 +19,7 @@ export const UITechnologyComponent = () => {
                                 : "bg-zinc-100 border-blue-400 hover:border-blue-700"
                         }`}
                     >
-                        <p className={`opacity-100 font-semibold bg-gradient-to-r md:text-md text-xs ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{tech}</p>
+                        <p className={`opacity-100 font-semibold bg-gradient-to-r md:text-base text-xs ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{tech}</p>
                     </div>
                 ))}
             </div>
