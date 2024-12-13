@@ -13,13 +13,13 @@ export const UITechnologyComponent = () => {
                 {technologies.map((tech, index) => (
                     <div
                         key={index}
-                        className={`w-[200px] mx-3 rounded-full text-center px-4 py-2 border duration-100 ${
+                        className={`md:w-[200px] w-[130px] md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${
                             nightMode
                                 ? "bg-[rgba(13,28,44,0.6)] border-zinc-700 hover:border-zinc-500"
                                 : "bg-zinc-100 border-blue-400 hover:border-blue-700"
                         }`}
                     >
-                        <p className={`opacity-100 font-semibold bg-gradient-to-r ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{tech}</p>
+                        <p className={`opacity-100 font-semibold bg-gradient-to-r md:text-md text-xs ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{tech}</p>
                     </div>
                 ))}
             </div>

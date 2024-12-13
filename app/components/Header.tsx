@@ -34,6 +34,7 @@ interface TabProps {
     nightMode: boolean
     setNightMode: (value: boolean) => void
     setSpanish: (value: boolean) => void
+    isMobile: boolean
 }
 
 export const Header = () => {
@@ -50,10 +51,10 @@ export const Header = () => {
         <div className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-5 py-8 ">
                 <div className="flex gap-2">
-                    <HiChartBar size={isMobile ? 60 : 55} className="text-zinc-500"/>
+                    <HiChartBar size={isMobile ? 45 : 55} className="text-zinc-500"/>
                     <div className="flex flex-col">    
-                        <h1 className='md:text-2xl text-3xl'>As You Need</h1>
-                        <h2 className="text-zinc-500 md:text-sm">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
+                        <h1 className='md:text-2xl text-lg'>As You Need</h1>
+                        <h2 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
                     </div>
                 </div>
                 <div className="flex gap-10 items-center">
@@ -63,7 +64,8 @@ export const Header = () => {
                             setNightMode,
                             setSpanish,
                             spanish,
-                            nightMode
+                            nightMode,
+                            isMobile
                         })
                     ) : (
                         tabsDesktopView({
@@ -71,7 +73,8 @@ export const Header = () => {
                             setNightMode,
                             setSpanish,
                             spanish,
-                            nightMode
+                            nightMode,
+                            isMobile
                         })
                     )}
                 </div>
@@ -131,22 +134,23 @@ const tabsMobileView = ({
     setNightMode,
     setSpanish,
     spanish,
-    nightMode 
+    nightMode,
+    isMobile 
 } : TabProps ) => {
     return (
         <Sheet>
             <SheetTrigger>
-                <HiQueueList size={40}/>
+                <HiQueueList size={isMobile ? 30 : 40}/>
             </SheetTrigger>
             <SheetContent className={`${nightMode ? 'bg-black border-zinc-700 pt-10' : '' }`}>
                 <SheetHeader>
-                <SheetTitle className="text-zinc-200 text-4xl mb-10">As You Need</SheetTitle>
-                <SheetDescription className="flex flex-col gap-5">
+                <SheetTitle className="text-zinc-200 text-2xl mb-10 text-start">As You Need</SheetTitle>
+                <SheetDescription className="flex flex-col items-start gap-5">
                     {tabs.map((tab) => (
                         <p 
                             key={tab.id}
                             onClick={() => scrollToSection(tab.section)}
-                            className="text-2xl"
+                            className="text-lg"
                         >
                             {spanish ? tab.titleSpanish : tab.titleEnglish}
                         </p>    
@@ -156,7 +160,7 @@ const tabsMobileView = ({
                         onClick={() => setNightMode(!nightMode)}
                     >
                         {nightMode 
-                            ? <p className="flex gap-2 items-center text-2xl border border-zinc-400 rounded-lg px-3 py-1 w-fit mt-7">Change <MdWbSunny size={20}/> </p>
+                            ? <p className="flex gap-2 items-center border border-zinc-400 rounded-lg px-3 py-1 w-fit mt-7">Change <MdWbSunny size={20}/> </p>
                             : <MdNightlight size={20}/>}
                     </div>
                     <div>

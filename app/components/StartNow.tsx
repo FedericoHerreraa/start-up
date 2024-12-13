@@ -1,11 +1,9 @@
 
 'use client'
 
-
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext"
 import { FaLongArrowAltRight } from "react-icons/fa";
-
 
 
 export const StartNow = () => {
@@ -17,17 +15,17 @@ export const StartNow = () => {
             id="start"
             className={`${nightMode ? 'bg-black' : ''} min-h-[100vh]`}
         >
-            <p className="text-zinc-500 text-center mb-3 text-xl">{spanish ? 'Bueno, ahora si vamos a lo importante.' : 'Alright, now let’s get to the important part.'}</p>
-            <h1 className={`text-6xl ${nightMode ? 'text-white' : ''} font-semibold text-center`}>
-                {spanish ? 'Comencemos ' : 'Let’s Start'} <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">{spanish ? 'Ahora Mismo.' : 'Right Now.'}</span>
+            <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Bueno, ahora si vamos a lo importante.' : 'Alright, now let’s get to the important part.'}</p>
+            <h1 className={`md:text-6xl text-4xl ${nightMode ? 'text-white' : ''} font-semibold text-center`}>
+                {spanish ? 'Comencemos ' : `Let${"'"}s Start`} <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">{spanish ? 'Ahora Mismo.' : 'Right Now.'}</span>
             </h1>
 
-            <section className="flex w-[95%] mx-auto mt-20 gap-7">
-                <div className={`w-1/2 rounded-xl h-[650px] p-10 text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
-                    <h2 className={`text-3xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
+            <section className="flex md:flex-row flex-col w-[95%] mx-auto mt-20 gap-7">
+                <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
+                    <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
                         {spanish ? 'Coordina una llamada con nosotros.' : 'Schedule a call with us.'}
                     </h2>
-                    <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} mb-10`}>
+                    <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} md:text-md text-sm mb-10`}>
                         {spanish ? '¡Gracias por tu interés en trabajar con nosotros!' : 'Thank you for your interest in working with us!'}
                     </p>
 
@@ -36,11 +34,11 @@ export const StartNow = () => {
                             {spanish 
                                 ? 'Esta sección es para programar una reunión con ' 
                                 : 'This section is to schedule a meeting with '}
-                            <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent text-xl font-semibold">
+                            <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
                                 {spanish ? 'Camila' : 'Camila'}
                             </span> 
                             {spanish ? ' y ' : ' and '}
-                            <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent text-xl font-semibold">
+                            <span className="bg-gradient-to-r from-violet-600 to-violet-800 bg-clip-text text-transparent md:text-xl text-lg font-semibold">
                                 {spanish ? 'Federico' : 'Federico'}
                             </span>,
                             {spanish 
@@ -95,7 +93,7 @@ export const StartNow = () => {
                             </div>
                         </div>
 
-                        <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-800 via-blue-900 to-violet-900' : 'from-blue-600 to-blue-300'} p-5 rounded-lg shadow-xl`}>
+                        <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-800 via-blue-900 to-violet-900' : 'from-blue-600 to-blue-300'} md:p-5 p-3 md:rounded-lg rounded-md shadow-xl`}>
                             <p>
                                 {spanish 
                                     ? 'Nuestro objetivo es conocerte mejor, entender tus requerimientos y asegurarnos de que todo esté alineado para el éxito de tu proyecto.' 
@@ -110,7 +108,7 @@ export const StartNow = () => {
                             : 'Select the time that works best for you in the calendar below. We look forward to seeing you!'}
                     </p>
                 </div>
-                <div className={`w-1/2 rounded-xl h-[80vh] p-10 shadow-lg`}>
+                <div className={`md:w-1/2 rounded-xl h-[80vh] md:p-10 p-5 shadow-lg`}>
                     <iframe
                         src="https://calendly.com/d/cqvt-yqv-34c/review-meeting"
                         width="100%"

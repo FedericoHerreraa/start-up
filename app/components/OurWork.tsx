@@ -16,8 +16,8 @@ export const OurWork = () => {
             id="work"
             className={`${nightMode ? 'bg-black text-zinc-300' : ''} min-h-[150vh]`}
         >
-            <p className="text-zinc-500 text-center mb-3 text-xl">{spanish ? 'Antes de comenzar debes conocer que hacemos.' : 'Before starting you should know what we do.'}</p>
-            <h1 className="text-center text-6xl md:w-[50%] w-[90%] mx-auto  font-semibold">{spanish ? 'Mira Nuestros' : 'Look At Our'} {' '}
+            <p className="text-zinc-500 text-center mb-3 md:text-xl ">{spanish ? 'Antes de comenzar debes conocer que hacemos.' : 'Before starting you should know what we do.'}</p>
+            <h1 className="text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold">{spanish ? 'Mira Nuestros' : 'Look At Our'} {' '}
                 <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent">
                     {spanish ? 'Mejores Proyectos.' : 'Best Projects.'}
                 </span>
