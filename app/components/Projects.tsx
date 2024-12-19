@@ -30,7 +30,10 @@ export const Projects = () => {
                             <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafio:' : 'Our Challenge:'}</h2>
                             <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
                             <div className={`flex ${index%2 === 0 ? 'justify-start' : 'justify-end'} `}>
-                                <Link href={`https://pinasco-three.vercel.app`} className="flex items-center gap-2 border border-blue-400 bg-zinc-900 hover:bg-zinc-800 px-7 py-2 rounded-lg mt-14 w-fit">
+                                <Link 
+                                    href={item.url} 
+                                    className="flex items-center gap-2 border border-blue-400 bg-zinc-900 hover:bg-zinc-800 px-7 py-2 rounded-lg mt-14 w-fit"
+                                >
                                     <p>Visitar</p>
                                     <ArrowRight size={20}/>
                                 </Link>
@@ -61,7 +64,8 @@ const info = [
         descriptionEnglish: 'Design of a website for a dental clinic. The project includes a contact form, an image gallery, and a services section.',
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
         desafioEnglish: 'The main challenge was to ensure that the design conveys trust and professionalism, while making patients feel comfortable browsing the site. Additionally, the focus was on highlighting the clinic\'s key services and providing a mobile-friendly experience.',
-        image: pinascoImg
+        image: pinascoImg,
+        url: 'https://pinasco-three.vercel.app'
     },
     {
         id: 2,
@@ -71,7 +75,8 @@ const info = [
         descriptionEnglish: 'Development of a web application for a pizzeria. The project includes a shopping cart, a payment system, and a promotions section.',
         desafioSpanish: 'El desafío fue integrar un sistema de pedidos intuitivo que permita a los usuarios personalizar sus pizzas de manera sencilla. También se trabajó en garantizar tiempos de respuesta rápidos y una interfaz atractiva para promover las promociones.',
         desafioEnglish: 'The challenge was to integrate an intuitive ordering system that allows users to customize their pizzas easily. Additionally, the focus was on ensuring fast response times and an attractive interface to highlight promotions.',
-        image: pinascoImg
+        image: pinascoImg,
+        url: 'https://pinasco-three.vercel.app'
     },
     {
         id: 3,
@@ -81,6 +86,7 @@ const info = [
         descriptionEnglish: 'Design of a website for a community of coffee lovers. The project includes a blog, an online store, and an events section.',
         desafioSpanish: 'El desafío fue desarrollar una plataforma que permita explorar los instrumentos de forma dinámica, con descripciones detalladas, reseñas y contenido multimedia. También se trabajó en crear un proceso de compra fluido que refleje la calidad y el compromiso de la tienda.',
         desafioEnglish: 'The challenge was to develop a platform that allows users to explore instruments dynamically, with detailed descriptions, reviews, and multimedia content. Additionally, the focus was on creating a seamless shopping process that reflects the store\'s quality and commitment.',
-        image: pinascoImg
+        image: pinascoImg,
+        url: 'https://pinasco-three.vercel.app'
     }
 ];
