@@ -13,7 +13,7 @@ export const Projects = () => {
     const { spanish } = useLenguage()
 
     return (
-        <div className="flex flex-col md:gap-5 gap-20">
+        <div className="flex flex-col md:gap-10 gap-20">
             {info.map((item, index) => (
                 <section key={index} className={`mt-32 h-[60vh] ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
@@ -26,20 +26,20 @@ export const Projects = () => {
                     </div>
                     <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' }  gap-5 w-[95%] mx-auto`}>
                         <div className={`md:w-1/2 md:h-96 h-60 ${index%2 === 0 ? 'mr-40' : 'ml-40 text-right'}`}>
-                            <p className="mt-10 text-zinc-400">{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
+                            <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
                             <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafio:' : 'Our Challenge:'}</h2>
                             <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
                             <div className={`flex ${index%2 === 0 ? 'justify-start' : 'justify-end'} `}>
                                 <Link 
                                     href={item.url} 
-                                    className="flex items-center gap-2 border border-blue-400 bg-zinc-900 hover:bg-zinc-800 px-7 py-2 rounded-lg mt-14 w-fit"
+                                    className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 hover:scale-110 transition-all duration-150 px-10 py-3 rounded-lg mt-14 w-fit"
                                 >
-                                    <p>Visitar</p>
-                                    <ArrowRight size={20}/>
+                                    <p className={`${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Visitar' : 'Navigate'}</p>
+                                    <ArrowRight size={20} className={`${nightMode ? '' : 'text-zinc-200'}`}/>
                                 </Link>
                             </div>
                         </div>
-                        <div className="border-x-2 border-t-2 border-zinc-600 rounded-t-[26px]">
+                        <div className={`border-x-4 border-t-[3px] ${nightMode ? 'border-zinc-600' : 'border-zinc-300'} rounded-t-[27px]`}>
                             <Image
                                 src={item.image}
                                 alt="foto de pinasco"
