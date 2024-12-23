@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import imgLanding from "@/app/img/pngwing.com-3.png"
+import imgLanding from "@/app/img/pngwing.com-4.png"
 
 import { HiCursorArrowRays } from "react-icons/hi2";
 
@@ -50,12 +50,12 @@ export const LandingInfo = () => {
                         </button>
                     </div>
                     {!isMobile && (
-                        <div className="w-1/3 flex">
+                        <div className="w-1/2 flex">
                             <Image 
                                 src={imgLanding} 
                                 alt="Landing Image" 
                                 width={600} 
-                                height={600} 
+                                height={500} 
                                 className="rounded-3xl"
                             />
                         </div>
