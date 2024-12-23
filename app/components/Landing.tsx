@@ -50,17 +50,14 @@ export const LandingInfo = () => {
                         </button>
                     </div>
                     {!isMobile && (
-                        <div className="w-1/2 flex">
+                        <div className="w-1/3 flex">
                             <Image 
                                 src={imgLanding} 
                                 alt="Landing Image" 
-                                width={400} 
-                                height={400} 
+                                width={600} 
+                                height={600} 
                                 className="rounded-3xl"
                             />
-
-                            {/* <div className="bg-zinc-200 rounded-3xl w-full h-full flex items-end animate-pulse shadow-2xl duration-1000">
-                            </div> */}
                         </div>
                     )}
                 </div>
