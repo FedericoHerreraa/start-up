@@ -50,7 +50,7 @@ export const LandingInfo = () => {
                         </button>
                     </div>
                     {!isMobile && (
-                        <div className="w-1/2 flex">
+                        <div className="w-1/2 flex animate-float">
                             <Image 
                                 src={imgLanding} 
                                 alt="Landing Image" 
