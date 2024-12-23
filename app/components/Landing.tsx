@@ -1,5 +1,8 @@
 'use client'
 
+import Image from "next/image";
+import imgLanding from "@/app/img/pngwing.com-3.png"
+
 import { HiCursorArrowRays } from "react-icons/hi2";
 
 import { useNightMode } from '@/app/context/NightModeContext'
@@ -48,8 +51,16 @@ export const LandingInfo = () => {
                     </div>
                     {!isMobile && (
                         <div className="w-1/2 flex">
-                            <div className="bg-zinc-200 rounded-3xl w-full h-full flex items-end animate-pulse shadow-2xl duration-1000">
-                            </div>
+                            <Image 
+                                src={imgLanding} 
+                                alt="Landing Image" 
+                                width={400} 
+                                height={400} 
+                                className="rounded-3xl"
+                            />
+
+                            {/* <div className="bg-zinc-200 rounded-3xl w-full h-full flex items-end animate-pulse shadow-2xl duration-1000">
+                            </div> */}
                         </div>
                     )}
                 </div>
