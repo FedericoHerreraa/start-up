@@ -17,7 +17,7 @@ export const Projects = () => {
     return (
         <div className="flex flex-col md:gap-10 gap-20">
             {info.map((item, index) => (
-                <section key={index} className={`mt-32 h-[60vh] ${nightMode ? 'bg-black' : ''}`}>
+                <section key={index} className={`mt-32 md:h-[60vh] h-[100vh] ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
                         <p className={`md:text-5xl text-2xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${item.id == 1 
                             ? 'from-blue-300 to-blue-400'
@@ -28,19 +28,19 @@ export const Projects = () => {
                     </div>
                     {index === 2 ? (
                         <div>   
-                            <h1 className="text-center  text-5xl mt-32 animate-float">Proximamente!</h1>
+                            <h1 className="text-center  md:text-5xl text-2xl mt-32 animate-float">Proximamente!</h1>
                         </div>
                     ) : (
-                        <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' }  gap-5 w-[95%] mx-auto`}>
-                            <div className={`md:w-1/2 md:h-96 h-60 ${index%2 === 0 ? 'mr-40' : 'ml-40 text-right'}`}>
+                        <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-5 w-[95%] mx-auto`}>
+                            <div className={`md:w-1/2 w-full md:h-96 h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
                                 <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
                                 <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafio:' : 'Our Challenge:'}</h2>
                                 <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
-                                <div className={`flex ${index%2 === 0 ? 'justify-start' : 'justify-end'} `}>
+                                <div className={`flex ${index%2 === 0 ? 'justify-start' : 'md:justify-end'} `}>
                                     <Link 
                                         href={item.url} 
                                         target="_blank"
-                                        className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 hover:scale-110 transition-all duration-150 px-10 py-3 rounded-lg mt-14 w-fit"
+                                        className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 md:hover:scale-110 transition-all duration-150 md:px-10 px-7 md:py-3 py-2 rounded-lg mt-14 w-fit"
                                     >
                                         <p className={`${nightMode ? '' : 'text-zinc-200'}`}>{spanish ? 'Visitar' : 'Navigate'}</p>
                                         <ArrowRight size={20} className={`${nightMode ? '' : 'text-zinc-200'}`}/>
@@ -48,33 +48,33 @@ export const Projects = () => {
                                 </div>
                             </div>
                             {index !== 1 ? (
-                                <div className={`border-2 ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
                                     <Image
                                         src={item.image1}
                                         alt="foto de pinasco"
-                                        width={1000}
+                                        width={800}
                                         height={600}
-                                        className="rounded-[22px] border-[10px] border-black"
+                                        className="rounded-[22px] md:border-[10px] border-[6px] border-black"
                                     />
                                 </div>
                             ) : (
-                                <div className="flex items-center gap-20">
-                                    <div className={`border-2 ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                <div className="flex items-center md:gap-20 gap-10">
+                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
                                         <Image
                                             src={item.image1}
                                             alt="foto de pinasco"
                                             width={300}
-                                            height={700}
-                                            className="rounded-[22px] border-[10px] border-black"
+                                            height={600}
+                                            className="rounded-[22px] md:border-[10px] border-[6px] border-black"
                                         />
                                     </div>
-                                    <div className={`border-2 ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
                                         <Image
                                             src={item.image2}
                                             alt="foto de pinasco"
                                             width={300}
-                                            height={700}
-                                            className="rounded-[22px] border-[10px] border-black"
+                                            height={600}
+                                            className="rounded-[22px] md:border-[10px] border-[6px] border-black"
                                         />
                                     </div>
                                 </div>

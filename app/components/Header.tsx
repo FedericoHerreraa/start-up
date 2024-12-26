@@ -60,7 +60,7 @@ export const Header = () => {
                     }
                     
                     <div className="flex flex-col">    
-                        <h1 className='md:text-2xl text-lg'>SoftNeed</h1>
+                        <h1 className='md:text-2xl text-lg'>As You Need</h1>
                         <h2 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Crea tu Propio Negocio' : 'Start Your Own Business'}</h2>
                     </div>
                 </div>
