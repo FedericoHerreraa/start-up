@@ -26,7 +26,7 @@ export const Footer = () => {
                     
                     <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-5xl text-3xl`}>As You Need</h1>
                 </div>
-                <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-base text-sm text-center mt-5`}>{spanish ? 'Encontraste el Mejor Lugar para Comenzar con tu Negocio.' : 'You Found the Right Place to Start your Own Business'}</p>
+                <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-base text-sm text-center mt-5`}>{spanish ? 'Encontraste el mejor lugar para comenzar con tu negocio.' : 'You found the right place to start your own business'}</p>
             </div>
         </div>
     )
