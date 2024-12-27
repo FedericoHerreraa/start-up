@@ -27,8 +27,8 @@ export const Projects = () => {
                         } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </p>
                     </div>
                     {index === 2 ? (
-                        <div>   
-                            <h1 className="text-center  md:text-5xl text-2xl mt-32 animate-float">Proximamente!</h1>
+                        <div className="flex justify-center h-full items-center">   
+                            <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Sooner!'}</h1>
                         </div>
                     ) : (
                         <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-5 w-[95%] mx-auto`}>
