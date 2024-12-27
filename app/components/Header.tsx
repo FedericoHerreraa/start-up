@@ -10,7 +10,7 @@ import { HiQueueList } from "react-icons/hi2";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-import logo from "@/app/img/Untitled-3.png"
+import logo from "@/app/img/logo.png"
 import Image from "next/image";
 
 import {
