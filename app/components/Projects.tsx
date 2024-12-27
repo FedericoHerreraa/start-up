@@ -15,7 +15,7 @@ export const Projects = () => {
     const { spanish } = useLenguage()
 
     return (
-        <div className="flex flex-col md:gap-10 gap-20">
+        <div className="flex flex-col md:gap-20 gap-20">
             {info.map((item, index) => (
                 <section key={index} className={`mt-32 md:h-[60vh] h-[100vh] ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">

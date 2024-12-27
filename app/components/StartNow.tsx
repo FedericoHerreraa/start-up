@@ -5,6 +5,7 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext"
 import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import { ContactUsForm } from "./ContactUsForm";
 
 
 export const StartNow = () => {
@@ -116,15 +117,8 @@ export const StartNow = () => {
                                 : 'Select the time that works best for you in the calendar below. We look forward to seeing you!'}
                         </p>
                     </div>
-                    <div className={`md:w-1/2 rounded-xl h-[80vh] md:p-10 p-5 shadow-lg`}>
-                        <iframe
-                            src="https://calendly.com/d/cqvt-yqv-34c/review-meeting"
-                            width="100%"
-                            height="100%"
-                            frameBorder="0"
-                            className="rounded-xl"
-                            title="Calendly"
-                        ></iframe>
+                    <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg bg-zinc-950`}>
+                        <ContactUsForm />
                     </div>
                 </section>
             </motion.div>
