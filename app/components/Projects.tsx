@@ -28,7 +28,7 @@ export const Projects = () => {
                     </div>
                     {index === 2 ? (
                         <div className="flex justify-center h-full items-center">   
-                            <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Sooner!'}</h1>
+                            <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Coming Soon!'}</h1>
                         </div>
                     ) : (
                         <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-5 w-[95%] mx-auto`}>
