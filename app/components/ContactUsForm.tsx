@@ -4,7 +4,7 @@ import { Calendar } from "@/app/components/ui/calendar"
 import {
     Select,
     SelectContent,
-    SelectItem,
+    // SelectItem,
     SelectTrigger,
     SelectValue,
 } from "@/app/components/ui/select"  
@@ -113,8 +113,6 @@ export const ContactUsForm = () => {
                             <SelectContent 
                                 
                             >
-                                {/* <SelectItem ></SelectItem>
-                                <SelectItem></SelectItem> */}
                             </SelectContent>
                         </Select>       
                     </div>
