@@ -10,7 +10,7 @@ import { ImArrowRight2 } from "react-icons/im";
 import { BsArrow90DegDown } from "react-icons/bs";
 
 import Image from "next/image";
-import { useMobileView } from "../context/MobileViewContext";
+import { useMobileView } from "@/app/context/MobileViewContext";
 import { motion } from "framer-motion";
 
 

@@ -4,7 +4,7 @@
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { HiChartBar } from "react-icons/hi2";
-import { useMobileView } from "../context/MobileViewContext";
+import { useMobileView } from "@/app/context/MobileViewContext";
 
 import Image from "next/image";
 import logo from "@/app/img/logo.png"
