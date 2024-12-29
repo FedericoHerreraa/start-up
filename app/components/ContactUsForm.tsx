@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Calendar } from "@/app/components/ui/calendar"
+import { ImSpinner8 } from "react-icons/im";
+import Confetti from 'react-confetti'
 
 import {
     Select,
@@ -9,13 +11,10 @@ import {
     SelectValue,
 } from "@/app/components/ui/select"  
 
-import Confetti from 'react-confetti'
-
-
-
 export const ContactUsForm = () => {
     const [date, setDate] = useState<Date | undefined>(new Date())
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
+    const [loading, setLoading] = useState<boolean>(false)
     const [formData, setFormData] = useState({
         to: '',
         name: '',
@@ -30,27 +29,34 @@ export const ContactUsForm = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
-        setShowConfetti(true)
+        setLoading(true)
     
-        // try {
-        //     const response = await fetch('/api/send-email', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(formData),
-        //     });
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
     
-        //     const result = await response.json();
-        //     if (response.ok) {
-        //         setShowConfetti(true)
-        //         console.log(result.message);
-        //     } else {
-        //         console.error('Error: ' + result.message);
-        //     }
-        // } catch (error) {
-        //     console.error('Error:', error);
-        // }
+            const result = await response.json();
+            if (response.ok) {
+                setLoading(false)
+                setShowConfetti(true)
+                setFormData({
+                    to: '',
+                    name: '',
+                    text: '',
+                });
+            } else {
+                setLoading(false)
+                console.error('Error: ' + result.message);
+            }
+        } catch (error) {
+            setLoading(false)
+            console.error('Error:', error);
+        }
     };
 
     useEffect(() => {
@@ -61,14 +67,6 @@ export const ContactUsForm = () => {
             return () => clearTimeout(timer);
         }
     }, [showConfetti])
-
-    // const getWindowSize = () => ({
-    //     width: window.innerWidth,
-    //     height: window.innerHeight,
-    //     top: window.scrollY, // Altura de la ventana visible
-    // });
-
-    // const { width, height, top } = getWindowSize();
     
     return (
         <>
@@ -164,7 +162,13 @@ export const ContactUsForm = () => {
                         className="bg-gradient-to-r w-[250px] mt-5 from-blue-700 to-blue-900 text-white py-2 px-4 rounded-lg text-sm font-medium hover:opacity-80"
                         type="submit"
                     >
-                        Send Email
+                        {loading ? (
+                            <div className="flex justify-center">
+                                <ImSpinner8 className="animate-spin h-5 w-5 text-white"/>
+                            </div>
+                        ) : (
+                            <p>Send Email</p>
+                        )}
                     </button>
                 </div>
             </form>

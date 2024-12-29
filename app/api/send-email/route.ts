@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from 'nodemailer';
 
-function generateEmailContent(name: string, text: string) {
+function generateMessage(name: string, text: string, subject: string) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -40,11 +40,12 @@ function generateEmailContent(name: string, text: string) {
         <body>
             <div class="container">
                 <div class="header">
-                    <h1>Nuevo mensaje de contacto</h1>
+                    <h1>${subject}</h1>
                 </div>
                 <div class="content">
-                    <p><strong>Nombre:</strong> ${name}</p>
-                    <p><strong>Mensaje:</strong> ${text}</p>
+                    <p>Nuestro equipo te confirmara la cita a la brevedad.</p>
+                    <p><strong>Nombre:</strong> ${name}.</p>
+                    <p><strong>Proyecto:</strong> ${text}.</p>
                 </div>
                 <div class="footer">
                     <p>Este es un mensaje automático. Por favor, no responda.</p>
@@ -81,13 +82,23 @@ export async function POST(req: NextRequest) {
             },
         })
 
-        const emailMessage = generateEmailContent(name, text)
+        const emailClientMessage = generateMessage(name, text, "Nos enviaste un nuevo mensaje!")
+        const emailUsMessage = generateMessage(name, text, "Nuevo mensaje de contacto")
 
+        // Email enviado al cliente
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to,
+            subject: "Cita con As You Need",
+            html: emailClientMessage
+        })
+
+        // Email enviado a nosotros
+        await transporter.sendMail({
+            from: to,
+            to: 'asyouneed1@gmail.com',
             subject: "Nuevo mensaje de contacto",
-            html: emailMessage
+            html: emailUsMessage
         })
 
         return NextResponse.json({ message: "Correo enviado exitosamente", status: 200 })
