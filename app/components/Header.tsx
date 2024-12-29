@@ -126,8 +126,8 @@ const tabsDesktopView = ({
                     <SelectContent 
                         className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
                     >
-                        <SelectItem value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                        <SelectItem value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
