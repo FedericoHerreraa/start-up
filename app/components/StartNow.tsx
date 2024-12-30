@@ -5,8 +5,7 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext"
 import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { ContactUsForm } from "./ContactUsForm";
-
+import { ContactUsController } from "./ContactUsController";
 
 export const StartNow = () => {
     const { nightMode } = useNightMode()
@@ -118,7 +117,7 @@ export const StartNow = () => {
                         </p>
                     </div>
                     <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg bg-zinc-950`}>
-                        <ContactUsForm />
+                        <ContactUsController />
                     </div>
                 </section>
             </motion.div>

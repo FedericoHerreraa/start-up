@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+
 import { Calendar } from "@/app/components/ui/calendar"
 import { ImSpinner8 } from "react-icons/im";
 import Confetti from 'react-confetti'
@@ -11,75 +11,38 @@ import {
     SelectValue,
 } from "@/app/components/ui/select"  
 
-export const ContactUsForm = () => {
-    const [showConfetti, setShowConfetti] = useState<boolean>(false)
-    const [date, setDate] = useState<Date>()
-    const [time, setTime] = useState<string>()
-    const [loading, setLoading] = useState<boolean>(false)
-    const [formData, setFormData] = useState({
-        to: '',
-        name: '',
-        text: '',
-    })
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
-
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        const dataToSend = {
-            ...formData,
-            date: date?.toLocaleDateString() || '',
-            time: time || '',
-        }
-
-        setLoading(true)
-    
-        try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(dataToSend),
-            });
-    
-            const result = await response.json();
-            if (response.ok) {
-                setLoading(false)
-                setShowConfetti(true)
-                setFormData({
-                    to: '',
-                    name: '',
-                    text: '',
-                });
-            } else {
-                setLoading(false)
-                console.error('Error: ' + result.message);
-            }
-        } catch (error) {
-            setLoading(false)
-            console.error('Error:', error);
-        }
-    };
-
-    useEffect(() => {
-        if (showConfetti) {
-            const timer = setTimeout(() => {
-                setShowConfetti(false);
-            }, 5000);
-            return () => clearTimeout(timer);
-        }
-    }, [showConfetti])
-
+export const ContactUsView = ({
+    handleChange,
+    handleSubmit,
+    formData,
+    date,
+    setDate,
+    time,
+    setTime,
+    loading,
+    showConfetti,
+    spanish
+}: {
+    handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
+    handleSubmit: (e: React.FormEvent) => void,
+    formData: {
+        to: string,
+        name: string,
+        text: string,
+    },
+    date: Date | undefined,
+    setDate: React.Dispatch<React.SetStateAction<Date | undefined>>,
+    time: string | undefined,
+    setTime: React.Dispatch<React.SetStateAction<string | undefined>>,
+    loading: boolean,
+    showConfetti: boolean,
+    spanish: boolean
+}) => {
     return (
         <>
             {showConfetti && 
                 <Confetti
-                    width={window.innerWidth} 
+                    className="w-screen"
                     height={window.innerHeight + window.scrollY}
                     numberOfPieces={200}
                     recycle={false}
@@ -108,7 +71,7 @@ export const ContactUsForm = () => {
                     </div>
 
                     <div className="w-1/2 text-zinc-300">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">Nombre y Apellido</label>
+                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Nombre y Apellido' : 'First Name & Last Name'}</label>
                         <input 
                             type="text" 
                             name="name"
@@ -116,13 +79,13 @@ export const ContactUsForm = () => {
                             onChange={handleChange}
                             required
                             className="py-2 px-4 block w-full border-gray-200 bg-zinc-900 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
-                            placeholder="Escribe tu nombre completo"
+                            placeholder={spanish ? 'Escribe tu nombre completo' : 'Write your entire name here' }
                         />                
                     </div>
                 </div>
 
                 <div className="w-full mt-3 text-zinc-300">
-                    <label className="block text-sm font-medium mb-2 text-zinc-400">Tu proyecto</label>
+                    <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Tu proyecto' : 'Your project'}</label>
                     <textarea 
                         className="py-3 px-4 block w-full bg-zinc-900 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
                         rows={4} 
@@ -130,13 +93,13 @@ export const ContactUsForm = () => {
                         value={formData.text}
                         onChange={handleChange}
                         required
-                        placeholder="Describe brevemente tu proyecto aqui..."
+                        placeholder={spanish ? "Describe brevemente tu proyecto aqui..." : 'Describe your project here...'}
                     ></textarea>
                 </div>
 
                 <div className="flex gap-5">
                     <div className="w-1/2">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">Elige el dia para la reunion</label>
+                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige el dia para la reunion' : 'Choose a date for the reunion'}</label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
                             <Calendar
                                 mode="single"
@@ -147,18 +110,18 @@ export const ContactUsForm = () => {
                         </div>       
                     </div>
                     <div className="w-1/2">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">Elige la cantidad de tiempo para la reunion</label>
+                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige la cantidad de tiempo para la reunion' : 'Select the amount of time for the reunion'}</label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
                             <Select onValueChange={(value) => setTime(value)}>
-                                <SelectTrigger className="border-none text-zinc-300">
+                                <SelectTrigger className="border-none text-zinc-400">
                                     <SelectValue 
                                         defaultValue={time}
-                                        placeholder="Selecciona una duracion" 
+                                        placeholder={spanish ? "Selecciona una duracion" : "Select a duration"}
                                     />
                                 </SelectTrigger>
                                 <SelectContent className="bg-black text-zinc-200 border-zinc-800 ">
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="30">30 minutos</SelectItem>
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="1">1 hora</SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="30">{spanish ? '30 minutos' : '30 minutes'}</SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="1">{spanish ? '1 hora' : '1 hour'}</SelectItem>
                                 </SelectContent>
                             </Select>       
                         </div>
@@ -166,7 +129,12 @@ export const ContactUsForm = () => {
                 </div>
 
                 <div className="mt-10">
-                    <p className="text-zinc-400 text-sm">Al hacer click en este boton nos enviaras un mail con la informacion, y se te notificara a ti tambien para tu seguridad</p>
+                    <p className="text-zinc-400 text-sm">
+                        {spanish
+                            ? 'Al hacer click en este boton nos enviaras un mail con tu informacion, y se te notificara a ti tambien para tu seguridad.'
+                            : 'By clicking this button you will send us an email with your information, and you will be notified for your security.'
+                        }
+                    </p>
                     <button
                         className="bg-gradient-to-r w-[250px] mt-5 from-blue-700 to-blue-900 text-white py-2 px-4 rounded-lg text-sm font-medium hover:opacity-80"
                         type="submit"
@@ -176,7 +144,7 @@ export const ContactUsForm = () => {
                                 <ImSpinner8 className="animate-spin h-5 w-5 text-white"/>
                             </div>
                         ) : (
-                            <p>Send Email</p>
+                            <p>{spanish ? 'Enviar Email' : 'Send Email'}</p>
                         )}
                     </button>
                 </div>
