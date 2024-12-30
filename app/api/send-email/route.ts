@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import nodemailer from 'nodemailer';
 
-function generateMessage(name: string, text: string, subject: string) {
+function generateMessage(name: string, text: string, time: string, date: string, subject: string,) {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -46,6 +46,8 @@ function generateMessage(name: string, text: string, subject: string) {
                     <p>Nuestro equipo te confirmara la cita a la brevedad.</p>
                     <p><strong>Nombre:</strong> ${name}.</p>
                     <p><strong>Proyecto:</strong> ${text}.</p>
+                    <p><strong>Fecha:</strong> ${date}.</p>
+                    <p><strong>Hora:</strong> ${time}.</p>
                 </div>
                 <div class="footer">
                     <p>Este es un mensaje automático. Por favor, no responda.</p>
@@ -60,17 +62,14 @@ function generateMessage(name: string, text: string, subject: string) {
 export async function POST(req: NextRequest) {
     try {
         const body = await req.json();
-        const { to, name, text } = body
+        const { to, name, text, date, time } = body
 
-        if (!to || !name || !text) {
+        if (!to || !name || !text || !date || !time) {
             return NextResponse.json({
-                message: "Faltan parámetros requeridos: 'to', 'subject' o 'text'.",
+                message: "Faltan parámetros requeridos: 'to', 'subject' o 'text' o 'date' o 'time'.",
                 status: 400
             });
         }
-
-        console.log('User: ', process.env.EMAIL_USER)
-        console.log('Pass: ', process.env.EMAIL_PASS)
 
         const transporter = nodemailer.createTransport({
             host: "smtp.gmail.com", 
@@ -82,8 +81,8 @@ export async function POST(req: NextRequest) {
             },
         })
 
-        const emailClientMessage = generateMessage(name, text, "Nos enviaste un nuevo mensaje!")
-        const emailUsMessage = generateMessage(name, text, "Nuevo mensaje de contacto")
+        const emailClientMessage = generateMessage(name, text, time, date, "Nos enviaste un nuevo mensaje!")
+        const emailUsMessage = generateMessage(name, text, time, date, "Nuevo mensaje de contacto")
 
         // Email enviado al cliente
         await transporter.sendMail({

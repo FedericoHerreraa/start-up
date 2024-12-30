@@ -12,8 +12,9 @@ import {
 } from "@/app/components/ui/select"  
 
 export const ContactUsForm = () => {
-    const [date, setDate] = useState<Date | undefined>(new Date())
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
+    const [date, setDate] = useState<Date>()
+    const [time, setTime] = useState<string>()
     const [loading, setLoading] = useState<boolean>(false)
     const [formData, setFormData] = useState({
         to: '',
@@ -29,6 +30,12 @@ export const ContactUsForm = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
+        const dataToSend = {
+            ...formData,
+            date: date?.toLocaleDateString() || '',
+            time: time || '',
+        }
+
         setLoading(true)
     
         try {
@@ -37,7 +44,7 @@ export const ContactUsForm = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(dataToSend),
             });
     
             const result = await response.json();
@@ -67,7 +74,7 @@ export const ContactUsForm = () => {
             return () => clearTimeout(timer);
         }
     }, [showConfetti])
-    
+
     return (
         <>
             {showConfetti && 
@@ -134,7 +141,7 @@ export const ContactUsForm = () => {
                             <Calendar
                                 mode="single"
                                 selected={date}
-                                onSelect={setDate}
+                                onSelect={(value) => setDate(value)}
                                 className="rounded-md border-none bg-zinc-900 text-zinc-300 text-center"
                             />          
                         </div>       
@@ -142,9 +149,12 @@ export const ContactUsForm = () => {
                     <div className="w-1/2">
                         <label className="block text-sm font-medium mb-2 text-zinc-400">Elige la cantidad de tiempo para la reunion</label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
-                            <Select>
+                            <Select onValueChange={(value) => setTime(value)}>
                                 <SelectTrigger className="border-none text-zinc-300">
-                                    <SelectValue placeholder="Selecciona una duracion" />
+                                    <SelectValue 
+                                        defaultValue={time}
+                                        placeholder="Selecciona una duracion" 
+                                    />
                                 </SelectTrigger>
                                 <SelectContent className="bg-black text-zinc-200 border-zinc-800 ">
                                     <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="30">30 minutos</SelectItem>
@@ -154,7 +164,6 @@ export const ContactUsForm = () => {
                         </div>
                     </div>
                 </div>
-
 
                 <div className="mt-10">
                     <p className="text-zinc-400 text-sm">Al hacer click en este boton nos enviaras un mail con la informacion, y se te notificara a ti tambien para tu seguridad</p>
