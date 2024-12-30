@@ -3,14 +3,16 @@
 
 import { useNightMode } from "@/app/context/NightModeContext";
 import Marquee from "react-fast-marquee";
+import { useLenguage } from "@/app/context/LenguageContext";
 
 export const UITechnologyComponent = () => {
+    const { spanish } = useLenguage()
     const { nightMode } = useNightMode();
 
     return (
         <Marquee>
             <div className="flex mt-20">
-                {services.map((tech, index) => (
+                {spanish ? servicesSpanish : servicesEnglish .map((tech, index) => (
                     <div
                         key={index}
                         className={`md:w-[200px] w-[130px] md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${
@@ -27,7 +29,7 @@ export const UITechnologyComponent = () => {
     );
 };
 
-const services = [
+const servicesSpanish = [
     "Diseño UX/UI",
     "Desarrollo Web",
     "Aplicaciones Móviles",
@@ -41,8 +43,24 @@ const services = [
     "Cloud Hosting",
     "Soluciones Ágiles",
     "Transformación Digital",
-    "Innovación Tecnológica",
     "Consultoría IT",
+];
+
+const servicesEnglish = [
+    "UX/UI Design",
+    "Web Development",
+    "Mobile Applications",
+    "Scalable Systems",
+    "E-commerce",
+    "SEO Optimization",
+    "API Integration",
+    "Automation",
+    "SaaS Platforms",
+    "Technical Support",
+    "Cloud Hosting",
+    "Agile Solutions",
+    "Digital Transformation",
+    "IT Consulting",
 ];
 
 // const technologies = [
