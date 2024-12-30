@@ -21,7 +21,8 @@ export const ContactUsView = ({
     setTime,
     loading,
     showConfetti,
-    spanish
+    spanish,
+    error
 }: {
     handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
     handleSubmit: (e: React.FormEvent) => void,
@@ -36,7 +37,8 @@ export const ContactUsView = ({
     setTime: React.Dispatch<React.SetStateAction<string | undefined>>,
     loading: boolean,
     showConfetti: boolean,
-    spanish: boolean
+    spanish: boolean,
+    error: string
 }) => {
     return (
         <>
@@ -107,12 +109,15 @@ export const ContactUsView = ({
                                 onSelect={(value) => setDate(value)}
                                 className="rounded-md border-none bg-zinc-900 text-zinc-300 text-center"
                             />          
-                        </div>       
+                        </div>
+                        {error && (
+                            <p className="text-red-500 text-sm mt-2">{error}</p>
+                        )}
                     </div>
                     <div className="w-1/2">
                         <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige la cantidad de tiempo para la reunion' : 'Select the amount of time for the reunion'}</label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
-                            <Select onValueChange={(value) => setTime(value)}>
+                            <Select required onValueChange={(value) => setTime(value)}>
                                 <SelectTrigger className="border-none text-zinc-400">
                                     <SelectValue 
                                         defaultValue={time}

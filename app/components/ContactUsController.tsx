@@ -7,6 +7,7 @@ import { ContactUsView } from "./ContactUsView";
 export const ContactUsController = () => {
     const { spanish } = useLenguage()
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
+    const [error, setError] = useState<string>('')
     const [date, setDate] = useState<Date>()
     const [time, setTime] = useState<string>()
     const [loading, setLoading] = useState<boolean>(false)
@@ -23,6 +24,14 @@ export const ContactUsController = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (!date) {
+            if (spanish) setError("Por favor selecciona una fecha antes de enviar el formulario.")
+            else setError("Please select a date before submitting the form.")
+            
+            setTimeout(() => setError(''), 3000)
+            return;
+        }
 
         const dataToSend = {
             ...formData,
@@ -81,6 +90,7 @@ export const ContactUsController = () => {
             loading={loading}
             showConfetti={showConfetti}
             spanish={spanish}
+            error={error}
         />
     )
 }
