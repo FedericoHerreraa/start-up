@@ -17,6 +17,10 @@ export const ContactUsController = () => {
         text: '',
     })
 
+    const today = new Date();
+    const twoMonthsAhead = new Date();
+    twoMonthsAhead.setMonth(today.getMonth() + 2);
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
@@ -91,6 +95,9 @@ export const ContactUsController = () => {
             showConfetti={showConfetti}
             spanish={spanish}
             error={error}
+            today={today}
+            twoMonthsAhead={twoMonthsAhead}
+            setError={setError}
         />
     )
 }

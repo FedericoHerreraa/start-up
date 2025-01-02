@@ -41,7 +41,7 @@ export const LandingInfo = () => {
                         </p>
                         <button 
                             onClick={() => scrollToSection('start')} 
-                            className={`bg-blue-800 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl ${spanish ? 'md:w-1/2 w-[75%]' : 'md:w-[45%] w-[75%]'}  hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
+                            className={`bg-blue-800 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl w-fit hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
                         >
                             <div className="flex gap-2 items-center">
                                 <p className="md:text-xl font-semibold">{spanish ? 'Comencemos Hoy!' : `Let${`'`}s Start Now!`}</p>

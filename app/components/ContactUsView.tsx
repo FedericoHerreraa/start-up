@@ -22,7 +22,10 @@ export const ContactUsView = ({
     loading,
     showConfetti,
     spanish,
-    error
+    error,
+    today,
+    twoMonthsAhead,
+    setError
 }: {
     handleChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void,
     handleSubmit: (e: React.FormEvent) => void,
@@ -38,7 +41,10 @@ export const ContactUsView = ({
     loading: boolean,
     showConfetti: boolean,
     spanish: boolean,
-    error: string
+    error: string,
+    today: Date,
+    twoMonthsAhead: Date,
+    setError: React.Dispatch<React.SetStateAction<string>>
 }) => {
     return (
         <>
@@ -101,12 +107,28 @@ export const ContactUsView = ({
 
                 <div className="flex gap-5">
                     <div className="w-1/2">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige el dia para la reunion' : 'Choose a date for the reunion'}</label>
+                        <label className="block text-sm font-medium mb-2 text-zinc-400">
+                            {spanish ? `Elige la fecha (${today.toLocaleDateString()} - ${twoMonthsAhead.toLocaleDateString()})` : `Choose a date (${today.toLocaleDateString()} - ${twoMonthsAhead.toLocaleDateString()})`}
+                        </label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
                             <Calendar
                                 mode="single"
                                 selected={date}
-                                onSelect={(value) => setDate(value)}
+                                onSelect={(value) => {
+                                    if (value) {
+                                        const selectedDate = new Date(value);
+                                        if (selectedDate >= today && selectedDate <= twoMonthsAhead) {
+                                            setDate(value);
+                                            setError(""); 
+                                        } else {
+                                            setError(
+                                                spanish
+                                                    ? "Selecciona una fecha dentro del rango permitido."
+                                                    : "Please select a date within the allowed range."
+                                            );
+                                        }
+                                    }
+                                }}
                                 className="rounded-md border-none bg-zinc-900 text-zinc-300 text-center"
                             />          
                         </div>
