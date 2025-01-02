@@ -12,7 +12,7 @@ export const UITechnologyComponent = () => {
     return (
         <Marquee>
             <div className="flex mt-20">
-                {spanish ? servicesSpanish : servicesEnglish .map((tech, index) => (
+                {(spanish ? servicesSpanish : servicesEnglish).map((tech, index) => (
                     <div
                         key={index}
                         className={`md:w-[200px] w-[130px] md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${

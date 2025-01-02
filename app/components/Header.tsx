@@ -152,9 +152,9 @@ const tabsMobileView = ({
             <SheetTrigger>
                 <HiQueueList size={isMobile ? 30 : 40}/>
             </SheetTrigger>
-            <SheetContent className={`${nightMode ? 'bg-black border-zinc-700 pt-10' : '' }`}>
+            <SheetContent className={`${nightMode ? 'bg-black border-zinc-700 pt-10' : 'pt-18' }`}>
                 <SheetHeader>
-                <SheetTitle className="text-zinc-200 text-2xl mb-10 text-start">As You Need</SheetTitle>
+                <SheetTitle className={` text-2xl mb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>As You Need</SheetTitle>
                 <SheetDescription className="flex flex-col items-start gap-5">
                     {tabs.map((tab) => (
                         <p 
@@ -170,7 +170,7 @@ const tabsMobileView = ({
                         onClick={() => setNightMode(!nightMode)}
                     >
                         {nightMode 
-                            ? <p className="flex gap-2 items-center border border-zinc-400 rounded-lg px-3 py-1 w-fit mt-7">Change <MdWbSunny size={20}/> </p>
+                            ? <MdWbSunny size={20}/>
                             : <MdNightlight size={20}/>}
                     </div>
                     <div>

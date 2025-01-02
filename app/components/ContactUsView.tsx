@@ -1,3 +1,5 @@
+'use client'
+
 
 import { Calendar } from "@/app/components/ui/calendar"
 import { ImSpinner8 } from "react-icons/im";
