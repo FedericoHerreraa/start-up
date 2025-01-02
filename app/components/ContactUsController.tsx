@@ -17,9 +17,16 @@ export const ContactUsController = () => {
         text: '',
     })
 
-    const today = new Date();
-    const twoMonthsAhead = new Date();
-    twoMonthsAhead.setMonth(today.getMonth() + 2);
+    const [today, setToday] = useState<Date | null>(null);
+    const [twoMonthsAhead, setTwoMonthsAhead] = useState<Date | null>(null);
+
+    useEffect(() => {
+        const now = new Date();
+        setToday(now);
+        const future = new Date();
+        future.setMonth(now.getMonth() + 2);
+        setTwoMonthsAhead(future);
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;

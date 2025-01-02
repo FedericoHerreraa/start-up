@@ -29,6 +29,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "@/app/components/ui/sheet"
+import { useState } from "react";
 
 
 interface TabProps {
@@ -37,13 +38,16 @@ interface TabProps {
     nightMode: boolean
     setNightMode: (value: boolean) => void
     setSpanish: (value: boolean) => void
-    isMobile: boolean
+    isOpen: boolean
+    setIsOpen: (value: boolean) => void
 }
+
 
 export const Header = () => {
     const { nightMode, setNightMode } = useNightMode()
     const { spanish, setSpanish } = useLenguage()
     const { isMobile } = useMobileView()
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId);
@@ -72,7 +76,8 @@ export const Header = () => {
                             setSpanish,
                             spanish,
                             nightMode,
-                            isMobile
+                            isOpen,
+                            setIsOpen
                         })
                     ) : (
                         tabsDesktopView({
@@ -81,7 +86,8 @@ export const Header = () => {
                             setSpanish,
                             spanish,
                             nightMode,
-                            isMobile
+                            isOpen,
+                            setIsOpen
                         })
                     )}
                 </div>
@@ -145,50 +151,75 @@ const tabsMobileView = ({
     setSpanish,
     spanish,
     nightMode,
-    isMobile 
+    isOpen,
+    setIsOpen 
 } : TabProps ) => {
     return (
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger>
-                <HiQueueList size={isMobile ? 30 : 40}/>
+                <HiQueueList size={25}/>
             </SheetTrigger>
-            <SheetContent className={`${nightMode ? 'bg-black border-zinc-700 pt-10' : 'pt-18' }`}>
+            <SheetContent className={`${nightMode ? 'bg-black border-zinc-800 pt-10' : 'pt-10 border-zinc-300' }`}>
                 <SheetHeader>
-                <SheetTitle className={` text-2xl mb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>As You Need</SheetTitle>
-                <SheetDescription className="flex flex-col items-start gap-5">
-                    {tabs.map((tab) => (
-                        <p 
-                            key={tab.id}
-                            onClick={() => scrollToSection(tab.section)}
-                            className="text-lg"
+                    <div onClick={() => setIsOpen(false)} className="absolute top-0 right-0 m-5 cursor-pointer">
+                        <p className={` ${nightMode ? 'text-zinc-100' : 'text-zinc-800'}`}>X</p>
+                    </div>
+                    <SheetTitle className={`text-2xl pb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>
+                        As You Need
+                    </SheetTitle>
+                    <SheetDescription className="flex flex-col items-start gap-5">
+                        {tabs.map((tab) => (
+                            <p 
+                                key={tab.id}
+                                onClick={() => {
+                                    setIsOpen(false)
+                                    scrollToSection(tab.section)
+                                }}
+                                className="text-lg"
+                            >
+                                {spanish ? tab.titleSpanish : tab.titleEnglish}
+                            </p>    
+                        ))}
+                        <div
+                            className="cursor-pointer"
+                            onClick={() => setNightMode(!nightMode)}
                         >
-                            {spanish ? tab.titleSpanish : tab.titleEnglish}
-                        </p>    
-                    ))}
-                    <div
-                        className="cursor-pointer"
-                        onClick={() => setNightMode(!nightMode)}
-                    >
-                        {nightMode 
-                            ? <MdWbSunny size={20}/>
-                            : <MdNightlight size={20}/>}
-                    </div>
-                    <div>
-                        <Select onValueChange={(value) => setSpanish(value === "spanish")}>
-                            <SelectTrigger 
-                                className={`w-[150px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                            {nightMode 
+                                ? <MdWbSunny size={20}/>
+                                : <MdNightlight size={20}/>}
+                        </div>
+                        <div>
+                            {/* <Select onValueChange={(value) => setSpanish(value === "spanish")}>
+                                <SelectTrigger 
+                                    className={`w-[150px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                >
+                                    <SelectValue className="placeholder-" placeholder={spanish ? "Español" : "Inglés"} />
+                                </SelectTrigger>
+                                <SelectContent 
+                                    className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
+                                >
+                                    <SelectItem value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
+                                    <SelectItem value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                                </SelectContent>
+                            </Select> */}
+                            <Select 
+                                defaultValue={spanish ? "spanish" : "english"} 
+                                onValueChange={() => setSpanish(!spanish)}
                             >
-                                <SelectValue className="placeholder-" placeholder={spanish ? "Español" : "Inglés"} />
-                            </SelectTrigger>
-                            <SelectContent 
-                                className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
-                            >
-                                <SelectItem value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                                <SelectItem value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
-                            </SelectContent>
-                        </Select>
-                    </div>
-                </SheetDescription>
+                                <SelectTrigger 
+                                    className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                >
+                                    <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
+                                </SelectTrigger>
+                                <SelectContent 
+                                    className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
+                                >
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </SheetDescription>
                 </SheetHeader>
             </SheetContent>
         </Sheet>

@@ -44,8 +44,8 @@ export const ContactUsView = ({
     showConfetti: boolean,
     spanish: boolean,
     error: string,
-    today: Date,
-    twoMonthsAhead: Date,
+    today: Date | null,
+    twoMonthsAhead: Date | null,
     setError: React.Dispatch<React.SetStateAction<string>>
 }) => {
     return (
@@ -110,7 +110,7 @@ export const ContactUsView = ({
                 <div className="flex gap-5">
                     <div className="w-1/2">
                         <label className="block text-sm font-medium mb-2 text-zinc-400">
-                            {spanish ? `Elige la fecha (${today.toLocaleDateString()} - ${twoMonthsAhead.toLocaleDateString()})` : `Choose a date (${today.toLocaleDateString()} - ${twoMonthsAhead.toLocaleDateString()})`}
+                            {spanish ? `Elige la fecha (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})` : `Choose a date (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})`}
                         </label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
                             <Calendar
@@ -119,7 +119,7 @@ export const ContactUsView = ({
                                 onSelect={(value) => {
                                     if (value) {
                                         const selectedDate = new Date(value);
-                                        if (selectedDate >= today && selectedDate <= twoMonthsAhead) {
+                                        if (today && selectedDate >= today && twoMonthsAhead && selectedDate <= twoMonthsAhead) {
                                             setDate(value);
                                             setError(""); 
                                         } else {

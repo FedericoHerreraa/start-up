@@ -15,7 +15,7 @@ export const UITechnologyComponent = () => {
                 {(spanish ? servicesSpanish : servicesEnglish).map((tech, index) => (
                     <div
                         key={index}
-                        className={`md:w-[200px] w-[130px] md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${
+                        className={`w-fit md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${
                             nightMode
                                 ? "bg-[rgba(13,28,44,0.6)] border-zinc-700 hover:border-zinc-500"
                                 : "bg-zinc-100 border-blue-400 hover:border-blue-700"
