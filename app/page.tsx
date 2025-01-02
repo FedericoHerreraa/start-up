@@ -9,6 +9,7 @@ import { Footer } from "@/app/components/Footer";
 import { LineSeparator } from '@/app/components/LineSeparator';
 import { BackToTop } from "@/app/components/BackToTop";
 import { Metadata } from "next";
+import { TrustedByCompanies } from "./components/TrustedByCompanies";
 
 export const metadata: Metadata = {
     title: "Home | As You Need",
@@ -24,6 +25,7 @@ export default function HomePage() {
             <OurWay />
             <LineSeparator />
             <OurWork />
+            <TrustedByCompanies />
             <CustomSeparator />
             <Founders /> 
             <LineSeparator />
