@@ -25,6 +25,7 @@ export default function HomePage() {
             <OurWay />
             <LineSeparator />
             <OurWork />
+            <LineSeparator />
             <TrustedByCompanies />
             <CustomSeparator />
             <Founders /> 
