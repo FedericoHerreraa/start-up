@@ -17,17 +17,15 @@ export const Projects = () => {
     return (
         <div className="flex flex-col md:gap-20 gap-20">
             {info.map((item, index) => (
-                <section key={index} className={`mt-32 md:h-[60vh] h-[100vh] ${nightMode ? 'bg-black' : ''}`}>
+                <section key={index} className={`mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? 'border-l-[3px] border-l-blue-900' : 'border-r-[3px] border-r-blue-900'}  ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
-                        <p className={`md:text-5xl text-2xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${item.id == 1 
-                            ? 'from-blue-300 to-blue-400'
-                            : item.id == 2
-                                ? 'from-red-400 to-red-500 md:text-end pr-10'
-                                : 'from-red-700 to-red-800'
+                        <p className={`md:text-5xl text-2xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
+                            ? ''
+                            : 'md:text-end md:mr-10'
                         } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </p>
                     </div>
                     {index === 2 ? (
-                        <div className="flex justify-center h-full items-center">   
+                        <div className="flex justify-center h-[60vh] items-center">   
                             <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Coming Soon!'}</h1>
                         </div>
                     ) : (
@@ -112,16 +110,16 @@ const info = [
         image2: cartNonnoMingo,
         url: 'https://www.nonnomingo.com.ar'
     },
-    {
-        id: 3,
-        titleSpanish: 'Venta de Instrumentos.',
-        titleEnglish: 'Musical Instruments Store.',
-        descriptionSpanish: 'Diseño de una página web para una comunidad de amantes del café. El proyecto incluye un blog, una tienda en línea y una sección de eventos.',
-        descriptionEnglish: 'Design of a website for a community of coffee lovers. The project includes a blog, an online store, and an events section.',
-        desafioSpanish: 'El desafío fue desarrollar una plataforma que permita explorar los instrumentos de forma dinámica, con descripciones detalladas, reseñas y contenido multimedia. También se trabajó en crear un proceso de compra fluido que refleje la calidad y el compromiso de la tienda.',
-        desafioEnglish: 'The challenge was to develop a platform that allows users to explore instruments dynamically, with detailed descriptions, reviews, and multimedia content. Additionally, the focus was on creating a seamless shopping process that reflects the store\'s quality and commitment.',
-        image1: '',
-        image2: '',
-        url: ''
-    }
+    // {
+    //     id: 3,
+    //     titleSpanish: 'Venta de Instrumentos.',
+    //     titleEnglish: 'Musical Instruments Store.',
+    //     descriptionSpanish: 'Diseño de una página web para una comunidad de amantes del café. El proyecto incluye un blog, una tienda en línea y una sección de eventos.',
+    //     descriptionEnglish: 'Design of a website for a community of coffee lovers. The project includes a blog, an online store, and an events section.',
+    //     desafioSpanish: 'El desafío fue desarrollar una plataforma que permita explorar los instrumentos de forma dinámica, con descripciones detalladas, reseñas y contenido multimedia. También se trabajó en crear un proceso de compra fluido que refleje la calidad y el compromiso de la tienda.',
+    //     desafioEnglish: 'The challenge was to develop a platform that allows users to explore instruments dynamically, with detailed descriptions, reviews, and multimedia content. Additionally, the focus was on creating a seamless shopping process that reflects the store\'s quality and commitment.',
+    //     image1: '',
+    //     image2: '',
+    //     url: ''
+    // }
 ];
