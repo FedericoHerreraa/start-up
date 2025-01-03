@@ -17,7 +17,7 @@ export const Projects = () => {
     return (
         <div className="flex flex-col md:gap-20 gap-20 pb-40">
             {info.map((item, index) => (
-                <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] md:${index%2 === 0 ? 'border-l-[3px] border-l-blue-950' : 'border-r-[3px] border-r-blue-950'}  ${nightMode ? 'bg-black' : ''}`}>
+                <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? 'md:border-l-[3px] border-l-blue-950' : 'md:border-r-[3px] border-r-blue-950'}  ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
                         <p className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
                             ? ''
