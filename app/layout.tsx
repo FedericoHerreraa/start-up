@@ -11,6 +11,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="https://framerusercontent.com/images/sHciS4qwmcUtBxlzJXwHGPxKgg.jpg"/>
+      </head>
       <body>
         <LenguageProvider>
           <NightModeProvider>

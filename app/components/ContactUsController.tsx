@@ -87,7 +87,11 @@ export const ContactUsController = () => {
             }, 5000);
             return () => clearTimeout(timer);
         }
-    }, [showConfetti])
+        if (error) {
+            const timeout = setTimeout(() => setError(''), 3000);
+            return () => clearTimeout(timeout);
+        }
+    }, [showConfetti, error])
 
     return (
         <ContactUsView
