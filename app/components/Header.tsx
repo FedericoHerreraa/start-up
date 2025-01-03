@@ -161,10 +161,10 @@ const tabsMobileView = ({
             </SheetTrigger>
             <SheetContent className={`${nightMode ? 'bg-black border-zinc-800 pt-10' : 'pt-10 border-zinc-300' }`}>
                 <SheetHeader>
-                    <div onClick={() => setIsOpen(false)} className="absolute top-0 right-0 m-5 cursor-pointer">
-                        <p className={` ${nightMode ? 'text-zinc-100' : 'text-zinc-800'}`}>X</p>
-                    </div>
                     <SheetTitle className={`text-2xl pb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>
+                        <div onClick={() => setIsOpen(false)} className="absolute top-0 right-0 m-5 cursor-pointer">
+                            <p className={`text-lg ${nightMode ? 'text-zinc-100' : 'text-zinc-800'}`}>X</p>
+                        </div>
                         As You Need
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">

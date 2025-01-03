@@ -17,34 +17,31 @@ export const TrustedByCompanies = () => {
         <div className={`py-24 ${nightMode ? 'bg-black' : ''} text-zinc-300 min-h-[60vh]`}>
             <p className="text-zinc-500 text-center mb-3 md:text-xl ">
                 {spanish
-                    ? "Nuestros Partners."
+                    ? "Nuestros Clients."
                     : "Our Partners."}
             </p>
             <h1 className={`${nightMode ? '' : 'text-black'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Apoyados por las" : "Trusted by the"}{" "}
+                {spanish ? "Acompañado por los" : "Trusted by the"}{" "}
                 <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                     {spanish ? "Mejores Clientes." : "Best Clients."}
                 </span>
             </h1>
 
-            <section className={`w-full ${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} mt-20 h-40 flex items-center justify-center gap-10`}>
+            <section className={`w-full ${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
                 <Image
                     src={nightMode ? christianSaadDark : christianSaadLight}
                     alt="Christian Saad"
-                    width={160}
-                    height={160}
+                    className="md:w-[160px] md:h-[70px] w-[100px] h-[40px]"
                 />
                 <Image
                     src={pinasco}
                     alt="Pinasco"
-                    width={160}
-                    height={160}
+                    className="md:w-[160px] md:h-[40px] w-[100px] h-[25px]"
                 />
                 <Image
                     src={buffalo}
                     alt="buffalo"
-                    width={80}
-                    height={80}
+                    className="md:w-[100px] md:h-[105px] w-[70px] h-[70px]"
                 />
             </section>
         </div>

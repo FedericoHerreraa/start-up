@@ -107,8 +107,8 @@ export const ContactUsView = ({
                     ></textarea>
                 </div>
 
-                <div className="flex gap-5">
-                    <div className="w-1/2">
+                <div className="flex md:flex-row flex-col gap-5">
+                    <div className="md:w-1/2">
                         <label className="block text-sm font-medium mb-2 text-zinc-400">
                             {spanish ? `Elige la fecha (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})` : `Choose a date (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})`}
                         </label>
@@ -138,7 +138,7 @@ export const ContactUsView = ({
                             <p className="text-red-500 text-sm mt-2">{error}</p>
                         )}
                     </div>
-                    <div className="w-1/2">
+                    <div className="md:w-1/2">
                         <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige la cantidad de tiempo para la reunion' : 'Select the amount of time for the reunion'}</label>
                         <div className="bg-zinc-900 flex justify-center rounded-lg">
                             <Select required onValueChange={(value) => setTime(value)}>
@@ -157,7 +157,7 @@ export const ContactUsView = ({
                     </div>
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-10 md:text-left text-center">
                     <p className="text-zinc-400 text-sm">
                         {spanish
                             ? 'Al hacer click en este boton nos enviaras un mail con tu informacion, y se te notificara a ti tambien para tu seguridad.'

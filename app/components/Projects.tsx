@@ -17,9 +17,9 @@ export const Projects = () => {
     return (
         <div className="flex flex-col md:gap-20 gap-20 pb-40">
             {info.map((item, index) => (
-                <section key={index} className={`mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? 'border-l-[3px] border-l-blue-900' : 'border-r-[3px] border-r-blue-900'}  ${nightMode ? 'bg-black' : ''}`}>
+                <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] md:${index%2 === 0 ? 'border-l-[3px] border-l-blue-950' : 'border-r-[3px] border-r-blue-950'}  ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
-                        <p className={`md:text-5xl text-2xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
+                        <p className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
                             ? ''
                             : 'md:text-end md:mr-10'
                         } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </p>
@@ -52,7 +52,7 @@ export const Projects = () => {
                                         alt="foto de pinasco"
                                         width={800}
                                         height={600}
-                                        className="rounded-[22px] md:border-[10px] border-[6px] border-black"
+                                        className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
                                     />
                                 </div>
                             ) : (
@@ -63,7 +63,7 @@ export const Projects = () => {
                                             alt="foto de pinasco"
                                             width={300}
                                             height={600}
-                                            className="rounded-[22px] md:border-[10px] border-[6px] border-black"
+                                            className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
                                         />
                                     </div>
                                     <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
@@ -72,7 +72,7 @@ export const Projects = () => {
                                             alt="foto de pinasco"
                                             width={300}
                                             height={600}
-                                            className="rounded-[22px] md:border-[10px] border-[6px] border-black"
+                                            className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
                                         />
                                     </div>
                                 </div>
