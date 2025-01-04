@@ -12,7 +12,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://framerusercontent.com/images/sHciS4qwmcUtBxlzJXwHGPxKgg.jpg"/>
+        <link rel="icon" href="https://res.cloudinary.com/dikdtnj2b/image/upload/v1736027957/logo_qxphk1.png"/>
       </head>
       <body>
         <LenguageProvider>
