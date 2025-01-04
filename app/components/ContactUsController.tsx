@@ -70,6 +70,8 @@ export const ContactUsController = () => {
                     name: '',
                     text: '',
                 });
+                setDate(undefined)
+                setTime('')
             } else {
                 setLoading(false)
                 console.error('Error: ' + result.message);

@@ -31,7 +31,7 @@ export const StartNow = () => {
                 <section className="flex md:flex-row flex-col w-[95%] mx-auto mt-20 gap-7">
                     <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
                         <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
-                            {spanish ? 'Coordina una llamada con nosotros.' : 'Schedule a call with us.'}
+                            {spanish ? 'Coordina una llamada.' : 'Schedule a call.'}
                         </h2>
                         <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} md:text-md text-sm mb-10`}>
                             {spanish ? '¡Gracias por tu interés en trabajar con nosotros!' : 'Thank you for your interest in working with us!'}
@@ -112,8 +112,8 @@ export const StartNow = () => {
                         
                         <p className={`mt-7 ${nightMode ? 'text-zinc-300' : 'text-zinc-600'} animate-pulse`}>
                             {spanish 
-                                ? 'Selecciona el horario que más te convenga en el calendario a continuación. ¡Te esperamos!' 
-                                : 'Select the time that works best for you in the calendar below. We look forward to seeing you!'}
+                                ? 'Selecciona el horario y dia que más te convenga en el calendario a continuación. ¡Te esperamos!' 
+                                : 'Select the time and day that works best for you in the calendar. We look forward to seeing you!'}
                         </p>
                     </div>
                     <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg bg-zinc-950`}>

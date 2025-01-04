@@ -47,7 +47,7 @@ function generateMessage(name: string, text: string, time: string, date: string,
                     <p><strong>Nombre:</strong> ${name}.</p>
                     <p><strong>Proyecto:</strong> ${text}.</p>
                     <p><strong>Fecha:</strong> ${date}.</p>
-                    <p><strong>Hora:</strong> ${time}.</p>
+                    <p><strong>Tiempo:</strong> ${time}.</p>
                 </div>
                 <div class="footer">
                     <p>Este es un mensaje automático. Por favor, no responda.</p>
