@@ -16,15 +16,14 @@ export const Footer = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`h-[50vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
+        <div className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
             <div className={`${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} h-full w-full`}>
                 <div className="flex gap-3 items-center justify-center pt-20">
                     {nightMode
                         ? <HiChartBar size={isMobile ? 45 : 55} className={`${nightMode ? 'text-zinc-500' : 'text-zinc-800'}`}/>
                         : <Image src={logo} alt="" className="w-12 h-auto rotate-45" />
                     }
-                    
-                    <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-5xl text-3xl`}>As You Need</h1>
+                    <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-5xl text-3xl`}>AsNeed</h1>
                 </div>
                 <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-base text-sm text-center mt-5`}>{spanish ? 'Encontraste el mejor lugar para comenzar con tu negocio.' : 'You found the right place to start your own business'}</p>
             </div>

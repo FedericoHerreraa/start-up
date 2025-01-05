@@ -12,8 +12,8 @@ import { Metadata } from "next";
 import { TrustedByCompanies } from "./components/TrustedByCompanies";
 
 export const metadata: Metadata = {
-    title: "Home | As You Need",
-    description: "En As You Need tenes la posibilidad de llevar tu negocio al siguiente nivel. Conocé más sobre nosotros y empezá a trabajar en tu proyecto.",
+    title: "Home | AsNeed",
+    description: "En AsNeed tenes la posibilidad de llevar tu negocio al siguiente nivel. Conocé más sobre nosotros y empezá a trabajar en tu proyecto.",
 }
 
 export default function HomePage() {

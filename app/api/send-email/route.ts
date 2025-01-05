@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
         await transporter.sendMail({
             from: process.env.EMAIL_USER,
             to,
-            subject: "Cita con As You Need",
+            subject: "Cita con AsNeed",
             html: emailClientMessage
         })
 
