@@ -50,6 +50,7 @@ export const ContactUsController = () => {
             ...formData,
             date: date?.toLocaleDateString() || '',
             time: time || '',
+            lenguage: spanish ? 'es' : 'en',
         }
 
         setLoading(true)
