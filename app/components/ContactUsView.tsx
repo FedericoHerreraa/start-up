@@ -24,6 +24,7 @@ export const ContactUsView = ({
     loading,
     showConfetti,
     spanish,
+    nightMode,
     error,
     today,
     twoMonthsAhead,
@@ -43,6 +44,7 @@ export const ContactUsView = ({
     loading: boolean,
     showConfetti: boolean,
     spanish: boolean,
+    nightMode: boolean,
     error: string,
     today: Date | null,
     twoMonthsAhead: Date | null,
@@ -68,36 +70,36 @@ export const ContactUsView = ({
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="flex gap-5 w-full">
                     <div className="w-1/2 text-zinc-300">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">Email</label>
+                        <label className={`block text-sm font-medium mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>Email</label>
                         <input 
                             type="email" 
                             name="to"
                             value={formData.to}
                             onChange={handleChange}
                             required
-                            className="py-2 px-4 block w-full border-gray-200 bg-zinc-900 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
-                            placeholder="you@site.com"
+                            className={`py-2 px-4 block w-full border-gray-200 ${nightMode ? 'bg-zinc-900' : 'bg-zinc-200'} rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600`} 
+                            placeholder={spanish ? 'tu@sitio.com' : 'you@site.com'}
                         />
                     </div>
 
                     <div className="w-1/2 text-zinc-300">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Nombre y Apellido' : 'First Name & Last Name'}</label>
+                        <label className={`block text-sm font-medium mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Nombre y Apellido' : 'First Name & Last Name'}</label>
                         <input 
                             type="text" 
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
                             required
-                            className="py-2 px-4 block w-full border-gray-200 bg-zinc-900 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
+                            className={`py-2 px-4 block w-full border-gray-200 ${nightMode ? 'bg-zinc-900' : 'bg-zinc-200'} rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600`}
                             placeholder={spanish ? 'Escribe tu nombre completo' : 'Write your entire name here' }
                         />                
                     </div>
                 </div>
 
                 <div className="w-full mt-3 text-zinc-300">
-                    <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Tu proyecto' : 'Your project'}</label>
+                    <label className={`block text-sm font-medium mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Tu proyecto' : 'Your project'}</label>
                     <textarea 
-                        className="py-3 px-4 block w-full bg-zinc-900 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" 
+                        className={`py-3 px-4 block w-full ${nightMode ? 'bg-zinc-900' : 'bg-zinc-200'} border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600`}
                         rows={4} 
                         name="text"
                         value={formData.text}
@@ -109,10 +111,10 @@ export const ContactUsView = ({
 
                 <div className="flex md:flex-row flex-col gap-5">
                     <div className="md:w-1/2">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">
+                        <label className={`block text-sm font-medium mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>
                             {spanish ? `Elige la fecha (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})` : `Choose a date (${today?.toLocaleDateString()} - ${twoMonthsAhead?.toLocaleDateString()})`}
                         </label>
-                        <div className="bg-zinc-900 flex justify-center rounded-lg">
+                        <div className={`${nightMode ? 'bg-zinc-900' : 'bg-zinc-200'} flex justify-center rounded-lg`}>
                             <Calendar
                                 mode="single"
                                 selected={date}
@@ -131,7 +133,7 @@ export const ContactUsView = ({
                                         }
                                     }
                                 }}
-                                className="rounded-md border-none bg-zinc-900 text-zinc-300 text-center"
+                                className={`rounded-md border-none ${nightMode ? 'bg-zinc-900 text-zinc-300 ' : 'bg-zinc-200 text-zinc-800 '} text-center`}
                             />          
                         </div>
                         {error && (
@@ -139,8 +141,8 @@ export const ContactUsView = ({
                         )}
                     </div>
                     <div className="md:w-1/2">
-                        <label className="block text-sm font-medium mb-2 text-zinc-400">{spanish ? 'Elige la cantidad de tiempo para la reunion' : 'Select the amount of time for the reunion'}</label>
-                        <div className="bg-zinc-900 flex justify-center rounded-lg">
+                        <label className={`block text-sm font-medium mb-2 ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Elige la cantidad de tiempo para la reunion' : 'Select the amount of time for the reunion'}</label>
+                        <div className={`${nightMode ? 'bg-zinc-900' : 'bg-zinc-200'} flex justify-center rounded-lg`}>
                             <Select required onValueChange={(value) => setTime(value)}>
                                 <SelectTrigger className="border-none text-zinc-400">
                                     <SelectValue 
@@ -148,9 +150,9 @@ export const ContactUsView = ({
                                         placeholder={spanish ? "Selecciona una duracion" : "Select a duration"}
                                     />
                                 </SelectTrigger>
-                                <SelectContent className="bg-black text-zinc-200 border-zinc-800 ">
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="30">{spanish ? '30 minutos' : '30 minutes'}</SelectItem>
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="1">{spanish ? '1 hora' : '1 hour'}</SelectItem>
+                                <SelectContent className={`${nightMode ? 'bg-black border-zinc-800 text-zinc-200' : 'bg-zinc-300 border-zinc-400 text-zinc-800'}  `}>
+                                    <SelectItem className={`${nightMode ? 'focus:bg-zinc-800 focus:text-zinc-200' : 'focus:bg-zinc-400'}`} value="30">{spanish ? '30 minutos' : '30 minutes'}</SelectItem>
+                                    <SelectItem className={`${nightMode ? 'focus:bg-zinc-800 focus:text-zinc-200' : 'focus:bg-zinc-400'}`} value="1">{spanish ? '1 hora' : '1 hour'}</SelectItem>
                                 </SelectContent>
                             </Select>       
                         </div>
@@ -158,7 +160,7 @@ export const ContactUsView = ({
                 </div>
 
                 <div className="mt-10 md:text-left text-center">
-                    <p className="text-zinc-400 text-sm">
+                    <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} text-sm`}>
                         {spanish
                             ? 'Al hacer click en este boton nos enviaras un mail con tu informacion, y se te notificara a ti tambien para tu seguridad.'
                             : 'By clicking this button you will send us an email with your information, and you will be notified for your security.'

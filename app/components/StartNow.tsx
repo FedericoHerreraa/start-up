@@ -116,7 +116,7 @@ export const StartNow = () => {
                                 : 'Select the time and day that works best for you in the calendar. We look forward to seeing you!'}
                         </p>
                     </div>
-                    <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg bg-zinc-950`}>
+                    <div className={`md:w-1/2 rounded-xl min-h-[80vh] md:p-10 p-5 shadow-lg ${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'}`}>
                         <ContactUsController />
                     </div>
                 </section>
