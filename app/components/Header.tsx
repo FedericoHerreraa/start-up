@@ -180,14 +180,6 @@ const tabsMobileView = ({
                                 {spanish ? tab.titleSpanish : tab.titleEnglish}
                             </p>    
                         ))}
-                        <div
-                            className="cursor-pointer"
-                            onClick={() => setNightMode(!nightMode)}
-                        >
-                            {nightMode 
-                                ? <MdWbSunny size={20}/>
-                                : <MdNightlight size={20}/>}
-                        </div>
                         <div>
                             <Select 
                                 defaultValue={spanish ? "spanish" : "english"} 
@@ -205,6 +197,14 @@ const tabsMobileView = ({
                                     <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
                                 </SelectContent>
                             </Select>
+                        </div>
+                        <div
+                            className="cursor-pointer"
+                            onClick={() => setNightMode(!nightMode)}
+                        >
+                            {nightMode 
+                                ? <MdWbSunny size={20}/>
+                                : <MdNightlight size={20}/>}
                         </div>
                     </SheetDescription>
                 </SheetHeader>
