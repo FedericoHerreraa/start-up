@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { ContactUsView } from "./ContactUsView";
+import { useNightMode } from "@/app/context/NightModeContext";
 
 export const ContactUsController = () => {
     const { spanish } = useLenguage()
+    const { nightMode } = useNightMode()
     const [showConfetti, setShowConfetti] = useState<boolean>(false)
     const [error, setError] = useState<string>('')
     const [date, setDate] = useState<Date>()
@@ -107,6 +109,7 @@ export const ContactUsController = () => {
             loading={loading}
             showConfetti={showConfetti}
             spanish={spanish}
+            nightMode={nightMode}
             error={error}
             today={today}
             twoMonthsAhead={twoMonthsAhead}
