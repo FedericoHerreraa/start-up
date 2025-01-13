@@ -137,7 +137,7 @@ export async function POST(req: NextRequest) {
 
         // Email enviado al cliente
         await transporter.sendMail({
-            from: process.env.EMAIL_USER,
+            from: `AsNeed <${process.env.EMAIL_USER}>`,
             to,
             subject: lenguage === 'en' ? 'New appointment with AsNeed' : 'Cita con AsNeed',
             html: emailClientMessage
@@ -145,7 +145,7 @@ export async function POST(req: NextRequest) {
 
         // Email enviado a nosotros
         await transporter.sendMail({
-            from: to,
+            from: `${name} <${to}>`,
             to: 'asyouneed1@gmail.com',
             subject: lenguage === 'en' ? 'New meeting arranged' : 'Nuevo cita reservada',
             html: emailUsMessage

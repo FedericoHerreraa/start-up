@@ -1,7 +1,7 @@
 'use client'
 
 
-import { HiChartBar } from "react-icons/hi2";
+// import { HiChartBar } from "react-icons/hi2";
 import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
 import { HiQueueList } from "react-icons/hi2";
@@ -10,7 +10,8 @@ import { HiQueueList } from "react-icons/hi2";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-import logo from "@/app/img/logo.png"
+import logoDark from "@/app/img/logo-dark.png"
+import logoLight from "@/app/img/logo-light.png"
 import Image from "next/image";
 
 import {
@@ -58,11 +59,7 @@ export const Header = () => {
         <div className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-5 py-8 ">
                 <div className="flex gap-5">
-                    {nightMode
-                        ? <HiChartBar size={isMobile ? 45 : 55} className="text-zinc-500"/>
-                        : <Image src={logo} alt="" className="w-12 h-auto rotate-45" />
-                    }
-                    
+                    <Image src={nightMode ? logoLight : logoDark} alt="" className="w-12 h-auto rotate-45" />
                     <div className="flex flex-col">    
                         <h1 className='md:text-2xl text-lg'>AsNeed</h1>
                         <h2 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h2>
