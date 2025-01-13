@@ -100,16 +100,16 @@ const info = [
     },
     {
         id: 2,
-        titleSpanish: 'Tienda de Pizzas.',
-        titleEnglish: 'Pizzeria Web Shop.',
-        descriptionSpanish: 'Desarrollo de una aplicación web para una pizzería. El proyecto incluye un carrito de compras, un sistema de pagos y una sección de promociones.',
-        descriptionEnglish: 'Development of a web application for a pizzeria. The project includes a shopping cart, a payment system, and a promotions section.',
-        desafioSpanish: 'El desafío fue integrar un sistema de pedidos intuitivo que permita a los usuarios personalizar sus pizzas de manera sencilla. También se trabajó en garantizar tiempos de respuesta rápidos y una interfaz atractiva para promover las promociones.',
-        desafioEnglish: 'The challenge was to integrate an intuitive ordering system that allows users to customize their pizzas easily. Additionally, the focus was on ensuring fast response times and an attractive interface to highlight promotions.',
+        titleSpanish: 'E-commerce de Pizzería.',
+        titleEnglish: 'Pizzeria E-commerce.',
+        descriptionSpanish: 'Desarrollo de una aplicación web de comercio electrónico para una pizzería. El proyecto incluye productos organizados por secciones, un carrito de compras interactivo, y un formulario de confirmación que permite enviar el pedido directamente por WhatsApp.',
+        descriptionEnglish: 'Development of an e-commerce web application for a pizzeria. The project includes products organized by sections, an interactive shopping cart, and a confirmation form that allows users to send their order directly via WhatsApp.',
+        desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',
+        desafioEnglish: 'The challenge was to implement a simple and intuitive shopping experience, ensuring that users could navigate through sections, add products to the cart, and easily send their orders. Integration with WhatsApp was also a key focus to streamline the confirmation process.',
         image1: homeNonnoMingo,
         image2: cartNonnoMingo,
         url: 'https://www.nonnomingo.com.ar'
-    },
+    }
     // {
     //     id: 3,
     //     titleSpanish: 'Venta de Instrumentos.',
