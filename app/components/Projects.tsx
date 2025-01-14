@@ -19,10 +19,10 @@ export const Projects = () => {
             {info.map((item, index) => (
                 <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? `md:border-l-[3px] ${nightMode ? 'border-l-blue-950' : 'border-l-blue-800' }` : `md:border-r-[3px] ${nightMode ? 'border-r-blue-950' : 'border-r-blue-800' } `}  ${nightMode ? 'bg-black' : ''}`}>
                     <div className="pl-10">
-                        <p className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
+                        <h1 className={`md:text-5xl text-3xl md:text-left text-center pb-10 font-semibold bg-gradient-to-r ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} ${index%2 === 0 
                             ? ''
                             : 'md:text-end md:mr-10'
-                        } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </p>
+                        } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </h1>
                     </div>
                     {index === 2 ? (
                         <div className="flex justify-center h-[60vh] items-center">   
@@ -88,8 +88,8 @@ export const Projects = () => {
 const info = [
     {
         id: 1,
-        titleSpanish: 'Consultorio Odontológico.',
-        titleEnglish: 'Dental Clinic Website.',
+        titleSpanish: 'Consultorio Odontológico',
+        titleEnglish: 'Dental Clinic Website',
         descriptionSpanish: 'Diseño de una página web para una clínica odontológica. El proyecto incluye un formulario de contacto, una galería de imágenes y una sección de servicios.',
         descriptionEnglish: 'Design of a website for a dental clinic. The project includes a contact form, an image gallery, and a services section.',
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
@@ -100,8 +100,8 @@ const info = [
     },
     {
         id: 2,
-        titleSpanish: 'E-commerce de Pizzería.',
-        titleEnglish: 'Pizzeria E-commerce.',
+        titleSpanish: 'E-commerce de Pizzería',
+        titleEnglish: 'Pizzeria E-commerce',
         descriptionSpanish: 'Desarrollo de una aplicación web de comercio electrónico para una pizzería. El proyecto incluye productos organizados por secciones, un carrito de compras interactivo, y un formulario de confirmación que permite enviar el pedido directamente por WhatsApp.',
         descriptionEnglish: 'Development of an e-commerce web application for a pizzeria. The project includes products organized by sections, an interactive shopping cart, and a confirmation form that allows users to send their order directly via WhatsApp.',
         desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',

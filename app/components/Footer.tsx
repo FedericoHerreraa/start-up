@@ -21,7 +21,7 @@ export const Footer = () => {
         <div className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
             <div className={`${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} flex flex-col gap-5 items-center h-full w-full`}>
                 <div className="flex gap-3 items-center justify-center pt-20">
-                    <Image src={nightMode ? logoLight : logoDark} alt="" className="w-12 h-auto rotate-45" />
+                    <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-12 w-10 h-auto rotate-45" />
                     <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-5xl text-3xl`}>AsNeed</h1>
                 </div>
                 <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-base text-sm text-center`}>{spanish ? 'Encontraste el mejor lugar para comenzar con tu negocio.' : 'You found the right place to start your own business'}</p>

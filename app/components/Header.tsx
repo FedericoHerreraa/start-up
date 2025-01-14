@@ -59,7 +59,7 @@ export const Header = () => {
         <div className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-5 py-8 ">
                 <div className="flex gap-5">
-                    <Image src={nightMode ? logoLight : logoDark} alt="" className="w-12 h-auto rotate-45" />
+                    <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-12 w-10 h-auto rotate-45" />
                     <div className="flex flex-col">    
                         <h1 className='md:text-2xl text-lg'>AsNeed</h1>
                         <h2 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h2>
@@ -74,7 +74,7 @@ export const Header = () => {
                             spanish,
                             nightMode,
                             isOpen,
-                            setIsOpen
+                            setIsOpen,
                         })
                     ) : (
                         tabsDesktopView({
@@ -84,7 +84,7 @@ export const Header = () => {
                             spanish,
                             nightMode,
                             isOpen,
-                            setIsOpen
+                            setIsOpen,
                         })
                     )}
                 </div>
@@ -98,7 +98,7 @@ const tabsDesktopView = ({
     setNightMode,
     setSpanish,
     spanish,
-    nightMode 
+    nightMode,
 } : TabProps ) => {
     return (
         <>
@@ -149,12 +149,12 @@ const tabsMobileView = ({
     spanish,
     nightMode,
     isOpen,
-    setIsOpen 
+    setIsOpen,
 } : TabProps ) => {
     return (
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger>
-                <HiQueueList size={25}/>
+                <HiQueueList size={30}/>
             </SheetTrigger>
             <SheetContent className={`${nightMode ? 'bg-black border-zinc-800 pt-10' : 'pt-10 border-zinc-300' }`}>
                 <SheetHeader>
