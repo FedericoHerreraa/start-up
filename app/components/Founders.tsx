@@ -38,11 +38,11 @@ export const Founders = () => {
                             <Image 
                                 src={imageCami} 
                                 alt="foto perfile de Cami" 
-                                className="rounded-full w-[162px] h-[188px] shadow-2xl"
+                                className="rounded-full object-cover w-[180px] h-[180px] shadow-2xl"
                             />
                             {isMobile 
                                 ? <BsArrow90DegDown color="gray" size={25} className="w-1/6 animate-pulse transform -scale-x-100" />
-                                : <ImArrowRight2 color="gray" size={25} className="w-1/6 animate-pulse"/>
+                                : <ImArrowRight2 color="gray" size={20} className="w-1/6 animate-pulse"/>
                             }
                         </div>
                         <div className={`md:text-lg ${nightMode ? 'text-zinc-300' : 'text-zinc-800'} md:w-3/4`}>
@@ -63,12 +63,12 @@ export const Founders = () => {
                         <div className="md:w-1/4 flex items-center gap-5">
                             {isMobile 
                                 ? <BsArrow90DegDown color="gray" size={25} className="w-1/6 animate-pulse"/>
-                                : <ImArrowRight2 color="gray" size={25} className="w-1/6 animate-pulse rotate-180"/>
+                                : <ImArrowRight2 color="gray" size={20} className="w-1/6 animate-pulse rotate-180"/>
                             }
                             <Image 
                                 src={imageFede} 
                                 alt="foto perfile de Fede" 
-                                className="rounded-full w-[162px] h-[188px] shadow-2xl"
+                                className="rounded-full object-cover w-[180px] h-[180px] shadow-2xl"
                             />
                         </div>
                     </div>
