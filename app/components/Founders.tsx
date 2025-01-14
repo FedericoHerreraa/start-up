@@ -32,7 +32,7 @@ export const Founders = () => {
                     {spanish ? 'Conoce a Nuestros ' : 'Meet Our'} <span className="bg-gradient-to-r from-violet-400 to-violet-800 bg-clip-text text-transparent">{spanish ? 'Fundadores.' : 'Founders.'}</span>
                 </h1>
 
-                <section className={`${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} md:p-10 p-5 flex flex-col md:gap-2 gap-10 min-h-96 rounded-2xl shadow-xl mt-20 md:w-[80%] w-[95%] mx-auto`}>
+                <section className={`${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} md:p-10 p-5 flex flex-col md:gap-2 gap-10 min-h-96 rounded-xl shadow-xl mt-20 md:w-[80%] w-[95%] mx-auto`}>
                     <div className="md:mx-10 mx-2 flex md:flex-row flex-col md:items-center md:gap-0 gap-5 items-start">
                         <div className="md:w-1/4 flex flex-row items-center gap-5">
                             <Image 
