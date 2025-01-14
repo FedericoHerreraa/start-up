@@ -12,7 +12,7 @@ export const UITechnologyComponent = () => {
     return (
         <Marquee>
             <div className="flex mt-20">
-                {(spanish ? servicesSpanish : servicesEnglish).map((tech, index) => (
+                {services.map((tech, index) => (
                     <div
                         key={index}
                         className={`w-fit md:mx-3 mx-1 rounded-full text-center md:px-4 px-2 md:py-2 py-1 border duration-100 ${
@@ -21,7 +21,7 @@ export const UITechnologyComponent = () => {
                                 : "bg-zinc-100 border-blue-400 hover:border-blue-700"
                         }`}
                     >
-                        <p className={`opacity-100 font-semibold bg-gradient-to-r md:text-sm text-xs ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{tech}</p>
+                        <p className={`opacity-100 font-semibold bg-gradient-to-r md:text-sm text-xs ${nightMode ? 'from-blue-300 to-blue-800' : 'from-blue-500 to-blue-950'}  bg-clip-text text-transparent`}>{spanish ? tech.spanish : tech.english}</p>
                     </div>
                 ))}
             </div>
@@ -29,58 +29,19 @@ export const UITechnologyComponent = () => {
     );
 };
 
-const servicesSpanish = [
-    "Diseño UX/UI",
-    "Desarrollo Web",
-    "Aplicaciones Móviles",
-    "Sistemas Escalables",
-    "E-commerce",
-    "Optimización SEO",
-    "Integración API",
-    "Automatización",
-    "Plataformas SaaS",
-    "Soporte Técnico",
-    "Cloud Hosting",
-    "Soluciones Ágiles",
-    "Transformación Digital",
-    "Consultoría IT",
+const services = [
+    { spanish: "Diseño UX/UI", english: "UX/UI Design" },
+    { spanish: "Desarrollo Web", english: "Web Development" },
+    { spanish: "Aplicaciones Móviles", english: "Mobile Applications" },
+    { spanish: "Sistemas Escalables", english: "Scalable Systems" },
+    { spanish: "E-commerce", english: "E-commerce" },
+    { spanish: "Optimización SEO", english: "SEO Optimization" },
+    { spanish: "Integración API", english: "API Integration" },
+    { spanish: "Automatización", english: "Automation" },
+    { spanish: "Plataformas SaaS", english: "SaaS Platforms" },
+    { spanish: "Soporte Técnico", english: "Technical Support" },
+    { spanish: "Cloud Hosting", english: "Cloud Hosting" },
+    { spanish: "Soluciones Ágiles", english: "Agile Solutions" },
+    { spanish: "Transformación Digital", english: "Digital Transformation" },
+    { spanish: "Consultoría IT", english: "IT Consulting" },
 ];
-
-const servicesEnglish = [
-    "UX/UI Design",
-    "Web Development",
-    "Mobile Applications",
-    "Scalable Systems",
-    "E-commerce",
-    "SEO Optimization",
-    "API Integration",
-    "Automation",
-    "SaaS Platforms",
-    "Technical Support",
-    "Cloud Hosting",
-    "Agile Solutions",
-    "Digital Transformation",
-    "IT Consulting",
-];
-
-// const technologies = [
-//     "Javascript",
-//     "Typescript",
-//     "Tailwindcss",
-//     "React Js",
-//     "React Native",
-//     "Next Js",
-//     "Node Js",
-//     "Express Js",
-//     "Nest Js",
-//     "SQL",
-//     "Mongo DB",
-//     "Swift UI",
-//     "XCode",
-//     "Java",
-//     "Python",
-//     "Git",
-//     "GitHub",
-//     "Vercel",
-//     "Render",
-// ]

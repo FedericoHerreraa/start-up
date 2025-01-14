@@ -12,9 +12,9 @@ import { Metadata } from "next";
 import { TrustedByCompanies } from "./components/TrustedByCompanies";
 
 export const metadata: Metadata = {
-    title: "Home | AsNeed",
-    description: "En AsNeed tenes la posibilidad de llevar tu negocio al siguiente nivel. Conocé más sobre nosotros y empezá a trabajar en tu proyecto.",
-}
+    title: "Grow Your Business | AsNeed",
+    description: "At AsNeed, we provide tailored solutions to help your business reach new heights. Discover how our expertise can transform your ideas into reality and start your journey with us today.",
+};
 
 export default function HomePage() {
     return (

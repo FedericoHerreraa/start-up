@@ -27,7 +27,7 @@ export const TrustedByCompanies = () => {
                 </span>
             </h1>
 
-            <section className={`w-full ${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
+            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
                 {companies.map((company, index) => (
                     <Image
                         key={index}

@@ -3,7 +3,6 @@
 
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
-// import { HiChartBar } from "react-icons/hi2";
 import { useMobileView } from "@/app/context/MobileViewContext";
 import argFlag from '@/app/img/argentina.png'
 import { FaRegCopyright } from "react-icons/fa";

@@ -135,7 +135,7 @@ export async function POST(req: NextRequest) {
             false
         )
 
-        // Email enviado al cliente
+        // Email sent to client
         await transporter.sendMail({
             from: `AsNeed <${process.env.EMAIL_USER}>`,
             to,
@@ -143,7 +143,7 @@ export async function POST(req: NextRequest) {
             html: emailClientMessage
         })
 
-        // Email enviado a nosotros
+        // Email sent to us
         await transporter.sendMail({
             from: `${name} <${to}>`,
             to: 'asyouneed1@gmail.com',
