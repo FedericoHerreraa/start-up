@@ -2,8 +2,8 @@
 
 
 import { useNightMode } from "@/app/context/NightModeContext";
-import Marquee from "react-fast-marquee";
 import { useLenguage } from "@/app/context/LenguageContext";
+import Marquee from "react-fast-marquee";
 
 export const UITechnologyComponent = () => {
     const { spanish } = useLenguage()

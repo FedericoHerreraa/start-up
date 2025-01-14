@@ -17,7 +17,7 @@ export const Footer = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
+        <footer className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
             <div className={`${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} flex flex-col gap-5 items-center h-full w-full`}>
                 <div className="flex gap-3 items-center justify-center pt-20">
                     <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-12 w-10 h-auto rotate-45" />
@@ -37,6 +37,6 @@ export const Footer = () => {
                     <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Hecho en ' : 'Made in '}Buenos Aires, Argentina</p>
                 </div>
             </div>
-        </div>
+        </footer>
     )
 }
