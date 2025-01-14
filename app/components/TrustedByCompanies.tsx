@@ -27,23 +27,36 @@ export const TrustedByCompanies = () => {
                 </span>
             </h1>
 
-            <section className={`w-full ${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
-                <Image
-                    src={nightMode ? christianSaadDark : christianSaadLight}
-                    alt="Christian Saad"
-                    className="md:w-[160px] md:h-[70px] w-[100px] h-[40px]"
-                />
-                <Image
-                    src={pinasco}
-                    alt="Pinasco"
-                    className="md:w-[160px] md:h-[40px] w-[100px] h-[25px]"
-                />
-                <Image
-                    src={buffalo}
-                    alt="buffalo"
-                    className="md:w-[100px] md:h-[105px] w-[70px] h-[70px]"
-                />
+            <section className={`w-full ${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
+                {companies.map((company, index) => (
+                    <Image
+                        key={index}
+                        src={company.img2 ? nightMode ? company.img1 : company.img2 : company.img1}
+                        alt={company.name}
+                        className={company.className}
+                    />
+                ))}                
             </section>
         </div>
     )   
 }
+
+
+const companies = [
+    {
+        name: 'Christian Saad',
+        img1: christianSaadDark,
+        img2: christianSaadLight,
+        className: 'md:w-[160px] md:h-[70px] w-[100px] h-[40px]'
+    },
+    {
+        name: 'Pinasco',
+        img1: pinasco,
+        className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px]'
+    },
+    {
+        name: 'Buffalo',
+        img1: buffalo,
+        className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px]'
+    }
+]
