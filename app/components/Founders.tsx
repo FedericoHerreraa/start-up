@@ -38,7 +38,7 @@ export const Founders = () => {
                             <Image 
                                 src={imageCami} 
                                 alt="foto perfile de Cami" 
-                                className="rounded-full object-cover w-[180px] h-[180px] shadow-2xl"
+                                className="rounded-full object-cover w-[150px] h-[150px] shadow-2xl"
                             />
                             {isMobile 
                                 ? <BsArrow90DegDown color="gray" size={25} className="w-1/6 animate-pulse transform -scale-x-100" />
@@ -68,7 +68,7 @@ export const Founders = () => {
                             <Image 
                                 src={imageFede} 
                                 alt="foto perfile de Fede" 
-                                className="rounded-full object-cover w-[180px] h-[180px] shadow-2xl"
+                                className="rounded-full object-cover w-[150px] h-[150px] shadow-2xl"
                             />
                         </div>
                     </div>
