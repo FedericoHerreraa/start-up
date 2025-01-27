@@ -29,7 +29,7 @@ export const Projects = () => {
                             <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Coming Soon!'}</h1>
                         </div>
                     ) : (
-                        <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-5 w-[95%] mx-auto`}>
+                        <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-5 md:w-[95%] w-[90%] mx-auto`}>
                             <div className={`md:w-1/2 w-full md:h-96 h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
                                 <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
                                 <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafio:' : 'Our Challenge:'}</h2>
