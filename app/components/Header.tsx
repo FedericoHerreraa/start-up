@@ -31,7 +31,6 @@ import {
 } from "@/app/components/ui/sheet"
 import { useState } from "react";
 
-
 interface TabProps {
     scrollToSection: (sectionId: string) => void
     spanish: boolean
