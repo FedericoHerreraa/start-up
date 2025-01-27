@@ -212,7 +212,7 @@ const tabsMobileView = ({
 const tabs = [
     {
         id: 1,
-        titleSpanish: 'Nuestra Filosofia',
+        titleSpanish: 'Nuestra Filosofía',
         titleEnglish: 'Our Philosophy',
         section: 'philosophy'
     },

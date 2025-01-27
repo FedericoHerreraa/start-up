@@ -19,7 +19,7 @@ export const OurWay = () => {
       >
         <p className="text-zinc-500 text-center mb-3 md:text-xl text-md">
           {spanish
-            ? "Primero que nada te mostramos nuestra filosofia."
+            ? "Primero que nada te mostramos nuestra filosofía."
             : "First of all we will show you our philosophy "}
         </p>
         <h1

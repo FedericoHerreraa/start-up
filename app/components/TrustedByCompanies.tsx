@@ -17,11 +17,11 @@ export const TrustedByCompanies = () => {
         <div className={`py-24 ${nightMode ? 'bg-black' : ''} text-zinc-300 min-h-[60vh]`}>
             <p className="text-zinc-500 text-center mb-3 md:text-xl ">
                 {spanish
-                    ? "Nuestros Clients."
+                    ? "Nuestros Clientes."
                     : "Our Partners."}
             </p>
             <h1 className={`${nightMode ? '' : 'text-black'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Acompañado por los" : "Trusted by the"}{" "}
+                {spanish ? "Acompañados por los" : "Trusted by the"}{" "}
                 <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                     {spanish ? "Mejores Clientes." : "Best Clients."}
                 </span>

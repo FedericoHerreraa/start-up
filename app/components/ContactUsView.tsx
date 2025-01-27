@@ -162,7 +162,7 @@ export const ContactUsView = ({
                 <div className="mt-10 md:text-left text-center">
                     <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} text-sm`}>
                         {spanish
-                            ? 'Al hacer click en este boton nos enviaras un mail con tu informacion, y se te notificara a ti tambien para tu seguridad.'
+                            ? 'Al hacer click en este boton nos enviaras un mail con tu información, y se te notificara a ti también para tu seguridad.'
                             : 'By clicking this button you will send us an email with your information, and you will be notified for your security.'
                         }
                     </p>

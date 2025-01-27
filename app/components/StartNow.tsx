@@ -23,7 +23,7 @@ export const StartNow = () => {
                 viewport={{ once: true }}
             >
                 
-                <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Bueno, ahora si vamos a lo importante.' : 'Alright, now let’s get to the important part.'}</p>
+                <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Bueno, ahora sí vamos a lo importante.' : 'Alright, now let’s get to the important part.'}</p>
                 <h1 className={`md:text-6xl text-4xl ${nightMode ? 'text-white' : ''} font-semibold text-center`}>
                     {spanish ? 'Comencemos ' : `Let${"'"}s Start`} <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">{spanish ? 'Ahora Mismo.' : 'Right Now.'}</span>
                 </h1>
@@ -31,7 +31,7 @@ export const StartNow = () => {
                 <section className="flex md:flex-row flex-col w-[95%] mx-auto mt-20 gap-7">
                     <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
                         <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
-                            {spanish ? 'Coordina una llamada.' : 'Schedule a call.'}
+                            {spanish ? 'Coordiná una llamada.' : 'Schedule a call.'}
                         </h2>
                         <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-500'} md:text-md text-sm mb-10`}>
                             {spanish ? '¡Gracias por tu interés en trabajar con nosotros!' : 'Thank you for your interest in working with us!'}
