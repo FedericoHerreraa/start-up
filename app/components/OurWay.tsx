@@ -5,6 +5,19 @@ import { useNightMode } from "@/app/context/NightModeContext";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/app/components/ui/alert-dialog"
+
+
 export const OurWay = () => {
   const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
@@ -105,15 +118,28 @@ export const OurWay = () => {
                   >
                     {spanish ? "Servicio Terciarizado." : "Outsourced Service."}
                   </h1>
-                  <p className="md:text-lg text-sm text-zinc-500">
-                    {spanish ? "Haz clic " : "Click "}
-                    <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent md:text-xl cursor-pointer font-semibold">
-                      {spanish ? "aquí" : "here"}
-                    </span>
-                    {spanish
-                      ? " para navegar al sitio web indicado para redes sociales."
-                      : " to navigate to the designated social media website."}
-                  </p>
+
+                  <AlertDialog>
+                    <p className="md:text-lg text-sm text-zinc-500">
+                      {spanish ? "Haz clic " : "Click "}
+                      <AlertDialogTrigger>
+                        <span className="bg-gradient-to-r from-blue-500 to-violet-600 bg-clip-text text-transparent md:text-xl cursor-pointer font-semibold">
+                          {spanish ? "aquí" : "here"}
+                        </span>
+                      </AlertDialogTrigger>
+                      {spanish
+                        ? " para navegar al sitio web indicado para redes sociales."
+                        : " to navigate to the designated social media website."}
+                    </p>
+                    <AlertDialogContent className={`${nightMode ? 'bg-zinc-900 border-zinc-700' : 'bg-zinc-300 border-zinc-500'}`}>
+                      <AlertDialogHeader>
+                        <AlertDialogTitle className={` ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>{spanish ? 'Proximamente! Estamos trabajando en ello.' : 'Soon! We are working on it.'}</AlertDialogTitle>
+                      </AlertDialogHeader>
+                      <AlertDialogFooter>
+                        <AlertDialogCancel>Ok</AlertDialogCancel>
+                      </AlertDialogFooter>
+                    </AlertDialogContent>
+                  </AlertDialog>                  
                 </div>
               </div>
             </div>
