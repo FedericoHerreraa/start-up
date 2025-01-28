@@ -42,10 +42,10 @@ export const Footer = () => {
                 <div>
                     <div className="flex gap-5 mt-5">
                         <a href="https://www.linkedin.com/in/as-need-572815349/" target="_blank">
-                            <SiLinkedin size={isMobile ? 20 : 30} className="text-zinc-500 hover:text-zinc-300 transition-all duration-150" />
+                            <SiLinkedin size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`} />
                         </a>
                         <a href="#" target="_blank">
-                            <SiInstagram size={isMobile ? 20 : 30} className="text-zinc-500 hover:text-zinc-300 transition-all duration-150"/>
+                            <SiInstagram size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`}/>
                         </a>
                     </div>
                 </div>
