@@ -129,12 +129,12 @@ export const OurWay = () => {
                         ? " para navegar al sitio web indicado para redes sociales."
                         : " to navigate to the designated social media website."}
                     </p>
-                    <AlertDialogContent className={`${nightMode ? 'bg-zinc-900 border-zinc-700' : 'bg-zinc-300 border-zinc-500'}`}>
+                    <AlertDialogContent className={`${nightMode ? 'bg-zinc-900 border-zinc-700' : 'bg-zinc-300 border-zinc-500'} md:w-full w-[80%] rounded-lg`}>
                       <AlertDialogHeader>
                         <AlertDialogTitle className={` ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>{spanish ? 'Proximamente! Estamos trabajando en ello.' : 'Soon! We are working on it.'}</AlertDialogTitle>
                       </AlertDialogHeader>
                       <AlertDialogFooter>
-                        <AlertDialogCancel>Ok</AlertDialogCancel>
+                        <AlertDialogCancel className="w-fit md:mx-0 mx-auto">Ok</AlertDialogCancel>
                       </AlertDialogFooter>
                     </AlertDialogContent>
                   </AlertDialog>                  
