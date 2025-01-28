@@ -157,14 +157,17 @@ const tabsMobileView = ({
             <SheetContent className={`${nightMode ? 'bg-black border-zinc-800 pt-10' : 'pt-10 border-zinc-300' }`}>
                 <SheetHeader>
                     <SheetTitle className={`text-2xl pb-10 text-start ${nightMode ? 'text-zinc-200' : 'text-zinc-800'}`}>
-                        <div onClick={() => setIsOpen(false)} className="absolute top-0 right-0 m-5 cursor-pointer">
-                            <p className={`text-lg ${nightMode ? 'text-zinc-100' : 'text-zinc-800'}`}>X</p>
-                        </div>
+                        <button 
+                            onClick={() => setIsOpen(false)} 
+                            className="absolute top-0 right-0 m-5 cursor-pointer text-lg"
+                        >
+                            {nightMode ? '❌' : '✖️'}
+                        </button>
                         AsNeed
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">
                         {tabs.map((tab) => (
-                            <p 
+                            <div 
                                 key={tab.id}
                                 onClick={() => {
                                     setIsOpen(false)
@@ -173,7 +176,7 @@ const tabsMobileView = ({
                                 className="text-lg"
                             >
                                 {spanish ? tab.titleSpanish : tab.titleEnglish}
-                            </p>    
+                            </div>    
                         ))}
                         <>
                             <Select 
@@ -193,14 +196,14 @@ const tabsMobileView = ({
                                 </SelectContent>
                             </Select>
                         </>
-                        <div
+                        <button
                             className="cursor-pointer"
                             onClick={() => setNightMode(!nightMode)}
                         >
                             {nightMode 
                                 ? <MdWbSunny size={20}/>
                                 : <MdNightlight size={20}/>}
-                        </div>
+                        </button>
                     </SheetDescription>
                 </SheetHeader>
             </SheetContent>

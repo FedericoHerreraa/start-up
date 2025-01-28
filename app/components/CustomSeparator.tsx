@@ -8,7 +8,7 @@ export const CustomSeparator = () => {
     const { nightMode } = useNightMode()
 
     return (
-        <div className={`py-40 flex flex-col gap-10 ${nightMode ? 'bg-black' : ''}`}>
+        <div className={`py-40 flex flex-col md:gap-10 gap-7 ${nightMode ? 'bg-black' : ''}`}>
             {Array.from({ length: 3 }).map((_, index) => (
                 <Marquee speed={index == 0 ? 200 : index == 1 ? 150 : 250} key={index} direction={index == 1 ? "right" : "left"}>
                     <div className="flex">

@@ -35,7 +35,7 @@ export const OurWay = () => {
 
         <div className="mt-20">
           <section>
-            <div className="flex items-center gap-5 md:w-[40%] w-[80%] mx-auto">
+            <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
               <p
                 className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
                   nightMode ? "text-zinc-300" : "text-zinc-600"
@@ -57,7 +57,7 @@ export const OurWay = () => {
               {arrowsInfo.map((arrow, index) => (
                 <div
                   key={index}
-                  className="flex gap-5 md:w-[35%] w-[70%] mx-auto"
+                  className="flex gap-5 md:w-[35%] w-[80%] mx-auto"
                 >
                   <BsArrowReturnRight size={30} color="gray" />
                   <div className="flex flex-col items-start ">
@@ -78,7 +78,7 @@ export const OurWay = () => {
           </section>
 
           <section className="mt-20">
-            <div className="flex items-center gap-5 md:w-[40%] w-[80%] mx-auto">
+            <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
               <p
                 className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
                   nightMode ? "text-zinc-300" : "text-zinc-600"
@@ -95,7 +95,7 @@ export const OurWay = () => {
               </h2>
             </div>
             <div className="flex flex-col gap-10 mt-10 items-center text-white">
-              <div className="flex gap-5 md:w-[35%] w-[70%] mx-auto">
+              <div className="flex gap-5 md:w-[35%] w-[80%] mx-auto">
                 <BsArrowReturnRight size={22} color="gray" />
                 <div className="flex flex-col items-start">
                   <h1

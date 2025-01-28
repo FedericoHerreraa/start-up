@@ -5,7 +5,10 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
 import argFlag from '@/app/img/argentina.png'
+
 import { FaRegCopyright } from "react-icons/fa";
+import { SiLinkedin } from "react-icons/si";
+import { SiInstagram } from "react-icons/si";
 
 import Image from "next/image";
 import logoDark from "@/app/img/logo-dark.png"
@@ -35,6 +38,16 @@ export const Footer = () => {
                         width={isMobile ? 15 : 25}
                     />
                     <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? 'Hecho en ' : 'Made in '}Buenos Aires, Argentina</p>
+                </div>
+                <div>
+                    <div className="flex gap-5 mt-5">
+                        <a href="https://www.linkedin.com/in/as-need-572815349/" target="_blank">
+                            <SiLinkedin size={isMobile ? 20 : 30} className="text-zinc-500 hover:text-zinc-300 transition-all duration-150" />
+                        </a>
+                        <a href="#" target="_blank">
+                            <SiInstagram size={isMobile ? 20 : 30} className="text-zinc-500 hover:text-zinc-300 transition-all duration-150"/>
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
