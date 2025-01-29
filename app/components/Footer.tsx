@@ -44,7 +44,7 @@ export const Footer = () => {
                         <a href="https://www.linkedin.com/in/as-need-572815349/" target="_blank">
                             <SiLinkedin size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`} />
                         </a>
-                        <a href="#" target="_blank">
+                        <a href="https://www.instagram.com/asneeed/?next=%2F" target="_blank">
                             <SiInstagram size={isMobile ? 20 : 30} className={`text-zinc-500 ${nightMode ? 'hover:text-zinc-300' : 'hover:text-zinc-700'} transition-all duration-150`}/>
                         </a>
                     </div>
