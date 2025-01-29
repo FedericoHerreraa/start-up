@@ -12,8 +12,8 @@ import { Metadata } from "next";
 import { TrustedByCompanies } from "./components/TrustedByCompanies";
 
 export const metadata: Metadata = {
-    title: "Grow Your Business | AsNeed",
-    description: "At AsNeed, we provide tailored solutions to help your business reach new heights. Discover how our expertise can transform your ideas into reality and start your journey with us today.",
+    title: "Grow Your Business | AsNeeed",
+    description: "At AsNeeed, we provide tailored solutions to help your business reach new heights. Discover how our expertise can transform your ideas into reality and start your journey with us today.",
 };
 
 export default function HomePage() {

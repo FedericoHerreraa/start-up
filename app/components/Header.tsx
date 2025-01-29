@@ -59,7 +59,7 @@ export const Header = () => {
                 <div className="flex gap-5">
                     <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-12 w-10 rotate-45" />
                     <div className="flex flex-col">    
-                        <h1 className='md:text-2xl text-lg'>AsNeed</h1>
+                        <h1 className='md:text-2xl text-lg'>AsNeeed</h1>
                         <h4 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h4>
                     </div>
                 </div>
@@ -163,7 +163,7 @@ const tabsMobileView = ({
                         >
                             {nightMode ? '❌' : '✖️'}
                         </button>
-                        AsNeed
+                        AsNeeed
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">
                         {tabs.map((tab) => (
