@@ -20,7 +20,7 @@ export const Projects = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className="flex flex-col md:gap-20 gap-20 pb-40">
+        <div className="flex flex-col md:gap-5 gap-16 pb-40">
             {info.map((item, index) => (
                 <section key={index} className={`md:mx-10 mt-32 md:min-h-[60vh] min-h-[100vh] ${index%2 === 0 ? `md:border-l-4 ${nightMode ? 'border-l-blue-950' : 'border-l-blue-800' }` : `md:border-r-4 ${nightMode ? 'border-r-blue-950' : 'border-r-blue-800' } `}  ${nightMode ? 'bg-black' : ''}`}>
                     <div className="md:pl-10">
