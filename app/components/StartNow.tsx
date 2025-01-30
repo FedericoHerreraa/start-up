@@ -100,7 +100,6 @@ export const StartNow = () => {
                                     <p>{spanish ? '1 hora.' : '1 hour.'}</p>
                                 </div>
                             </div>
-
                             <div className={`bg-gradient-to-b ${nightMode ? 'from-blue-800 via-blue-900 to-violet-900' : 'from-blue-600 to-blue-300'} md:p-5 p-3 md:rounded-lg rounded-md shadow-xl`}>
                                 <p>
                                     {spanish 
