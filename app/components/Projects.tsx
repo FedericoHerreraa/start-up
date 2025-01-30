@@ -3,9 +3,13 @@
 
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
-import pinascoImg from '@/app/img/pinasco-project.png'
-import homeNonnoMingo from '@/app/img/homeNonnoMingo.jpeg'
-import cartNonnoMingo from '@/app/img/cartNonnoMingo.jpeg'
+import { useMobileView } from "@/app/context/MobileViewContext"
+import desktopPinasco from '@/app/img/desktopPinasco.png'
+import desktopNonnomingo from '@/app/img/desktopNonnoMingo.png'
+import mobile1Nonnomingo from '@/app/img/mobile1NonnoMingo.jpeg'
+import mobile2Nonnomingo from '@/app/img/mobile2NonnoMingo.jpeg'
+import mobile1Pinasco from '@/app/img/mobile1Pinasco.jpeg'
+import mobile2Pinasco from '@/app/img/mobile2Pinasco.jpeg'
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -13,6 +17,7 @@ import Link from "next/link"
 export const Projects = () => {
     const { nightMode } = useNightMode()
     const { spanish } = useLenguage()
+    const { isMobile } = useMobileView()
 
     return (
         <div className="flex flex-col md:gap-20 gap-20 pb-40">
@@ -45,11 +50,11 @@ export const Projects = () => {
                                     </Link>
                                 </div>
                             </div>
-                            {index !== 1 ? (
+                            {!isMobile ? (
                                 <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
                                     <Image
-                                        src={item.image1}
-                                        alt="foto de pinasco"
+                                        src={item.desktop}
+                                        alt="vista computadora"
                                         width={800}
                                         height={600}
                                         className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
@@ -57,22 +62,22 @@ export const Projects = () => {
                                 </div>
                             ) : (
                                 <div className="flex items-center md:gap-20 gap-10">
-                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl shadow-xl`}>
                                         <Image
-                                            src={item.image1}
-                                            alt="foto de pinasco"
+                                            src={item.mobile1}
+                                            alt="foto de movil 1"
                                             width={300}
                                             height={600}
-                                            className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
+                                            className="md:rounded-[22px] rounded-[15px] md:border-[10px] border-[4px] border-black"
                                         />
                                     </div>
-                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                    <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl shadow-xl`}>
                                         <Image
-                                            src={item.image2}
-                                            alt="foto de pinasco"
+                                            src={item.mobile2}
+                                            alt="foto de movile 2"
                                             width={300}
                                             height={600}
-                                            className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
+                                            className="md:rounded-[22px] rounded-[15px] md:border-[10px] border-[4px] border-black"
                                         />
                                     </div>
                                 </div>
@@ -94,8 +99,9 @@ const info = [
         descriptionEnglish: 'Design of a website for a dental clinic. The project includes a contact form, an image gallery, and a services section.',
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
         desafioEnglish: 'The main challenge was to ensure that the design conveys trust and professionalism, while making patients feel comfortable browsing the site. Additionally, the focus was on highlighting the clinic\'s key services and providing a mobile-friendly experience.',
-        image1: pinascoImg,
-        image2: pinascoImg,
+        desktop: desktopPinasco,
+        mobile1: mobile1Pinasco,
+        mobile2: mobile2Pinasco,
         url: 'https://pinasco-three.vercel.app'
     },
     {
@@ -106,8 +112,9 @@ const info = [
         descriptionEnglish: 'Development of an e-commerce web application for a pizzeria. The project includes products organized by sections, an interactive shopping cart, and a confirmation form that allows users to send their order directly via WhatsApp.',
         desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',
         desafioEnglish: 'The challenge was to implement a simple and intuitive shopping experience, ensuring that users could navigate through sections, add products to the cart, and easily send their orders. Integration with WhatsApp was also a key focus to streamline the confirmation process.',
-        image1: homeNonnoMingo,
-        image2: cartNonnoMingo,
+        desktop: desktopNonnomingo,
+        mobile1: mobile1Nonnomingo,
+        mobile2: mobile2Nonnomingo,
         url: 'https://www.nonnomingo.com.ar'
     }
 ];
