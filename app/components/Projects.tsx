@@ -102,7 +102,7 @@ const info = [
         desktop: desktopPinasco,
         mobile1: mobile1Pinasco,
         mobile2: mobile2Pinasco,
-        url: 'https://pinasco-three.vercel.app'
+        url: 'https://www.odontologiapinasco.com'
     },
     {
         id: 2,
