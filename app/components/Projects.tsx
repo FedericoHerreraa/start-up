@@ -8,7 +8,7 @@ import desktopPinasco from '@/app/img/desktopPinasco.png'
 import desktopNonnomingo from '@/app/img/desktopNonnoMingo.png'
 import mobile1Nonnomingo from '@/app/img/mobile1NonnoMingo.jpeg'
 import mobile2Nonnomingo from '@/app/img/mobile2NonnoMingo.jpeg'
-import mobile1Pinasco from '@/app/img/mobile1Pinasco.jpeg'
+import mobile1Pinasco from '@/app/img/mobile1Pinasco.png'
 import mobile2Pinasco from '@/app/img/mobile2Pinasco.jpeg'
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
