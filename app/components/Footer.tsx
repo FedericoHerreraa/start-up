@@ -4,15 +4,15 @@
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-import argFlag from '@/app/img/argentina.png'
+import argFlag from '@/app/img/others/argentina.png'
 
 import { FaRegCopyright } from "react-icons/fa";
 import { SiLinkedin } from "react-icons/si";
 import { SiInstagram } from "react-icons/si";
 
 import Image from "next/image";
-import logoDark from "@/app/img/logo-dark.png"
-import logoLight from "@/app/img/logo-light.png"
+import logoDark from "@/app/img/logos/logo-dark.png"
+import logoLight from "@/app/img/logos/logo-light.png"
 
 export const Footer = () => {
     const { nightMode } = useNightMode()

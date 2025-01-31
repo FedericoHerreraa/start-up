@@ -3,8 +3,8 @@
 import { useNightMode } from "@/app/context/NightModeContext"
 import { useLenguage } from "@/app/context/LenguageContext";
 
-import imageFede from "@/app/img/fede.jpg"
-import imageCami from "@/app/img/cami.jpeg"
+import imageFede from "@/app/img/founders/fede.jpg"
+import imageCami from "@/app/img/founders/cami.jpeg"
 
 import { ImArrowRight2 } from "react-icons/im";
 import { BsArrow90DegDown } from "react-icons/bs";

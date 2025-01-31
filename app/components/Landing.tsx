@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image";
-import imgLanding from "@/app/img/pngwing.com-4.png"
+import imgLanding from "@/app/img/images/pngwing.com-4.png"
 
 import { HiCursorArrowRays } from "react-icons/hi2";
 
