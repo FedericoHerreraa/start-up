@@ -4,15 +4,15 @@
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
-import desktopPinasco from '@/app/img/desktopPinasco.png'
-import desktopNonnomingo from '@/app/img/desktopNonnoMingo.png'
-import desktopChristian from '@/app/img/desktopChristian.png'
-import mobile1Nonnomingo from '@/app/img/mobile1NonnoMingo.jpeg'
-import mobile2Nonnomingo from '@/app/img/mobile2NonnoMingo.jpeg'
-import mobile1Pinasco from '@/app/img/mobile1Pinasco.png'
-import mobile2Pinasco from '@/app/img/mobile2Pinasco.jpeg'
-import mobile1Christian from '@/app/img/mobile1Christian.png'
-import mobile2Christian from '@/app/img/mobile2Christian.png'
+import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
+import desktopNonnomingo from '@/app/img/projects/desktopNonnoMingo.png'
+import desktopChristian from '@/app/img/projects/desktopChristian.png'
+import mobile1Nonnomingo from '@/app/img/projects/mobile1NonnoMingo.jpeg'
+import mobile2Nonnomingo from '@/app/img/projects/mobile2NonnoMingo.jpeg'
+import mobile1Pinasco from '@/app/img/projects/mobile1Pinasco.png'
+import mobile2Pinasco from '@/app/img/projects/mobile2Pinasco.jpeg'
+import mobile1Christian from '@/app/img/projects/mobile1Christian.png'
+import mobile2Christian from '@/app/img/projects/mobile2Christian.png'
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"

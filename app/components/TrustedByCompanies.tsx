@@ -3,10 +3,10 @@
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 
-import christianSaadDark from '@/app/img/ChristianSaad-dark.png'
-import christianSaadLight from '@/app/img/ChristianSaad-light.png'
-import pinasco from '@/app/img/LogoHorizontal@2x.png'
-import buffalo from '@/app/img/buffalo.png'
+import christianSaadDark from '@/app/img/logos/ChristianSaad-dark.png'
+import christianSaadLight from '@/app/img/logos/ChristianSaad-light.png'
+import pinasco from '@/app/img/logos/LogoHorizontal@2x.png'
+import buffalo from '@/app/img/logos/buffalo.png'
 import Image from "next/image"
 
 export const TrustedByCompanies = () => {

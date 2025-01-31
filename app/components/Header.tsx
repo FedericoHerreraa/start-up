@@ -9,8 +9,8 @@ import { HiQueueList } from "react-icons/hi2";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-import logoDark from "@/app/img/logo-dark.png"
-import logoLight from "@/app/img/logo-light.png"
+import logoDark from "@/app/img/logos/logo-dark.png"
+import logoLight from "@/app/img/logos/logo-light.png"
 import Image from "next/image";
 
 import {
