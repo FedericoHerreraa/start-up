@@ -8,6 +8,7 @@ import christianSaadLight from '@/app/img/logos/ChristianSaad-light.png'
 import pinasco from '@/app/img/logos/LogoHorizontal@2x.png'
 import buffalo from '@/app/img/logos/buffalo.png'
 import Image from "next/image"
+import Marquee from "react-fast-marquee"
 
 export const TrustedByCompanies = () => {
     const { nightMode } = useNightMode()
@@ -27,15 +28,17 @@ export const TrustedByCompanies = () => {
                 </span>
             </h1>
 
-            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-10 flex-wrap`}>
-                {companies.map((company, index) => (
-                    <Image
-                        key={index}
-                        src={company.img2 ? nightMode ? company.img1 : company.img2 : company.img1}
-                        alt={company.name}
-                        className={company.className}
-                    />
-                ))}                
+            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-100'} mt-20 min-h-40 flex items-center justify-center gap-20 flex-wrap`}>
+                <Marquee speed={50}>
+                    {companies.map((company, index) => (
+                        <Image
+                            key={index}
+                            src={company.img2 ? nightMode ? company.img1 : company.img2 : company.img1}
+                            alt={company.name}
+                            className={company.className}
+                        />
+                    ))}                
+                </Marquee>
             </section>
         </div>
     )   
@@ -47,16 +50,26 @@ const companies = [
         name: 'Christian Saad',
         img1: christianSaadDark,
         img2: christianSaadLight,
-        className: 'md:w-[160px] md:h-[70px] w-[100px] h-[40px]'
+        className: 'md:w-[160px] md:h-[70px] w-[100px] h-[40px] mx-20'
     },
     {
         name: 'Pinasco',
         img1: pinasco,
-        className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px]'
+        className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px] mx-20'
     },
     {
         name: 'Buffalo',
         img1: buffalo,
-        className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px]'
-    }
+        className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px] mx-20'
+    },
+    {
+        name: 'Pinasco',
+        img1: pinasco,
+        className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px] mx-20'
+    },
+    {
+        name: 'Buffalo',
+        img1: buffalo,
+        className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px] mx-20'
+    },
 ]
