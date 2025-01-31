@@ -167,7 +167,7 @@ const tabsMobileView = ({
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">
                         {tabs.map((tab) => (
-                            <div 
+                            <span 
                                 key={tab.id}
                                 onClick={() => {
                                     setIsOpen(false)
@@ -176,7 +176,7 @@ const tabsMobileView = ({
                                 className="text-lg"
                             >
                                 {spanish ? tab.titleSpanish : tab.titleEnglish}
-                            </div>    
+                            </span>    
                         ))}
                         <>
                             <Select 
