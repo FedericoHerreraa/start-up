@@ -6,10 +6,13 @@ import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
 import desktopPinasco from '@/app/img/desktopPinasco.png'
 import desktopNonnomingo from '@/app/img/desktopNonnoMingo.png'
+import desktopChristian from '@/app/img/desktopChristian.png'
 import mobile1Nonnomingo from '@/app/img/mobile1NonnoMingo.jpeg'
 import mobile2Nonnomingo from '@/app/img/mobile2NonnoMingo.jpeg'
 import mobile1Pinasco from '@/app/img/mobile1Pinasco.png'
 import mobile2Pinasco from '@/app/img/mobile2Pinasco.jpeg'
+import mobile1Christian from '@/app/img/mobile1Christian.png'
+import mobile2Christian from '@/app/img/mobile2Christian.png'
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -29,11 +32,6 @@ export const Projects = () => {
                             : 'md:text-end md:mr-10'
                         } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </h1>
                     </div>
-                    {index === 2 ? (
-                        <div className="flex justify-center h-[60vh] items-center">   
-                            <h1 className="md:text-5xl text-2xl animate-pulse">{spanish ? 'Proximamente!' : 'Coming Soon!'}</h1>
-                        </div>
-                    ) : (
                         <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-10 md:w-[95%] w-[90%] mx-auto`}>
                             <div className={`md:w-1/2 w-full md:h-96 h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
                                 <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
@@ -83,7 +81,6 @@ export const Projects = () => {
                                 </div>
                             )}
                         </div>
-                    )}
                 </section> 
             ))}
         </div>
@@ -116,5 +113,18 @@ const info = [
         mobile1: mobile1Nonnomingo,
         mobile2: mobile2Nonnomingo,
         url: 'https://www.nonnomingo.com.ar'
+    },
+    {
+        id: 3,
+        titleSpanish: 'Página Informativa para Consultorio',
+        titleEnglish: 'Informative Website for Dental Clinic',
+        descriptionSpanish: 'Diseño de una página web informativa para un consultorio odontológico. El proyecto incluye secciones para tratamientos, información de contacto, galería de imágenes y un formulario para solicitar turnos.',
+        descriptionEnglish: 'Design of an informative website for a dental clinic. The project includes sections for treatments, contact information, an image gallery, and a form to request appointments.',
+        desafioSpanish: 'El desafío fue estructurar la información de manera clara y atractiva, destacando los tratamientos ofrecidos y facilitando el contacto con los pacientes. Además, se trabajó en optimizar la experiencia para dispositivos móviles.',
+        desafioEnglish: 'The challenge was to structure the information in a clear and appealing way, highlighting the treatments offered and making it easy for patients to get in touch. Mobile optimization was also a key focus.',
+        desktop: desktopChristian,
+        mobile1: mobile1Christian,
+        mobile2: mobile2Christian,
+        url: 'https://web-odontologia-christian.vercel.app'
     }
 ];
