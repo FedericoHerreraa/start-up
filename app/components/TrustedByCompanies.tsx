@@ -14,7 +14,7 @@ export const TrustedByCompanies = () => {
     const { spanish } = useLenguage()
     
     return (
-        <div className={`py-24 ${nightMode ? 'bg-black' : ''} text-zinc-300 min-h-[60vh]`}>
+        <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-zinc-300 min-h-[60vh]`}>
             <p className="text-zinc-500 text-center mb-3 md:text-xl ">
                 {spanish
                     ? "Nuestros Clientes."
