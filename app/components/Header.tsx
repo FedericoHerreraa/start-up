@@ -249,15 +249,15 @@ const tabsMobileView = ({
 const tabs = [
     {
         id: 1,
-        titleSpanish: 'Precios',
-        titleEnglish: 'Pricing',
-        url: '/pricing'
-    },
-    {
-        id: 2,
         titleSpanish: 'Nuestro Trabajo',
         titleEnglish: 'Our Work',
         url: '/our-work'
+    },
+    {
+        id: 2,
+        titleSpanish: 'Precios',
+        titleEnglish: 'Pricing',
+        url: '/pricing'
     },
     {
         id: 3,

@@ -28,7 +28,7 @@ export const Founders = () => {
                 viewport={{ once: true }}
             > 
                 <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Los que llevan la magia adelante.' : 'Those who bring the magic to life.'}</p>
-                <h1 className={`md:text-6xl text-4xl font-semibold text-center ${nightMode ? 'text-white' : ' '}`}>
+                <h1 className={`md:text-6xl text-4xl font-semibold text-center ${nightMode ? 'text-white' : 'text-zinc-700'}`}>
                     {spanish ? 'Conocé a Nuestros ' : 'Meet Our'} <span className="bg-gradient-to-r from-violet-400 to-violet-800 bg-clip-text text-transparent">{spanish ? 'Fundadores.' : 'Founders.'}</span>
                 </h1>
 

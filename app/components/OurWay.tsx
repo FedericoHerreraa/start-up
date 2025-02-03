@@ -35,7 +35,7 @@ export const OurWay = () => {
         </p>
         <h1
           className={`text-center md:text-6xl text-4xl font-semibold ${
-            nightMode ? "text-white" : "text-black"
+            nightMode ? "text-white" : "text-zinc-700"
           }`}
         >
           {spanish ? "Nuestra Forma de" : "Our Way Of "}{" "}

@@ -22,7 +22,7 @@ export const TrustedByCompanies = () => {
                     : "Our Partners."}
             </p>
             
-            <h1 className={`${nightMode ? '' : 'text-black'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
+            <h1 className={`${nightMode ? '' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
                 {spanish ? "Acompañados por los" : "Trusted by the"}{" "}
                 <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                     {spanish ? "Mejores Clientes." : "Best Clients."}
