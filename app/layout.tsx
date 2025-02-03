@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://res.cloudinary.com/dikdtnj2b/image/upload/v1738006742/image-3_witjuk.png"/>
+        <link rel="icon" href="https://res.cloudinary.com/dikdtnj2b/image/upload/v1738620951/newDarkLogo_ecklxo.png"/>
       </head>
       <body>
         <LenguageProvider>
