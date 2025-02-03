@@ -52,10 +52,10 @@ export const WhyUs = () => {
                     <Image
                         src={nightMode ? logoDark : logoLight}
                         alt="logo"
-                        width={200}
-                        height={200}
+                        width={230}
+                        height={230}
                     />
-                    <p className="text-zinc-300">Here, we turn your ideas into digital reality</p>
+                    <p className="text-zinc-300 text-xl">Here, we turn your ideas into digital reality</p>
                     <Link href='/start-now' className="flex items-center gap-1 bg-blue-800 px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-75 mt-5">
                         <p className="text-xl">Start right now</p>
                         <MdArrowRightAlt size={30}/>

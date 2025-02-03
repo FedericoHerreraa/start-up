@@ -5,18 +5,16 @@ import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
 import { HiQueueList } from "react-icons/hi2";
 
-
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-// import logoDark from "@/app/img/logos/logo-dark.png"
-// import logoLight from "@/app/img/logos/logo-light.png"
 
 import logoDark from '@/app/img/logos/newDarkLogo.png'
 import logoLight from '@/app/img/logos/newLightLogo.png'
 
 import argFlag from '@/app/img/others/argentina.png'
 import usaFlag from '@/app/img/others/usa.png'
+
 import Image from "next/image";
 import Link from "next/link";
 
