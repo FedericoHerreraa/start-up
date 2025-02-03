@@ -16,7 +16,7 @@ export const TrustedByCompanies = () => {
     const { spanish } = useLenguage()
     
     return (
-        <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-white min-h-[60vh]`}>
+        <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-white md:min-h-[60vh] min-h-[45vh]`}>
             <TitleSection
                 firstTitleEnglish="Trusted by the"
                 secondTitleEnglish="Best Clients."
