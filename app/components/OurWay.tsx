@@ -2,6 +2,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
+import { TitleSection } from "@/app/components/reusable/titleSection";
 import { BsArrowReturnRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,6 @@ import {
   AlertDialogTrigger,
 } from "@/app/components/ui/alert-dialog"
 
-
 export const OurWay = () => {
   const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
@@ -28,21 +28,17 @@ export const OurWay = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className="text-zinc-500 text-center mb-3 md:text-xl text-md">
-          {spanish
-            ? "Primero que nada te mostramos nuestra filosofía."
-            : "First of all we will show you our philosophy "}
-        </p>
-        <h1
-          className={`text-center md:text-6xl text-4xl font-semibold ${
-            nightMode ? "text-white" : "text-black"
-          }`}
-        >
-          {spanish ? "Nuestra Forma de" : "Our Way Of "}{" "}
-          <span className="bg-gradient-to-r from-green-500 to-green-800 bg-clip-text text-transparent">
-            {spanish ? "Trabajar." : "Working."}
-          </span>
-        </h1>
+        <TitleSection
+          firstTitleEnglish="Our Way Of "
+          secondTitleEnglish="Working."
+          firstTitleSpanish="Nuestra Forma de "
+          secondTitleSpanish="Trabajar."
+          subTitleEnglish="First of all we will show you our philosophy."
+          subTitleSpanish="Primero que nada te mostramos nuestra filosofía."
+          color="from-green-500 to-green-800"
+          spanish={spanish}
+          nightMode={nightMode}
+        />
 
         <div className="mt-20">
           <section>

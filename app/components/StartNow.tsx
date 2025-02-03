@@ -3,6 +3,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext"
+import { TitleSection } from "@/app/components/reusable/titleSection";
 import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { ContactUsController } from "./ContactUsController";
@@ -13,8 +14,7 @@ export const StartNow = () => {
 
     return (
         <div 
-            id="start"
-            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh]`}
+            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] pt-40`}
         >
             <motion.div
                 initial={{ y: -100, opacity: 1 }}
@@ -22,11 +22,17 @@ export const StartNow = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
             >
-                
-                <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Bueno, ahora sí vamos a lo importante.' : 'Alright, now let’s get to the important part.'}</p>
-                <h1 className={`md:text-6xl text-4xl ${nightMode ? 'text-white' : ''} font-semibold text-center`}>
-                    {spanish ? 'Comencemos ' : `Let${"'"}s Start`} <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">{spanish ? 'Ahora Mismo.' : 'Right Now.'}</span>
-                </h1>
+                <TitleSection
+                    firstTitleEnglish="Let's Start"
+                    secondTitleEnglish="Right Now."
+                    firstTitleSpanish="Comencemos "
+                    secondTitleSpanish="Ahora Mismo."
+                    subTitleEnglish="Alright, now let’s get to the important part."
+                    subTitleSpanish="Bueno, ahora sí vamos a lo importante."
+                    color="from-blue-700 to-blue-900"
+                    spanish={spanish}
+                    nightMode={nightMode}
+                />
 
                 <section className="flex md:flex-row flex-col w-[95%] mx-auto mt-20 gap-7">
                     <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>

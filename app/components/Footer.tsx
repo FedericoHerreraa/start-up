@@ -11,8 +11,9 @@ import { SiLinkedin } from "react-icons/si";
 import { SiInstagram } from "react-icons/si";
 
 import Image from "next/image";
-import logoDark from "@/app/img/logos/logo-dark.png"
-import logoLight from "@/app/img/logos/logo-light.png"
+
+import logoDark from '@/app/img/logos/newDarkLogo.png'
+import logoLight from '@/app/img/logos/newLightLogo.png'
 
 export const Footer = () => {
     const { nightMode } = useNightMode()
@@ -22,8 +23,8 @@ export const Footer = () => {
     return (
         <footer className={`h-[70vh] ${nightMode ? 'bg-black' : ''} pt-20`}>
             <div className={`${nightMode ? 'bg-zinc-950' : 'bg-zinc-100'} flex flex-col gap-5 items-center h-full w-full`}>
-                <div className="flex gap-3 items-center justify-center pt-20">
-                    <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-10 w-8 h-auto rotate-45" />
+                <div className="flex gap-1 items-center justify-center pt-20">
+                    <Image src={nightMode ? logoDark : logoLight} alt="" className="md:w-[85px] w-8 h-auto" />
                     <h1 className={`${nightMode ? 'text-zinc-300' : 'text-black'} md:text-4xl text-2xl`}>AsNeeed</h1>
                 </div>
                 <p className={`${nightMode ? 'text-zinc-400' : 'text-zinc-600'} md:text-lg text-base text-center`}>{spanish ? 'Transformamos tus ideas en realidad digital.' : 'We turn your ideas into digital reality.'}</p>
