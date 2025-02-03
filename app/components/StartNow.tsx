@@ -13,8 +13,7 @@ export const StartNow = () => {
 
     return (
         <div 
-            id="start"
-            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh]`}
+            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] pt-40`}
         >
             <motion.div
                 initial={{ y: -100, opacity: 1 }}
