@@ -59,7 +59,7 @@ export const Header = () => {
                     <Image 
                         src={nightMode ? logoDark : logoLight} 
                         alt="logo" 
-                        className="md:w-[85px] w-10" 
+                        className="md:w-[85px] w-16" 
                     />
                     <div className="flex flex-col">    
                         <h1 className='md:text-2xl text-lg'>AsNeeed</h1>

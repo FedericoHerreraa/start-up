@@ -30,7 +30,7 @@ export const FAQs = () => {
                 nightMode={nightMode}
             />
 
-            <section className="w-[40%] mx-auto mt-20">
+            <section className="md:w-[40%] w-[80%] mx-auto mt-20">
                 <Accordion type="single" collapsible>
                     {info.map((item, index) => (
                         <AccordionItem 

@@ -14,7 +14,7 @@ export const StartNow = () => {
 
     return (
         <div 
-            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] pt-40`}
+            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] md:pt-40 pt-10`}
         >
             <motion.div
                 initial={{ y: -100, opacity: 1 }}
@@ -34,7 +34,7 @@ export const StartNow = () => {
                     nightMode={nightMode}
                 />
 
-                <section className="flex md:flex-row flex-col w-[95%] mx-auto mt-20 gap-7">
+                <section className="flex md:flex-row flex-col md:w-[95%] w-[99%] mx-auto mt-20 gap-7">
                     <div className={`md:w-1/2 rounded-xl h-[650px] md:p-10 p-5 md:text-lg ${nightMode ? 'text-zinc-300' : ''}`}>
                         <h2 className={`md:text-3xl text-xl ${nightMode ? 'text-zinc-200' : 'text-zinc-800'} font-semibold`}>
                             {spanish ? 'Coordiná una llamada.' : 'Schedule a call.'}

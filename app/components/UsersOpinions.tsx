@@ -33,7 +33,7 @@ export const UsersOpinions = () => {
                 nightMode={nightMode}
             />
 
-            <section className="mt-20 w-[80%] mx-auto">
+            <section className="mt-20 md:w-[80%] w-[70%] mx-auto">
                 <Carousel 
                     opts={{
                         loop: true
@@ -46,8 +46,8 @@ export const UsersOpinions = () => {
                 >
                     <CarouselContent>
                         <CarouselItem>
-                            <div className="flex items-center justify-center gap-5">
-                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} p-7 rounded-lg`}>
+                            <div className="flex md:flex-row flex-col items-center justify-center gap-5">
+                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}>
                                     <p className="text-lg font-bold">
                                         {spanish ? 'Pinasco Odontología' : 'Pinasco Dental Clinic'}
                                     </p>
@@ -58,7 +58,7 @@ export const UsersOpinions = () => {
                                         }
                                     </p>
                                 </div>
-                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} p-7 rounded-lg`}>
+                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}>
                                     <p className="text-lg font-bold">
                                         {spanish ? 'Buffalo Café' : 'Buffalo Café'}
                                     </p>
@@ -73,8 +73,8 @@ export const UsersOpinions = () => {
                         </CarouselItem>
 
                         <CarouselItem>
-                            <div className="flex items-center justify-center gap-5">
-                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} p-7 rounded-lg`}>
+                            <div className="flex md:flex-row flex-col items-center justify-center gap-5">
+                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}>
                                     <p className="text-lg font-bold">
                                         {spanish ? 'Christian Saad Odontología' : 'Christian Saad Dental Clinic'}
                                     </p>
@@ -85,7 +85,7 @@ export const UsersOpinions = () => {
                                         }
                                     </p>
                                 </div>
-                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} p-7 rounded-lg`}>
+                                <div className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}>
                                     <p className="text-lg font-bold">
                                         {spanish ? 'Pizzería Nonnomingo' : 'Nonnomingo Pizzeria'}
                                     </p>

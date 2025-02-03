@@ -13,7 +13,7 @@ export const OurWork = () => {
 
   return (
     <div
-      className={`${nightMode ? "bg-black text-zinc-300" : ""} min-h-[150vh] pt-40`}
+      className={`${nightMode ? "bg-black text-zinc-300" : ""} min-h-[150vh] md:pt-40 pt-10`}
     >
       <motion.div
         initial={{ y: -100, opacity: 1 }}

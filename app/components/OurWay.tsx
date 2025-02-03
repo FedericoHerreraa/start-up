@@ -21,7 +21,7 @@ export const OurWay = () => {
   const { spanish } = useLenguage();
 
   return (
-    <div id="philosophy" className={`${nightMode ? "bg-black" : ""} min-h-[100vh]`}>
+    <div className={`${nightMode ? "bg-black" : ""} md:min-h-[100vh] min-h-[70vh]`}>
       <motion.div
         initial={{ y: -100, opacity: 1 }}
         whileInView={{ y: 0, opacity: 1 }}

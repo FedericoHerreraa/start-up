@@ -21,7 +21,7 @@ export const Founders = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className={`${nightMode ? 'bg-black' : '' } md:min-h-[75vh] min-h-[100vh]`}>
+        <div className={`${nightMode ? 'bg-black' : '' } min-h-[75vh]`}>
             <motion.div
                 initial={{ y: -100, opacity: 1 }}
                 whileInView={{ y: 0, opacity: 1 }}
