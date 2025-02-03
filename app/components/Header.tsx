@@ -11,6 +11,8 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
 import logoDark from "@/app/img/logos/logo-dark.png"
 import logoLight from "@/app/img/logos/logo-light.png"
+import argFlag from '@/app/img/others/argentina.png'
+import usaFlag from '@/app/img/others/usa.png'
 import Image from "next/image";
 
 import {
@@ -123,15 +125,33 @@ const tabsDesktopView = ({
                     onValueChange={() => setSpanish(!spanish)}
                 >
                     <SelectTrigger 
-                        className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                        className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
                     >
                         <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                     </SelectTrigger>
                     <SelectContent 
                         className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
                     >
-                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200 " value="spanish">
+                            <div className="flex items-center gap-2">
+                                {spanish ? 'Español' : 'Spanish'}
+                                <Image
+                                    src={argFlag}
+                                    alt="Argentina Flag"
+                                    width={20}
+                                />
+                            </div>
+                        </SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">
+                            <div className="flex items-center gap-2">
+                                {spanish ? 'Inglés' : 'English'}    
+                                <Image
+                                    src={usaFlag}
+                                    alt="USA Flag"
+                                    width={20}
+                                />
+                            </div>
+                        </SelectItem>
                     </SelectContent>
                 </Select>
             </div>
@@ -184,15 +204,33 @@ const tabsMobileView = ({
                                 onValueChange={() => setSpanish(!spanish)}
                             >
                                 <SelectTrigger 
-                                    className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                    className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
                                 >
                                     <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                                 </SelectTrigger>
                                 <SelectContent 
                                     className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
                                 >
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">
+                                        <div className="flex items-center gap-2">
+                                            {spanish ? 'Español' : 'Spanish'}
+                                            <Image
+                                                src={argFlag}
+                                                alt="Argentina Flag"
+                                                width={15}
+                                            />
+                                        </div>
+                                    </SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">
+                                        <div className="flex items-center gap-2">
+                                            {spanish ? 'Inglés' : 'English'}    
+                                            <Image
+                                                src={usaFlag}
+                                                alt="USA Flag"
+                                                width={15}
+                                            />
+                                        </div>
+                                    </SelectItem>
                                 </SelectContent>
                             </Select>
                         </>
