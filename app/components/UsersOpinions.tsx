@@ -4,16 +4,15 @@
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
 
+import Autoplay from "embla-carousel-autoplay"
+
 import {
     Carousel,
     CarouselContent,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "@/app/components/ui/carousel"
-
-// import argFlag from '@/app/img/others/argentina.png'
-  
+} from "@/app/components/ui/carousel"  
 
 export const UsersOpinions = () => {
     const { nightMode } = useNightMode()
@@ -35,15 +34,45 @@ export const UsersOpinions = () => {
             </h1>
 
 
-            <section className="mt-20">
-                <Carousel>
+            <section className="mt-20 w-[80%] mx-auto">
+                <Carousel 
+                    opts={{
+                        loop: true
+                    }}
+                    plugins={[
+                        Autoplay({
+                          delay: 3500,
+                        }),
+                    ]}
+                >
                     <CarouselContent>
-                        <CarouselItem>...</CarouselItem>
-                        <CarouselItem>...</CarouselItem>
-                        <CarouselItem>...</CarouselItem>
+                        <CarouselItem>
+                            <div className="flex items-center gap-5">
+                                <div className="bg-zinc-900 p-7 rounded-lg">
+                                    <p className="text-lg text-zinc-300">- John Doe</p>
+                                    <p className="text-lg text-zinc-300">"The best service I have ever tried, I will definitely continue to use it."</p>
+                                </div>
+                                <div className="bg-zinc-900 p-7 rounded-lg">
+                                    <p className="text-lg text-zinc-300">- John Doe</p>
+                                    <p className="text-lg text-zinc-300">"The best service I have ever tried, I will definitely continue to use it."</p>
+                                </div>
+                            </div>
+                        </CarouselItem>
+                        <CarouselItem>
+                            <div className="flex items-center gap-5">
+                                <div className="bg-zinc-900 p-7 rounded-lg">
+                                    <p className="text-lg text-zinc-300">- John Doe</p>
+                                    <p className="text-lg text-zinc-300">"The best service I have ever tried, I will definitely continue to use it."</p>
+                                </div>
+                                <div className="bg-zinc-900 p-7 rounded-lg">
+                                    <p className="text-lg text-zinc-300">- John Doe</p>
+                                    <p className="text-lg text-zinc-300">"The best service I have ever tried, I will definitely continue to use it."</p>
+                                </div>
+                            </div>
+                        </CarouselItem>
                     </CarouselContent>
-                    <CarouselPrevious />
-                    <CarouselNext />
+                    <CarouselPrevious className="bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white"/>
+                    <CarouselNext className="bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white"/>
                 </Carousel>
             </section>
         </div>
