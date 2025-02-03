@@ -12,6 +12,7 @@ import { BsArrow90DegDown } from "react-icons/bs";
 import Image from "next/image";
 import { useMobileView } from "@/app/context/MobileViewContext";
 import { motion } from "framer-motion";
+import { TitleSection } from "@/app/components/reusable/titleSection";
 
 
 export const Founders = () => {
@@ -27,10 +28,17 @@ export const Founders = () => {
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
             > 
-                <p className="text-zinc-500 text-center mb-3 md:text-xl">{spanish ? 'Los que llevan la magia adelante.' : 'Those who bring the magic to life.'}</p>
-                <h1 className={`md:text-6xl text-4xl font-semibold text-center ${nightMode ? 'text-white' : 'text-zinc-700'}`}>
-                    {spanish ? 'Conocé a Nuestros ' : 'Meet Our'} <span className="bg-gradient-to-r from-violet-400 to-violet-800 bg-clip-text text-transparent">{spanish ? 'Fundadores.' : 'Founders.'}</span>
-                </h1>
+                <TitleSection
+                    firstTitleEnglish="Meet Our"
+                    secondTitleEnglish="Founders."
+                    firstTitleSpanish="Conocé a Nuestros "
+                    secondTitleSpanish="Fundadores."
+                    subTitleEnglish="Those who bring the magic to life."
+                    subTitleSpanish="Los que llevan la magia adelante."
+                    color="from-violet-400 to-violet-800"
+                    spanish={spanish}
+                    nightMode={nightMode}
+                />
 
                 <section className={`${nightMode ? 'bg-zinc-900' : 'bg-zinc-100'} md:p-10 p-5 flex flex-col md:gap-2 gap-10 min-h-96 rounded-xl shadow-xl mt-20 md:w-[80%] w-[95%] mx-auto`}>
                     <div className="md:mx-10 mx-2 flex md:flex-row flex-col md:items-center md:gap-0 gap-5 items-start">

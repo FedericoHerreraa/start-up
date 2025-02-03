@@ -9,6 +9,7 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/app/components/ui/accordion"
+import { TitleSection } from "./reusable/titleSection"
   
 
 export const FAQs = () => {
@@ -17,18 +18,17 @@ export const FAQs = () => {
 
     return (
         <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} pb-20`}>
-            <p className="text-zinc-500 text-center mb-3 md:text-xl ">
-                {spanish
-                    ? "FAQs."
-                    : "FAQs."}
-            </p>
-                
-            <h1 className={`${nightMode ? '' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Preguntas" : "Frequently Ask"}{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                    {spanish ? "Frecuentes." : "Questions."}
-                </span>
-            </h1>
+            <TitleSection
+                firstTitleEnglish="Frequently Ask"
+                secondTitleEnglish="Questions."
+                firstTitleSpanish="Preguntas"
+                secondTitleSpanish="Frecuentes."
+                subTitleEnglish="FAQs."
+                subTitleSpanish="FAQs."
+                color="from-blue-600 to-blue-800"
+                spanish={spanish}
+                nightMode={nightMode}
+            />
 
             <section className="w-[40%] mx-auto mt-20">
                 <Accordion type="single" collapsible>

@@ -2,6 +2,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
+import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import christianSaadDark from '@/app/img/logos/ChristianSaad-dark.png'
 import christianSaadLight from '@/app/img/logos/ChristianSaad-light.png'
@@ -16,18 +17,17 @@ export const TrustedByCompanies = () => {
     
     return (
         <div className={`py-10 ${nightMode ? 'bg-black' : ''} text-white min-h-[60vh]`}>
-            <p className="text-zinc-500 text-center mb-3 md:text-xl ">
-                {spanish
-                    ? "Nuestros Clientes."
-                    : "Our Partners."}
-            </p>
-            
-            <h1 className={`${nightMode ? '' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Acompañados por los" : "Trusted by the"}{" "}
-                <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
-                    {spanish ? "Mejores Clientes." : "Best Clients."}
-                </span>
-            </h1>
+            <TitleSection
+                firstTitleEnglish="Trusted by the"
+                secondTitleEnglish="Best Clients."
+                firstTitleSpanish="Acompañados por los"
+                secondTitleSpanish="Mejores Clientes."
+                subTitleEnglish="Our Partners."
+                subTitleSpanish="Nuestros Clientes."
+                color="from-blue-700 to-blue-900"
+                spanish={spanish}
+                nightMode={nightMode}
+            />
 
             <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-100'} mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap`}>
                 <Marquee speed={50}>

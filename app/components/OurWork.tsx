@@ -2,6 +2,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
+import { TitleSection } from "@/app/components/reusable/titleSection";
 import { Projects } from "./Projects";
 import { UITechnologyComponent } from "./UITechnology";
 import { motion } from "framer-motion";
@@ -20,17 +21,17 @@ export const OurWork = () => {
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <p className="text-zinc-500 text-center mb-3 md:text-xl ">
-          {spanish
-            ? "Antes de comenzar debes conocer qué hacemos."
-            : "Before starting you should know what we do."}
-        </p>
-        <h1 className="text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold">
-          {spanish ? "Mirá Nuestros" : "Look At Our"}{" "}
-          <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent">
-            {spanish ? "Mejores Proyectos." : "Best Projects."}
-          </span>
-        </h1>
+        <TitleSection
+          firstTitleEnglish="Look At Our"
+          secondTitleEnglish="Best Projects."
+          firstTitleSpanish="Mirá Nuestros"
+          secondTitleSpanish="Mejores Proyectos."
+          subTitleEnglish="Before starting you should know what we do."
+          subTitleSpanish="Antes de comenzar debes conocer qué hacemos."
+          color="from-orange-400 to-orange-800"
+          spanish={spanish}
+          nightMode={nightMode}
+        />
 
         <UITechnologyComponent />
 

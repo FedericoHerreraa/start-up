@@ -3,6 +3,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
+import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import Autoplay from "embla-carousel-autoplay"
 
@@ -20,18 +21,17 @@ export const UsersOpinions = () => {
 
     return (
         <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[60vh]`}>
-            <p className="text-zinc-500 text-center mb-3 md:text-xl ">
-                {spanish
-                    ? "Escucha a los mejores clientes."
-                    : "Listen to the best clients."}
-            </p>
-                
-            <h1 className={`${nightMode ? '' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Que dicen" : "What our users"}{" "}
-                <span className="bg-gradient-to-r from-orange-400 to-orange-800 bg-clip-text text-transparent">
-                    {spanish ? "nuestros clientes." : "are saying."}
-                </span>
-            </h1>
+            <TitleSection
+                firstTitleEnglish="What our users"
+                secondTitleEnglish="are saying."
+                firstTitleSpanish="Que dicen"
+                secondTitleSpanish="nuestros clientes."
+                subTitleEnglish="Listen to the best clients."
+                subTitleSpanish="Escucha a los mejores clientes."
+                color="from-orange-400 to-orange-800"
+                spanish={spanish}
+                nightMode={nightMode}
+            />
 
             <section className="mt-20 w-[80%] mx-auto">
                 <Carousel 

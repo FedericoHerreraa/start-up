@@ -2,6 +2,7 @@
 
 import { useLenguage } from "@/app/context/LenguageContext"
 import { useNightMode } from "@/app/context/NightModeContext"
+import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import Image from "next/image"
 import Link from "next/link"
@@ -31,18 +32,17 @@ export const WhyUs = () => {
 
     return (
         <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[70vh]`}>
-            <p className="text-zinc-500 text-center mb-3 md:text-xl ">
-                {spanish
-                    ? "El socio estratégico que necesitas."
-                    : "The strategic partner you need."}
-            </p>
-                
-            <h1 className={`${nightMode ? '' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
-                {spanish ? "Por que elegir" : "Why choosing"}{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
-                    {spanish ? "AsNeeed." : "AsNeeed."}
-                </span>
-            </h1>
+            <TitleSection
+                firstTitleEnglish="Why choosing"
+                secondTitleEnglish="AsNeeed."
+                firstTitleSpanish="Por que elegir"
+                secondTitleSpanish="AsNeeed."
+                subTitleEnglish="The strategic partner you need."
+                subTitleSpanish="El socio estratégico que necesitas."
+                color="from-blue-600 to-blue-800"
+                spanish={spanish}
+                nightMode={nightMode}
+            />
 
             <section className="mt-20 w-[80%] mx-auto flex gap-10">
                 <div className="border-l-4 border-l-blue-700 flex flex-col gap-5 w-2/3">
