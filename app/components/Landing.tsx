@@ -1,10 +1,11 @@
 'use client'
 
 import Image from "next/image";
-import imgLanding from "@/app/img/images/pngwing.com-4.png"
+import Link from "next/link";
 
 import { HiCursorArrowRays } from "react-icons/hi2";
 
+import imgLanding from "@/app/img/images/pngwing.com-4.png"
 import { useNightMode } from '@/app/context/NightModeContext'
 import { useLenguage } from '@/app/context/LenguageContext';
 import { useMobileView } from "@/app/context/MobileViewContext";
@@ -14,13 +15,6 @@ export const LandingInfo = () => {
     const { nightMode } = useNightMode();
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
-
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-    };
 
     return (
         <div className={nightMode ? 'text-white bg-black' : ''}>
@@ -39,15 +33,15 @@ export const LandingInfo = () => {
                                 : 'At "AsNeeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms, and social media, fully customized to meet your business needs.'
                             }
                         </p>
-                        <button 
-                            onClick={() => scrollToSection('start')} 
+                        <Link 
+                            href='/start-now'
                             className={`bg-blue-800 text-white md:py-5 py-3 md:px-7 px-5 shadow-2xl rounded-xl w-fit hover:scale-110 hover:bg-blue-700 transform transition duration-300 ease-in-out`}
                         >
                             <div className="flex gap-2 items-center">
                                 <p className="md:text-xl font-semibold">{spanish ? 'Comencemos Hoy!' : `Let${`'`}s Start Now!`}</p>
                                 <HiCursorArrowRays size={25}/>
                             </div>
-                        </button>
+                        </Link>
                     </div>
                     {!isMobile && (
                         <div className="w-1/2 flex animate-float">
