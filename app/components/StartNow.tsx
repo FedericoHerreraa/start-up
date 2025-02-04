@@ -4,7 +4,6 @@
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext"
 import { TitleSection } from "@/app/components/reusable/titleSection";
-import { motion } from "framer-motion";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { ContactUsController } from "./ContactUsController";
 
@@ -14,14 +13,8 @@ export const StartNow = () => {
 
     return (
         <div 
-            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] md:pt-40 pt-10`}
+            className={`${nightMode ? 'bg-black' : ''} min-h-[100vh] md:pt-20 pt-10`}
         >
-            <motion.div
-                initial={{ y: -100, opacity: 1 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                viewport={{ once: true }}
-            >
                 <TitleSection
                     firstTitleEnglish="Let's Start"
                     secondTitleEnglish="Right Now."
@@ -125,7 +118,6 @@ export const StartNow = () => {
                         <ContactUsController />
                     </div>
                 </section>
-            </motion.div>
         </div>
     )
 }

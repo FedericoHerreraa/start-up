@@ -255,9 +255,9 @@ const tabs = [
     },
     {
         id: 2,
-        titleSpanish: 'Precios',
-        titleEnglish: 'Pricing',
-        url: '/pricing'
+        titleSpanish: 'Planes',
+        titleEnglish: 'Plans',
+        url: '/plans'
     },
     {
         id: 3,
