@@ -28,7 +28,7 @@ export const Projects = () => {
             {info.map((item, index) => (
                 <div key={index} className="overflow-hidden">
                     <motion.section
-                        initial={{ x: index % 2 === 0 ? -200 : 200, opacity: 0 }} 
+                        initial={{ x: index % 2 === 0 ? -60 : 60, opacity: 0 }} 
                         whileInView={{ x: 0, opacity: 1 }} 
                         transition={{ duration: 1.5, ease: "easeOut" }} 
                         viewport={{ once: true }}

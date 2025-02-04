@@ -23,7 +23,7 @@ export const OurWay = () => {
   return (
     <div className={`${nightMode ? "bg-black" : ""} md:min-h-[100vh] min-h-[70vh]`}>
       <motion.div
-        initial={{ y: -100, opacity: 1 }}
+        initial={{ y: -60, opacity: 1 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}

@@ -23,7 +23,7 @@ export const Founders = () => {
     return (
         <div className={`${nightMode ? 'bg-black' : '' } min-h-[75vh]`}>
             <motion.div
-                initial={{ y: -100, opacity: 1 }}
+                initial={{ y: -60, opacity: 1 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1, ease: "easeOut" }}
                 viewport={{ once: true }}
