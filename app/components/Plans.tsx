@@ -9,7 +9,7 @@ export const PlansComponent = () => {
     const { nightMode } = useNightMode()
 
     return (
-        <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} h-[100vh] md:pt-20 pt-10`}>
+        <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} min-h-[100vh] md:pt-20 pt-10`}>
             <TitleSection
                 firstTitleEnglish="Our"
                 secondTitleEnglish="Plans"
