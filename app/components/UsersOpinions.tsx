@@ -64,9 +64,9 @@ export const UsersOpinions = () => {
                                                     {spanish ? testimonial.name.es : testimonial.name.en}
                                                 </p>
                                                 <p className="mt-2">
-                                                    <RiDoubleQuotesL size={18} className="inline mr-1" />
+                                                    <RiDoubleQuotesL size={20} className="inline mr-1" />
                                                     {spanish ? testimonial.review.es : testimonial.review.en}
-                                                    <RiDoubleQuotesR size={18} className="inline ml-1" />
+                                                    <RiDoubleQuotesR size={20} className="inline ml-1" />
                                                 </p>
                                             </div>
                                         ))}
@@ -104,8 +104,8 @@ const testimonials = [
         id: 3,
         name: { es: "Christian Saad Odontología", en: "Christian Saad Dental Clinic" },
         review: {
-            es: "Buscábamos un sitio web que reflejara la calidad y profesionalismo de nuestra clínica, y AsNeeed superó nuestras expectativas. Nos entregaron un diseño elegante, funcional y fácil de administrar. Además, el soporte que ofrecen es excelente, siempre dispuestos a ayudar en cualquier momento.",
-            en: "We were looking for a website that reflected the quality and professionalism of our clinic, and AsNeeed exceeded our expectations. They delivered an elegant, functional, and easy-to-manage design. Moreover, their support is excellent, always ready to help at any time."
+            es: "Soy cliente (odontólogo), han desarrollado mi página web de manera precisa y eficaz, rápidamente entendieron cuál era mi objetivo y necesidad de comunicación y llevaron a cabo mi web bien ordenada  y dinámica",
+            en: "I am a client (dentist), they have developed my website precisely and effectively, quickly understood what my goal and communication need was and carried out my website well organized and dynamic"
         }
     },
     {
