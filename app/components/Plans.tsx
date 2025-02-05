@@ -31,7 +31,7 @@ export const PlansComponent = () => {
                                 <p className="text-center mt-3">{spanish ? plan.description.spanish : plan.description.english}</p>
                             </div>
                             <div className="w-[50%] mx-auto mt-10">
-                                <button className={`w-full mt-5 py-2 ${nightMode ? 'bg-blue-700 hover:bg-blue-900 text-zinc-300' : 'bg-blue-600 hover:bg-blue-700 text-zinc-100'} rounded-md`}>
+                                <button className={`w-full mt-5 py-2 transition-all duration-100 hover:rounded-md ${nightMode ? 'border-b border-b-blue-700 hover:bg-blue-950 text-zinc-300' : 'bg-blue-600 hover:bg-blue-700 text-zinc-100'}`}>
                                     {spanish ? 'Quiero saber mas' : 'I want to know more'}
                                 </button>
                             </div>
