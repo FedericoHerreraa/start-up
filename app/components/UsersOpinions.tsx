@@ -64,7 +64,7 @@ export const UsersOpinions = () => {
                                                 key={testimonial.id}
                                                 className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}
                                             >
-                                                <p className="text-lg font-bold flex items-center gap-3">
+                                                <p className="text-lg font-bold flex items-center gap-2">
                                                     <Image
                                                         src={testimonial.img}
                                                         alt="Christian Saad Odontología"
@@ -103,7 +103,7 @@ const testimonials = [
             en: "AsNeeed transformed our clinic's digital presence. Thanks to their team, we now have a modern, fast, and mobile-optimized website. Our patients can easily schedule appointments and get all the information they need in seconds. Incredible service!"
         },
         img: pinascoLogo,
-        className: 'h-14'
+        className: 'h-10 w-9'
     },
     {
         id: 2,
@@ -113,7 +113,7 @@ const testimonials = [
             en: "Since implementing our web platform developed by AsNeeed, our bookings have increased by 40%. The interface is intuitive, fast, and fully adapted to our needs. Their team was always available for any adjustments we needed. 100% recommended!"
         },
         img: buffaloLogo,
-        className: ''
+        className: 'h-10 w-9'
     },
     {
         id: 3,
@@ -123,7 +123,7 @@ const testimonials = [
             en: "I am a client (dentist), they have developed my website precisely and effectively, quickly understood what my goal and communication need was and carried out my website well organized and dynamic"
         },
         img: chrisLogo,
-        className: 'rounded-xl'
+        className: 'rounded-xl h-10 w-10'
     },
     {
         id: 4,
@@ -132,7 +132,7 @@ const testimonials = [
             es: "Gracias a AsNeeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
             en: "Thanks to AsNeeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
         },
-        img: '',
-        className: ''
+        img: chrisLogo,
+        className: 'rounded-xl h-10 w-10'
     }
 ];
