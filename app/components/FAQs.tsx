@@ -36,7 +36,7 @@ export const FAQs = () => {
                         <AccordionItem 
                             key={index} 
                             value={`item-${item.id}`}
-                            className="border border-zinc-700 rounded-lg mb-4 px-2"
+                            className={`border ${nightMode ? 'border-zinc-700' : 'border-zinc-300'} rounded-lg mb-4 px-2`}
                         >
                             <AccordionTrigger className="font-bold text-base">{spanish ? item.questionSpanish : item.questionEnglish}</AccordionTrigger>
                             <AccordionContent>
