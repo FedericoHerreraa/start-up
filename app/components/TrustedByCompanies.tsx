@@ -72,6 +72,6 @@ const companies = [
     {
         name: 'Buffalo Music',
         img1: buffaloMusic,
-        className: 'md:w-[200px] md:h-[110px] w-[70px] h-[70px] md:mx-20 mx-7'
+        className: 'md:w-[200px] md:h-[110px] w-[130px] h-[70px] md:mx-20 mx-7'
     },
 ]
