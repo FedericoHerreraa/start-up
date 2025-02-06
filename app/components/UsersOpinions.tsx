@@ -7,6 +7,12 @@ import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import Autoplay from "embla-carousel-autoplay"
 
+import Image from "next/image"
+
+import chrisLogo from '@/app/img/logos/christian-only-logo.png'
+import buffaloLogo from '@/app/img/logos/buffalo.png'
+import pinascoLogo from '@/app/img/logos/pinasco-only-logo.png'
+
 import {
     Carousel,
     CarouselContent,
@@ -15,7 +21,6 @@ import {
     CarouselPrevious,
 } from "@/app/components/ui/carousel"  
 
-import { FaRocket } from "react-icons/fa";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
@@ -60,7 +65,13 @@ export const UsersOpinions = () => {
                                                 className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}
                                             >
                                                 <p className="text-lg font-bold flex items-center gap-3">
-                                                    <FaRocket size={18} className="ml-1" />
+                                                    <Image
+                                                        src={testimonial.img}
+                                                        alt="Christian Saad Odontología"
+                                                        width={50}
+                                                        height={50}
+                                                        className={testimonial.className}
+                                                    />
                                                     {spanish ? testimonial.name.es : testimonial.name.en}
                                                 </p>
                                                 <p className="mt-2">
@@ -90,7 +101,9 @@ const testimonials = [
         review: {
             es: "AsNeeed transformó la presencia digital de nuestra clínica. Gracias a su equipo, ahora tenemos una página web moderna, rápida y optimizada para dispositivos móviles. Nuestros pacientes pueden agendar citas fácilmente y obtener toda la información que necesitan en segundos. ¡Increíble servicio!",
             en: "AsNeeed transformed our clinic's digital presence. Thanks to their team, we now have a modern, fast, and mobile-optimized website. Our patients can easily schedule appointments and get all the information they need in seconds. Incredible service!"
-        }
+        },
+        img: pinascoLogo,
+        className: 'h-14'
     },
     {
         id: 2,
@@ -98,7 +111,9 @@ const testimonials = [
         review: {
             es: "Desde que implementamos nuestra plataforma web desarrollada por AsNeeed, nuestras reservas han aumentado un 40%. La interfaz es intuitiva, rápida y completamente adaptada a nuestras necesidades. Su equipo siempre estuvo disponible para cualquier ajuste que necesitamos. ¡100% recomendados!",
             en: "Since implementing our web platform developed by AsNeeed, our bookings have increased by 40%. The interface is intuitive, fast, and fully adapted to our needs. Their team was always available for any adjustments we needed. 100% recommended!"
-        }
+        },
+        img: buffaloLogo,
+        className: ''
     },
     {
         id: 3,
@@ -106,7 +121,9 @@ const testimonials = [
         review: {
             es: "Soy cliente (odontólogo), han desarrollado mi página web de manera precisa y eficaz, rápidamente entendieron cuál era mi objetivo y necesidad de comunicación y llevaron a cabo mi web bien ordenada  y dinámica",
             en: "I am a client (dentist), they have developed my website precisely and effectively, quickly understood what my goal and communication need was and carried out my website well organized and dynamic"
-        }
+        },
+        img: chrisLogo,
+        className: 'rounded-xl'
     },
     {
         id: 4,
@@ -114,6 +131,8 @@ const testimonials = [
         review: {
             es: "Gracias a AsNeeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
             en: "Thanks to AsNeeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
-        }
+        },
+        img: '',
+        className: ''
     }
 ];
