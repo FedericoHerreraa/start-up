@@ -9,11 +9,13 @@ import { useNightMode } from "@/app/context/NightModeContext"
 import { FaApple } from "react-icons/fa";
 import { IoLogoAndroid } from "react-icons/io";
 import { IoIosCheckmarkCircle } from "react-icons/io";
+import { useMobileView } from "../context/MobileViewContext"
 
 
 export const PlansComponent = () => {
     const { spanish } = useLenguage()
     const { nightMode } = useNightMode()
+    const { isMobile } = useMobileView()
 
     return (
         <div className={`${nightMode ? 'bg-black text-zinc-300' : 'text-zinc-700'} min-h-[100vh] md:pt-20 pt-10`}>
@@ -31,17 +33,17 @@ export const PlansComponent = () => {
 
             <section className="md:w-[90%] w-[95%] mx-auto mt-20">
                 <div>
-                    <div className="mb-7 bg-gradient-to-r from-blue-500 to-violet-600 px-5 py-2 w-fit rounded-lg">
-                        <h1 className="text-xl text-zinc-100">{spanish ? 'Desarrollo Web' : 'Web Development'}</h1>
+                    <div className="mb-7 bg-gradient-to-r from-blue-500 to-violet-600 md:px-5 px-3 md:py-2 py-1 w-fit rounded-lg">
+                        <h1 className="md:text-xl text-lg text-zinc-100">{spanish ? 'Desarrollo Web' : 'Web Development'}</h1>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {webPlans.map(plan => (
                             <div key={plan.id} className={`border min-h-[50vh] hover:scale-105 transition-all duration-200 rounded-xl py-7 px-5 ${nightMode ? 'text-zinc-300 bg-zinc-900 border-blue-900 hover:border-blue-500' : 'text-zinc-700 bg-zinc-100 border-blue-300 hover:border-blue-500'}`}>
                                 <div className={nightMode ? 'text-zinc-400' : 'text-zinc-500'}>
-                                    <h2 className={`text-center text-3xl font-bold border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-800'} w-fit mx-auto pb-1`}>{spanish ? plan.title.spanish : plan.title.english}</h2>
-                                    <p className=" my-6">{spanish ? plan.description.spanish : plan.description.english}</p>
+                                    <h2 className={`text-center md:text-3xl text-xl font-bold border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-800'} w-fit mx-auto pb-1`}>{spanish ? plan.title.spanish : plan.title.english}</h2>
+                                    <p className="my-6">{spanish ? plan.description.spanish : plan.description.english}</p>
                                     <div className="mt-2">
-                                        <h3 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-600'} text-lg`}>{spanish ? 'Caracteristicas:' : 'Features:'}</h3>
+                                        <h3 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-600'} md:text-lg`}>{spanish ? 'Caracteristicas:' : 'Features:'}</h3>
                                         {(spanish ? plan.features.spanish : plan.features.english).map((feature, index) => (
                                             <p key={index} className="flex items-center text-sm gap-2 ml-1 mb-2 mt-2">
                                                 <IoIosCheckmarkCircle className="text-yellow-500"/>
@@ -60,14 +62,14 @@ export const PlansComponent = () => {
                     </div>
                 </div>
                 <div className="mt-20">
-                    <div className="mb-7 bg-gradient-to-r from-blue-500 to-violet-600 px-5 py-2 w-fit rounded-lg">
-                        <h1 className="text-xl text-zinc-100">{spanish ? 'Desarrollo Movil' : 'Mobile Development'}</h1>
+                    <div className="mb-7 bg-gradient-to-r from-blue-500 to-violet-600 md:px-5 px-3 md:py-2 py-1 w-fit rounded-lg">
+                        <h1 className="md:text-xl text-zinc-100">{spanish ? 'Desarrollo Movil' : 'Mobile Development'}</h1>
                     </div>
                     <div className={`p-7 border  min-h-40 w-full rounded-xl hover:scale-105 transition-all duration-200 ${nightMode ? 'bg-zinc-900 border-blue-900 hover:border-blue-500' : 'bg-zinc-100 border-blue-300 hover:border-blue-600'}`}>
-                        <div className="flex items-center gap-3">
-                            <h1 className={`text-3xl border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
-                            <FaApple size={35}/>
-                            <IoLogoAndroid size={35}/>
+                        <div className="flex items-center gap-2">
+                            <h1 className={`md:text-3xl text-xl border-b ${nightMode ? 'border-b-zinc-300' : 'border-b-zinc-700'} w-fit pb-1`}>{spanish ? 'Desarrollo Multiplataforma' : 'Multiplatform Development'}</h1>
+                            <FaApple size={isMobile ? 25 : 35}/>
+                            <IoLogoAndroid size={isMobile ? 25 : 35}/>
                         </div>
                         <p className={`mt-3 ${nightMode ? 'text-zinc-400' : 'text-zinc-500'} text-sm`}>
                             {spanish 
