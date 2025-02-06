@@ -12,6 +12,7 @@ import Image from "next/image"
 import chrisLogo from '@/app/img/logos/christian-only-logo.png'
 import buffaloLogo from '@/app/img/logos/buffalo.png'
 import pinascoLogo from '@/app/img/logos/pinasco-only-logo.png'
+import nonnomingoLogo from '@/app/img/logos/nonnomingo-logo.jpg'
 
 import {
     Carousel,
@@ -127,12 +128,12 @@ const testimonials = [
     },
     {
         id: 4,
-        name: { es: "Pizzería Nonnomingo", en: "Nonnomingo Pizzeria" },
+        name: { es: "Pizzería NonnoMingo", en: "NonnoMingo Pizzeria" },
         review: {
             es: "Gracias a AsNeeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
             en: "Thanks to AsNeeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
         },
-        img: chrisLogo,
+        img: nonnomingoLogo,
         className: 'rounded-xl h-10 w-10'
     }
 ];
