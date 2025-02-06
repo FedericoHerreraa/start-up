@@ -50,7 +50,7 @@ export const PlansComponent = () => {
                                         ))}
                                     </div>
                                 </div>
-                                <div className="w-[50%] mx-auto mt-10">
+                                <div className="min-w-[50%] mx-auto mt-10">
                                     <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 hover:rounded-md ${nightMode ? 'border-b border-b-blue-700 hover:bg-blue-950 text-zinc-300' : 'border-b border-b-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
                                         {spanish ? 'Quiero saber mas' : 'I want to know more'}
                                     </Link>
@@ -75,7 +75,7 @@ export const PlansComponent = () => {
                                 : 'We develop optimized mobile applications for iOS and Android with a single codebase, reducing costs and development time. Using advanced technologies like React Native and Flutter, we ensure high performance, compatibility, and a smooth user experience across all devices. With a multiplatform approach, updates and improvements are applied simultaneously on both platforms, ensuring efficiency and scalability for business growth.'
                             }
                         </p>
-                        <div className="w-[50%] mt-10">
+                        <div className="min-w-[50%] mt-10">
                             <Link href='/start-now' className={`w-full mt-5 py-2 px-4 transition-all duration-100 hover:rounded-md ${nightMode ? 'border-b border-b-blue-700 hover:bg-blue-950 text-zinc-300' : 'border-b border-b-blue-300 hover:bg-blue-500 text-zinc-700'}`}>
                                 {spanish ? 'Quiero saber mas' : 'I want to know more'}
                             </Link>
