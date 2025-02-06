@@ -5,13 +5,18 @@ import { MdNightlight } from "react-icons/md";
 import { MdWbSunny } from "react-icons/md";
 import { HiQueueList } from "react-icons/hi2";
 
-
 import { useNightMode } from "@/app/context/NightModeContext";
 import { useLenguage } from "@/app/context/LenguageContext";
 import { useMobileView } from "@/app/context/MobileViewContext";
-import logoDark from "@/app/img/logos/logo-dark.png"
-import logoLight from "@/app/img/logos/logo-light.png"
+
+import logoDark from '@/app/img/logos/newDarkLogo.png'
+import logoLight from '@/app/img/logos/newLightLogo.png'
+
+import argFlag from '@/app/img/others/argentina.png'
+import usaFlag from '@/app/img/others/usa.png'
+
 import Image from "next/image";
+import Link from "next/link";
 
 import {
     Select,
@@ -32,7 +37,6 @@ import {
 import { useState } from "react";
 
 interface TabProps {
-    scrollToSection: (sectionId: string) => void
     spanish: boolean
     nightMode: boolean
     setNightMode: (value: boolean) => void
@@ -48,25 +52,23 @@ export const Header = () => {
     const { isMobile } = useMobileView()
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) element.scrollIntoView({ behavior: "smooth" });
-    };
-
     return (
         <header className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
-            <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-5 py-8 ">
-                <div className="flex gap-5">
-                    <Image src={nightMode ? logoLight : logoDark} alt="" className="md:w-12 w-10 rotate-45" />
+            <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-8 ">
+                <Link href='/' className="flex items-center gap-1">
+                    <Image 
+                        src={nightMode ? logoDark : logoLight} 
+                        alt="logo" 
+                        className="md:w-[85px] w-16" 
+                    />
                     <div className="flex flex-col">    
                         <h1 className='md:text-2xl text-lg'>AsNeeed</h1>
                         <h4 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h4>
                     </div>
-                </div>
+                </Link>
                 <nav className="flex gap-10 items-center">
                     {isMobile ? (
                         tabsMobileView({
-                            scrollToSection,
                             setNightMode,
                             setSpanish,
                             spanish,
@@ -76,7 +78,6 @@ export const Header = () => {
                         })
                     ) : (
                         tabsDesktopView({
-                            scrollToSection,
                             setNightMode,
                             setSpanish,
                             spanish,
@@ -92,7 +93,6 @@ export const Header = () => {
 }
 
 const tabsDesktopView = ({ 
-    scrollToSection,
     setNightMode,
     setSpanish,
     spanish,
@@ -101,13 +101,13 @@ const tabsDesktopView = ({
     return (
         <>
             {tabs.map((tab) => (
-                <p 
+                <Link 
                     key={tab.id}
-                    onClick={() => scrollToSection(tab.section)}
+                    href={tab.url}
                     className="text-xl cursor-pointer hover:scale-105 duration-200"
                 >
                     {spanish ? tab.titleSpanish : tab.titleEnglish}
-                </p>    
+                </Link>    
             ))}
             <div
                 className="cursor-pointer"
@@ -123,15 +123,33 @@ const tabsDesktopView = ({
                     onValueChange={() => setSpanish(!spanish)}
                 >
                     <SelectTrigger 
-                        className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                        className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
                     >
                         <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                     </SelectTrigger>
                     <SelectContent 
                         className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
                     >
-                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200 " value="spanish">
+                            <div className="flex items-center gap-2">
+                                {spanish ? 'Español' : 'Spanish'}
+                                <Image
+                                    src={argFlag}
+                                    alt="Argentina Flag"
+                                    width={20}
+                                />
+                            </div>
+                        </SelectItem>
+                        <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">
+                            <div className="flex items-center gap-2">
+                                {spanish ? 'Inglés' : 'English'}    
+                                <Image
+                                    src={usaFlag}
+                                    alt="USA Flag"
+                                    width={20}
+                                />
+                            </div>
+                        </SelectItem>
                     </SelectContent>
                 </Select>
             </div>
@@ -141,7 +159,6 @@ const tabsDesktopView = ({
 
 
 const tabsMobileView = ({ 
-    scrollToSection,
     setNightMode,
     setSpanish,
     spanish,
@@ -167,16 +184,16 @@ const tabsMobileView = ({
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">
                         {tabs.map((tab) => (
-                            <span 
+                            <Link 
                                 key={tab.id}
                                 onClick={() => {
                                     setIsOpen(false)
-                                    scrollToSection(tab.section)
                                 }}
+                                href={tab.url}
                                 className="text-lg"
                             >
                                 {spanish ? tab.titleSpanish : tab.titleEnglish}
-                            </span>    
+                            </Link>    
                         ))}
                         <>
                             <Select 
@@ -184,15 +201,33 @@ const tabsMobileView = ({
                                 onValueChange={() => setSpanish(!spanish)}
                             >
                                 <SelectTrigger 
-                                    className={`w-[100px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
+                                    className={`w-[125px] ${nightMode ? 'bg-black border-zinc-600' : 'bg-white border-zinc-300'} m-0 border`}
                                 >
                                     <SelectValue placeholder={spanish ? spanish ? "Español" : "Spanish" : spanish ? "Inglés" : "English"} />
                                 </SelectTrigger>
                                 <SelectContent 
                                     className={`${nightMode ? 'bg-black text-zinc-200 border-zinc-800' : 'bg-white text-zinc-800 border-zinc-200'}`}
                                 >
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">{spanish ? 'Español' : 'Spanish'}</SelectItem>
-                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">{spanish ? 'Inglés' : 'English'}</SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="spanish">
+                                        <div className="flex items-center gap-2">
+                                            {spanish ? 'Español' : 'Spanish'}
+                                            <Image
+                                                src={argFlag}
+                                                alt="Argentina Flag"
+                                                width={15}
+                                            />
+                                        </div>
+                                    </SelectItem>
+                                    <SelectItem className="focus:bg-zinc-800 focus:text-zinc-200" value="english">
+                                        <div className="flex items-center gap-2">
+                                            {spanish ? 'Inglés' : 'English'}    
+                                            <Image
+                                                src={usaFlag}
+                                                alt="USA Flag"
+                                                width={15}
+                                            />
+                                        </div>
+                                    </SelectItem>
                                 </SelectContent>
                             </Select>
                         </>
@@ -214,20 +249,20 @@ const tabsMobileView = ({
 const tabs = [
     {
         id: 1,
-        titleSpanish: 'Nuestra Filosofía',
-        titleEnglish: 'Our Philosophy',
-        section: 'philosophy'
+        titleSpanish: 'Nuestro Trabajo',
+        titleEnglish: 'Our Work',
+        url: '/our-work'
     },
     {
         id: 2,
-        titleSpanish: 'Nuestro Trabajo',
-        titleEnglish: 'Our Work',
-        section: 'work'
+        titleSpanish: 'Planes',
+        titleEnglish: 'Plans',
+        url: '/plans'
     },
     {
         id: 3,
         titleSpanish: 'Empezar Ya',
         titleEnglish: 'Start Now',
-        section: 'start'
+        url: '/start-now'
     }
 ]

@@ -1,15 +1,13 @@
+import { Metadata } from "next";
 import { OurWay } from "@/app/components/OurWay";
-import { Header } from "@/app/components/Header"
 import { LandingInfo } from "@/app/components/Landing"
-import { OurWork } from "@/app/components/OurWork";
 import { CustomSeparator } from "@/app/components/CustomSeparator";
 import { Founders } from "@/app/components/Founders";
-import { StartNow } from "@/app/components/StartNow";
-import { Footer } from "@/app/components/Footer";
 import { LineSeparator } from '@/app/components/LineSeparator';
-import { BackToTop } from "@/app/components/BackToTop";
-import { Metadata } from "next";
-import { TrustedByCompanies } from "./components/TrustedByCompanies";
+import { TrustedByCompanies } from "@/app/components/TrustedByCompanies";
+import { WhyUs } from "@/app/components/WhyUs";
+import { UsersOpinions } from "@/app/components/UsersOpinions";
+import { FAQs } from "@/app/components/FAQs";
 
 export const metadata: Metadata = {
     title: "Grow Your Business | AsNeeed",
@@ -19,20 +17,19 @@ export const metadata: Metadata = {
 export default function HomePage() {
     return (
         <>
-            <Header />
             <LandingInfo />
             <CustomSeparator />
             <OurWay />
             <LineSeparator />
-            <OurWork />
-            <LineSeparator />
+            <WhyUs />
+            <CustomSeparator />
             <TrustedByCompanies />
+            <LineSeparator />
+            <UsersOpinions />
             <CustomSeparator />
             <Founders /> 
             <LineSeparator />
-            <StartNow />
-            <Footer />
-            <BackToTop />
+            <FAQs />
         </>
     )
 }
