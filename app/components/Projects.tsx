@@ -41,7 +41,7 @@ export const Projects = () => {
                                 } bg-clip-text text-transparent`}>{spanish ? item.titleSpanish : item.titleEnglish} </h1>
                             </div>
                                 <div className={`flex ${index%2 === 0 ? 'md:flex-row flex-col' : 'md:flex-row-reverse flex-col' } gap-10 md:w-[95%] w-[90%] mx-auto`}>
-                                    <div className={`md:w-1/2 w-full md:h-96 h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
+                                    <div className={`md:w-1/2 w-full md:min-h-96 min-h-[480px] md:${index%2 === 0 ? 'mr-40' : 'ml-40 md:text-right'}`}>
                                         <p className={`mt-10  ${nightMode ? 'text-zinc-400' : 'text-zinc-600'}`}>{spanish ? item.descriptionSpanish : item.descriptionEnglish}</p>
                                         <h2 className="mt-10 text-lg font-semibold">{spanish ? 'Nuestro desafío:' : 'Our Challenge:'}</h2>
                                         <p className="mt-5">{spanish ? item.desafioSpanish : item.desafioEnglish}</p>
@@ -57,7 +57,7 @@ export const Projects = () => {
                                         </div>
                                     </div>
                                     {!isMobile ? (
-                                        <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                        <div className={`md:border-2 h-fit border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
                                             <Image
                                                 src={item.desktop}
                                                 alt="vista computadora"
