@@ -1,5 +1,7 @@
 import { Metadata } from "next"
 import { StartNow } from "@/app/components/StartNow";
+import { LineSeparator } from "@/app/components/LineSeparator";
+import { FAQs } from "@/app/components/FAQs";
 
 export const metadata: Metadata = {
     title: "Schedule a Call | AsNeeed",
@@ -8,6 +10,10 @@ export const metadata: Metadata = {
 
 export default function StartNowPage() {
     return (
-        <StartNow />
+        <>
+            <StartNow />
+            <LineSeparator />
+            <FAQs />
+        </>
     )
 }

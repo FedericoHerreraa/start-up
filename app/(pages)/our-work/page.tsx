@@ -1,5 +1,9 @@
 import { Metadata } from "next";
 import { OurWork } from "@/app/components/OurWork";
+import { LineSeparator } from "@/app/components/LineSeparator";
+import { UsersOpinions } from "@/app/components/UsersOpinions";
+import { CustomSeparator } from "@/app/components/CustomSeparator";
+import { FAQs } from "@/app/components/FAQs";
 
 export const metadata: Metadata = {
     title: "Our Best Projects | AsNeeed",
@@ -9,6 +13,13 @@ export const metadata: Metadata = {
 
 export default function OurWorkPage() {
     return (
-        <OurWork/>
+        <>
+            <OurWork/>
+            <CustomSeparator />
+            <UsersOpinions />
+            <LineSeparator />
+            <FAQs />
+        </>
+
     )
 }
