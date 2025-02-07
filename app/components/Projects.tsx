@@ -57,7 +57,7 @@ export const Projects = () => {
                                         </div>
                                     </div>
                                     {!isMobile ? (
-                                        <div className={`md:border-2 h-fit border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl shadow-xl`}>
+                                        <div className={`md:border-2 h-fit border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl`}>
                                             <Image
                                                 src={item.desktop}
                                                 alt="vista computadora"
@@ -68,7 +68,7 @@ export const Projects = () => {
                                         </div>
                                     ) : (
                                         <div className="flex items-center md:gap-20 gap-10">
-                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl shadow-xl`}>
+                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl`}>
                                                 <Image
                                                     src={item.mobile1}
                                                     alt="foto de movil 1"
@@ -77,7 +77,7 @@ export const Projects = () => {
                                                     className="md:rounded-[22px] rounded-[15px] md:border-[10px] border-[4px] border-black"
                                                 />
                                             </div>
-                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl shadow-xl`}>
+                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl`}>
                                                 <Image
                                                     src={item.mobile2}
                                                     alt="foto de movile 2"
