@@ -100,8 +100,8 @@ const testimonials = [
         id: 1,
         name: { es: "Pinasco Odontología", en: "Pinasco Dental Clinic" },
         review: {
-            es: "AsNeeed transformó la presencia digital de nuestra clínica. Gracias a su equipo, ahora tenemos una página web moderna, rápida y optimizada para dispositivos móviles. Nuestros pacientes pueden agendar citas fácilmente y obtener toda la información que necesitan en segundos. ¡Increíble servicio!",
-            en: "AsNeeed transformed our clinic's digital presence. Thanks to their team, we now have a modern, fast, and mobile-optimized website. Our patients can easily schedule appointments and get all the information they need in seconds. Incredible service!"
+            es: "Muchas gracias Fede y Cami por la paciencia y la profesionalidad. Quedamos muy conformes con su trabajo!",
+            en: "Thank you very much Fede and Cami for your patience and professionalism. We are very satisfied with your work!"
         },
         img: pinascoLogo,
         className: 'h-10 w-9'

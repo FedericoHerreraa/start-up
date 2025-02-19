@@ -6,7 +6,8 @@ import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
 import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
 import desktopNonnomingo from '@/app/img/projects/desktopNonnoMingo.png'
-import desktopChristian from '@/app/img/projects/desktopChristian.png'
+// import desktopChristian from '@/app/img/projects/desktopChristian.png'
+import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
 import mobile1Nonnomingo from '@/app/img/projects/mobile1NonnoMingo.jpeg'
 import mobile2Nonnomingo from '@/app/img/projects/mobile2NonnoMingo.jpeg'
 import mobile1Pinasco from '@/app/img/projects/mobile1Pinasco.png'
@@ -100,6 +101,19 @@ export const Projects = () => {
 const info = [
     {
         id: 1,
+        titleSpanish: 'E-commerce de venta de instrumentos musicales',
+        titleEnglish: 'E-commerce for musical instruments',
+        descriptionSpanish: 'Desarrollo de una tienda online para la venta de instrumentos musicales. El proyecto incluye una sección de productos, un carrito de compras, autentificacion, roles de usuario y compras.',
+        descriptionEnglish: 'Development of an online store for the sale of musical instruments. The project includes a product section, a shopping cart, authentication, user roles, and purchases.',
+        desafioSpanish: 'El desafío fue implementar una experiencia de compra completa, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito, realizar compras y gestionar sus pedidos. También se trabajó en la autentificación y roles de usuario para garantizar la seguridad de la información.',
+        desafioEnglish: 'The challenge was to implement a complete shopping experience, ensuring that users could navigate through sections, add products to the cart, make purchases, and manage their orders. Authentication and user roles were also key focuses to ensure information security.',
+        desktop: desktopBuffalo,
+        mobile1: mobile1Christian,
+        mobile2: mobile2Christian,
+        url: 'https://buffalo-strong-git-test-as-you-needs-projects.vercel.app'
+    },
+    {
+        id: 2,
         titleSpanish: 'Consultorio Odontológico',
         titleEnglish: 'Dental Clinic Website',
         descriptionSpanish: 'Diseño de una página web para una clínica odontológica. El proyecto incluye un formulario de contacto, una galería de imágenes y una sección de servicios.',
@@ -112,9 +126,9 @@ const info = [
         url: 'https://www.odontologiapinasco.com'
     },
     {
-        id: 2,
-        titleSpanish: 'E-commerce de Pizzería',
-        titleEnglish: 'Pizzeria E-commerce',
+        id: 3,
+        titleSpanish: 'Tienda de Pizza',
+        titleEnglish: 'Pizzeria Store',
         descriptionSpanish: 'Desarrollo de una aplicación web de comercio electrónico para una pizzería. El proyecto incluye productos organizados por secciones, un carrito de compras interactivo, y un formulario de confirmación que permite enviar el pedido directamente por WhatsApp.',
         descriptionEnglish: 'Development of an e-commerce web application for a pizzeria. The project includes products organized by sections, an interactive shopping cart, and a confirmation form that allows users to send their order directly via WhatsApp.',
         desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',
@@ -124,17 +138,4 @@ const info = [
         mobile2: mobile2Nonnomingo,
         url: 'https://www.nonnomingo.com.ar'
     },
-    {
-        id: 3,
-        titleSpanish: 'Página Informativa para Consultorio',
-        titleEnglish: 'Informative Website for Dental Clinic',
-        descriptionSpanish: 'Diseño de una página web informativa para un consultorio odontológico. El proyecto incluye secciones para tratamientos, información de contacto, galería de imágenes y un formulario para solicitar turnos.',
-        descriptionEnglish: 'Design of an informative website for a dental clinic. The project includes sections for treatments, contact information, an image gallery, and a form to request appointments.',
-        desafioSpanish: 'El desafío fue estructurar la información de manera clara y atractiva, destacando los tratamientos ofrecidos y facilitando el contacto con los pacientes. Además, se trabajó en optimizar la experiencia para dispositivos móviles.',
-        desafioEnglish: 'The challenge was to structure the information in a clear and appealing way, highlighting the treatments offered and making it easy for patients to get in touch. Mobile optimization was also a key focus.',
-        desktop: desktopChristian,
-        mobile1: mobile1Christian,
-        mobile2: mobile2Christian,
-        url: 'https://web-odontologia-christian.vercel.app'
-    }
 ];
