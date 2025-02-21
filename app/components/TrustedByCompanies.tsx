@@ -7,8 +7,9 @@ import { TitleSection } from "@/app/components/reusable/titleSection"
 import christianSaadDark from '@/app/img/logos/ChristianSaad-dark.png'
 import christianSaadLight from '@/app/img/logos/ChristianSaad-light.png'
 import pinasco from '@/app/img/logos/LogoHorizontal@2x.png'
-import buffalo from '@/app/img/logos/buffalo.png'
+import buffaloCafe from '@/app/img/logos/buffalo.png'
 import buffaloMusic from '@/app/img/logos/buffaloMusic.png'
+// import buffaloStrong from '@/app/img/logos/buffaloStrong.png'
 import Image from "next/image"
 import Marquee from "react-fast-marquee"
 
@@ -54,6 +55,11 @@ const companies = [
         img2: christianSaadLight,
         className: 'md:w-[160px] md:h-[70px] w-[100px] h-[40px] md:mx-20 mx-7'
     },
+    // {
+    //     name: 'Buffalo Strong',
+    //     img1: buffaloStrong,
+    //     className: 'md:w-[200px] md:h-[110px] w-[130px] h-[70px] md:mx-20 mx-7 bg-white'
+    // },
     {
         name: 'Pinasco',
         img1: pinasco,
@@ -61,7 +67,7 @@ const companies = [
     },
     {
         name: 'Buffalo',
-        img1: buffalo,
+        img1: buffaloCafe,
         className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px] md:mx-20 mx-7'
     },
     {
