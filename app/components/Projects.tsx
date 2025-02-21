@@ -110,7 +110,7 @@ const info = [
         desktop: desktopBuffalo,
         mobile1: mobile1Christian,
         mobile2: mobile2Christian,
-        url: 'https://buffalo-strong-git-test-as-you-needs-projects.vercel.app'
+        url: 'https://buffalo-strong.vercel.app'
     },
     {
         id: 2,
