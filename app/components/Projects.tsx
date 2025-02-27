@@ -110,7 +110,7 @@ const info = [
         desktop: desktopBuffalo,
         mobile1: mobile1Christian,
         mobile2: mobile2Christian,
-        url: 'https://buffalo-strong.vercel.app'
+        url: 'https://www.sbmusic.ar'
     },
     {
         id: 2,
