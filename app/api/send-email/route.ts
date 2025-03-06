@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY); 
 
 function generateMessage(
     name: string,
@@ -105,16 +107,6 @@ export async function POST(req: NextRequest) {
             });
         }
 
-        const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com", 
-            port: 465,
-            secure: true, 
-            auth: {
-                user: process.env.EMAIL_USER, 
-                pass: process.env.EMAIL_PASS,
-            },
-        })
-
         const emailClientMessage = generateMessage(
             name, 
             text, 
@@ -136,16 +128,16 @@ export async function POST(req: NextRequest) {
         )
 
         // Email sent to client
-        await transporter.sendMail({
-            from: `AsNeeed <${process.env.EMAIL_USER}>`,
+        await resend.emails.send({
+            from: 'contact@asneeed.com',
             to,
             subject: lenguage === 'en' ? 'New appointment with AsNeeed' : 'Cita con AsNeeed',
             html: emailClientMessage
         })
 
         // Email sent to us
-        await transporter.sendMail({
-            from: `${name} <${to}>`,
+        await resend.emails.send({
+            from: 'contact@asneeed.com',
             to: 'asneeed@gmail.com',
             subject: lenguage === 'en' ? 'New meeting arranged' : 'Nuevo cita reservada',
             html: emailUsMessage
