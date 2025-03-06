@@ -6,14 +6,14 @@ import { useNightMode } from "@/app/context/NightModeContext"
 import { useMobileView } from "@/app/context/MobileViewContext"
 import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
 import desktopNonnomingo from '@/app/img/projects/desktopNonnoMingo.png'
-// import desktopChristian from '@/app/img/projects/desktopChristian.png'
 import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
 import mobile1Nonnomingo from '@/app/img/projects/mobile1NonnoMingo.jpeg'
 import mobile2Nonnomingo from '@/app/img/projects/mobile2NonnoMingo.jpeg'
 import mobile1Pinasco from '@/app/img/projects/mobile1Pinasco.png'
 import mobile2Pinasco from '@/app/img/projects/mobile2Pinasco.jpeg'
-import mobile1Christian from '@/app/img/projects/mobile1Christian.png'
-import mobile2Christian from '@/app/img/projects/mobile2Christian.png'
+import mobile1Buffalo from '@/app/img/projects/mobile1Buffalo.jpeg'
+import mobile2Buffalo from '@/app/img/projects/mobile2Buffalo.jpeg'
+
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -108,8 +108,8 @@ const info = [
         desafioSpanish: 'El desafío fue implementar una experiencia de compra completa, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito, realizar compras y gestionar sus pedidos. También se trabajó en la autentificación y roles de usuario para garantizar la seguridad de la información.',
         desafioEnglish: 'The challenge was to implement a complete shopping experience, ensuring that users could navigate through sections, add products to the cart, make purchases, and manage their orders. Authentication and user roles were also key focuses to ensure information security.',
         desktop: desktopBuffalo,
-        mobile1: mobile1Christian,
-        mobile2: mobile2Christian,
+        mobile1: mobile1Buffalo,
+        mobile2: mobile2Buffalo,
         url: 'https://www.sbmusic.ar'
     },
     {
