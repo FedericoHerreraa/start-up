@@ -82,8 +82,8 @@ const info = [
   },
   {
     icon: <FaLightbulb />,
-    textSpanish: "Desarrollo web y móvil con las herramientas más avanzadas del mercado.",
-    textEnglish: "Web and mobile development with the most advanced tools on the market."
+    textSpanish: "Escribimos cada línea de código a medida, utilizando las herramientas más avanzadas del mercado.",
+    textEnglish: "We write every line of code from scratch, using the most advanced tools on the market."
   },
   {
     icon: <FaMobileAlt />,
