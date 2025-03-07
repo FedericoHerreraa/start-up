@@ -63,7 +63,7 @@ export const UsersOpinions = () => {
                                         {items.map((testimonial) => (
                                             <div
                                                 key={testimonial.id}
-                                                className={`${nightMode ? 'bg-zinc-900 text-zinc-300' : 'bg-zinc-100 text-zinc-800'} md:p-7 p-4 rounded-lg`}
+                                                className={`${nightMode ? 'bg-zinc-90 border border-zinc-800 text-zinc-300' : 'bg-zinc-50 border border-zinc-200 text-zinc-800'} md:p-7 p-4 rounded-lg`}
                                             >
                                                 <p className="text-lg font-bold flex items-center gap-2">
                                                     <Image
@@ -87,8 +87,8 @@ export const UsersOpinions = () => {
                             );
                         })}
                     </CarouselContent>
-                    <CarouselPrevious className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-400 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
-                    <CarouselNext className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-400 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
+                    <CarouselPrevious className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-200 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
+                    <CarouselNext className={`${nightMode ? 'bg-black border-zinc-700 text-zinc-200 hover:bg-zinc-900 hover:text-white' : 'bg-zinc-200 border-zinc-200 hover:bg-zinc-600 hover:text-white'}`}/>
                 </Carousel>
             </section>
         </div>
