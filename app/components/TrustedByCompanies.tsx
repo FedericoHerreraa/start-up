@@ -5,11 +5,11 @@ import { useNightMode } from "@/app/context/NightModeContext"
 import { TitleSection } from "@/app/components/reusable/titleSection"
 
 import christianSaadDark from '@/app/img/logos/ChristianSaad-dark.png'
-import christianSaadLight from '@/app/img/logos/ChristianSaad-light.png'
 import pinasco from '@/app/img/logos/LogoHorizontal@2x.png'
+import pillowLogo from '@/app/img/logos/pillowLogo.png'
 import buffaloCafe from '@/app/img/logos/buffalo.png'
 import buffaloMusic from '@/app/img/logos/buffaloMusic.png'
-// import buffaloStrong from '@/app/img/logos/buffaloStrong.png'
+import buffaloStrongDark from '@/app/img/logos/buffaloStrong-dark.png'
 import Image from "next/image"
 import Marquee from "react-fast-marquee"
 
@@ -31,12 +31,12 @@ export const TrustedByCompanies = () => {
                 nightMode={nightMode}
             />
 
-            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-100'} mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap`}>
+            <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-800'} mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap`}>
                 <Marquee speed={50}>
                     {companies.map((company, index) => (
                         <Image
                             key={index}
-                            src={company.img2 ? nightMode ? company.img1 : company.img2 : company.img1}
+                            src={company.img}
                             alt={company.name}
                             className={company.className}
                         />
@@ -51,33 +51,32 @@ export const TrustedByCompanies = () => {
 const companies = [
     {
         name: 'Christian Saad',
-        img1: christianSaadDark,
-        img2: christianSaadLight,
+        img: christianSaadDark,
         className: 'md:w-[160px] md:h-[70px] w-[100px] h-[40px] md:mx-20 mx-7'
     },
-    // {
-    //     name: 'Buffalo Strong',
-    //     img1: buffaloStrong,
-    //     className: 'md:w-[200px] md:h-[110px] w-[130px] h-[70px] md:mx-20 mx-7 bg-white'
-    // },
+    {
+        name: 'Buffalo Strong',
+        img: buffaloStrongDark,
+        className: 'md:w-[100px] md:h-[90px] w-[130px] h-[70px] md:mx-20 mx-7'
+    },
     {
         name: 'Pinasco',
-        img1: pinasco,
+        img: pinasco,
         className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px] md:mx-20 mx-7'
     },
     {
         name: 'Buffalo',
-        img1: buffaloCafe,
+        img: buffaloCafe,
         className: 'md:w-[100px] md:h-[105px] w-[70px] h-[70px] md:mx-20 mx-7'
     },
     {
-        name: 'Pinasco',
-        img1: pinasco,
-        className: 'md:w-[160px] md:h-[40px] w-[100px] h-[25px] md:mx-20 mx-7'
+        name: 'Pillow',
+        img: pillowLogo,
+        className: 'md:w-[190px] md:h-[40px] w-[130px] h-[25px] md:mx-20 mx-7'
     },
     {
         name: 'Buffalo Music',
-        img1: buffaloMusic,
+        img: buffaloMusic,
         className: 'md:w-[200px] md:h-[110px] w-[130px] h-[70px] md:mx-20 mx-7'
     },
 ]
