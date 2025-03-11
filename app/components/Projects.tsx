@@ -11,8 +11,8 @@ import mobile1Nonnomingo from '@/app/img/projects/mobile1NonnoMingo.jpeg'
 import mobile2Nonnomingo from '@/app/img/projects/mobile2NonnoMingo.jpeg'
 import mobile1Pinasco from '@/app/img/projects/mobile1Pinasco.png'
 import mobile2Pinasco from '@/app/img/projects/mobile2Pinasco.jpeg'
-import mobile1Buffalo from '@/app/img/projects/mobile1Buffalo.jpeg'
-import mobile2Buffalo from '@/app/img/projects/mobile2Buffalo.jpeg'
+import mobile1Buffalo from '@/app/img/projects/mobile1Buffalo.png'
+import mobile2Buffalo from '@/app/img/projects/mobile2Buffalo.png'
 
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
