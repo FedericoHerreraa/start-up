@@ -18,6 +18,8 @@ import usaFlag from '@/app/img/others/usa.png'
 import Image from "next/image";
 import Link from "next/link";
 
+// import { montserrat } from "@/app/fonts/fonts";
+
 import {
     Select,
     SelectContent,
@@ -53,7 +55,7 @@ export const Header = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     return (
-        <header className={` ${nightMode ? 'text-zinc-300 bg-black' : ''}`}>
+        <header className={` ${nightMode ? 'text-zinc-300 bg-black' : ''} `}>
             <div className="flex justify-between items-center md:w-[80%] w-[90%] mx-auto my-auto md:py-3 py-8 ">
                 <Link href='/' className="flex items-center gap-1">
                     <Image 

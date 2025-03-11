@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HiCursorArrowRays } from "react-icons/hi2";
+import { FaHandshake } from 'react-icons/fa';
 
 import imgLanding from "@/app/img/images/pngwing.com-4.png"
 import { useNightMode } from '@/app/context/NightModeContext'
 import { useLenguage } from '@/app/context/LenguageContext';
 import { useMobileView } from "@/app/context/MobileViewContext";
-import { FaHandshake } from 'react-icons/fa';
+// import { montserrat } from "@/app/fonts/fonts";
 
 
 export const LandingInfo = () => {
@@ -18,7 +19,7 @@ export const LandingInfo = () => {
     const { isMobile } = useMobileView()
 
     return (
-        <div className={nightMode ? 'text-white bg-black' : ''}>
+        <div className={`${nightMode ? 'text-white bg-black' : ''}`}>
             <div className="md:pt-32 pt-16 md:h-[75vh] h-[70vh]">
                 <div className="w-[80%] mx-auto flex justify-between gap-10">
                     <div className="flex flex-col md:gap-10 gap-16 md:w-1/2 md:items-start items-center">
