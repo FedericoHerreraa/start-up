@@ -3,6 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { useEffect, useRef } from "react";
+import Typed from "typed.js";
+
 import { HiCursorArrowRays } from "react-icons/hi2";
 import { FaHandshake } from 'react-icons/fa';
 
@@ -10,13 +13,25 @@ import imgLanding from "@/app/img/images/pngwing.com-4.png"
 import { useNightMode } from '@/app/context/NightModeContext'
 import { useLenguage } from '@/app/context/LenguageContext';
 import { useMobileView } from "@/app/context/MobileViewContext";
-// import { montserrat } from "@/app/fonts/fonts";
-
 
 export const LandingInfo = () => {
     const { nightMode } = useNightMode();
     const { spanish } = useLenguage()
     const { isMobile } = useMobileView()
+
+    const typedRef = useRef(null);
+
+    useEffect(() => {
+        const typed = new Typed(typedRef.current, {
+            strings: [spanish ? "Digital" : "Business", spanish ? "Hoy" : "Startup", spanish ? "Online" : "Brand"], 
+            typeSpeed: 100,  
+            backSpeed: 50,  
+            backDelay: 1500,
+            loop: true, 
+        });
+
+        return () => typed.destroy();
+    }, [spanish]);
 
     return (
         <div className={`${nightMode ? 'text-white bg-black' : ''}`}>
@@ -27,7 +42,7 @@ export const LandingInfo = () => {
                             <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
                                 {spanish ? 'Negocio' : 'Digital'} {' '}
                             </span>
-                            {spanish ? 'Digital.' : 'Business.'}
+                            <span ref={typedRef}></span>
                         </h1>
                         <p className={`md:text-xl text-md md:text-left text-center ${nightMode ? 'text-zinc-400' : 'text-zinc-700'} `}>
                             {spanish 
