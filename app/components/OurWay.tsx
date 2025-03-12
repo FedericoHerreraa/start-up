@@ -4,6 +4,7 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { BsArrowReturnRight } from "react-icons/bs";
+import { useState, useEffect, useRef  } from "react";
 
 import {
   AlertDialog,
@@ -18,10 +19,31 @@ import {
 export const OurWay = () => {
   const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
+  const sectionRef = useRef(null);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+      
+      const section = sectionRef.current;
+      const { top, bottom, height } = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      if (top <= windowHeight && bottom >= 0) {
+        const progress = Math.min(1, Math.max(0, (windowHeight - top) / height));
+        setScrollProgress(progress);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <div
       className={`${nightMode ? "bg-black" : ""} md:min-h-[100vh] min-h-[70vh]`}
+      ref={sectionRef}
     >
       <TitleSection
         firstTitleEnglish="Our Way Of "
@@ -35,7 +57,7 @@ export const OurWay = () => {
         nightMode={nightMode}
       />
 
-      <div className="mt-20">
+      <div className="mt-20" style={{ transform: `translateX(-${scrollProgress * 10}vw)` }}>
         <section>
           <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
             <p
