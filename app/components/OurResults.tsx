@@ -6,6 +6,9 @@ import { TitleSection } from "./reusable/titleSection";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
+import { AiOutlineProject } from "react-icons/ai";
+import { FaSmile, FaAward } from "react-icons/fa";
+
 const Counter = ({ from = 0, to, plus }: { from?: number; to: number, plus: boolean }) => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true });
@@ -22,7 +25,7 @@ const Counter = ({ from = 0, to, plus }: { from?: number; to: number, plus: bool
     }, [isInView, to]);
 
     return (
-        <motion.p ref={ref} className="text-5xl font-bold">
+        <motion.p ref={ref} className="md:text-5xl text-3xl font-bold">
             {plus ? '+' : ''}{count}
         </motion.p>
     );
@@ -49,24 +52,27 @@ export const OurResults = () => {
                 nightMode={nightMode}
             />
 
-            <section className="w-[80%] mx-auto mt-20">
-                <div className={`flex justify-around items-center w-full min-h-60 border ${nightMode ? 'border-zinc-700 bg-zinc-900' : 'border-zinc-200 bg-zinc-50 shadow-lg'} rounded-xl p-10`}>
+            <section className="md:w-[80%] w-[95%] mx-auto mt-20">
+                <div className={`flex justify-around items-center w-full min-h-60 border ${nightMode ? 'border-zinc-700 bg-zinc-900' : 'border-zinc-200 bg-zinc-50 shadow-lg'} rounded-xl md:p-10 p-3`}>
                     <div className="flex w-full justify-center gap-10 text-center">
                         <div className="w-1/3 flex flex-col items-center gap-2">
                             <Counter to={50} plus={false}/>
-                            <p className="text-lg text-zinc-500">
+                            <p className="md:text-lg text-zinc-500 flex md:flex-row flex-col items-center gap-2">
+                                <AiOutlineProject />
                                 {spanish ? "Proyectos Completados" : "Completed Projects"}
                             </p>
                         </div>
-                        <div className="w-1/3 flex flex-col items-center gap-2 border-x border-zinc-700">
+                        <div className="w-1/3 flex flex-col items-center gap-2 border-x md:px-0 px-10 border-zinc-700">
                             <Counter to={10}plus={true}/>
-                            <p className="text-lg text-zinc-500">
+                            <p className="md:text-lg text-zinc-500 flex md:flex-row flex-col items-center gap-2">
+                                <FaSmile />
                                 {spanish ? "Clientes Satisfechos" : "Happy Clients"}
                             </p>
                         </div>
-                        <div className="w-1/3 flex flex-col items-center gap-2">
+                        <div className="w-1/3 flex flex-col items-center gap-2 ">
                             <Counter to={5} plus={true}/>
-                            <p className="text-lg text-zinc-500">
+                            <p className="md:text-lg text-zinc-500 flex md:flex-row flex-col items-center gap-2">
+                                <FaAward />
                                 {spanish ? "Años de Experiencia" : "Years of Experience"}
                             </p>
                         </div>
