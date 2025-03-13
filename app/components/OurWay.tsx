@@ -4,7 +4,7 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { BsArrowReturnRight } from "react-icons/bs";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 
 import {
   AlertDialog,
