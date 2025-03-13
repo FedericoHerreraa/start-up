@@ -52,6 +52,10 @@ export default {
   			}
   		},
   		keyframes: {
+			slide: {
+				"0%": { transform: "translateX(-50px)" },
+				"100%": { transform: "translateX(0)" },
+			  },
   			float: {
   				'0%, 100%': {
   					transform: 'translateY(0)'
@@ -80,7 +84,8 @@ export default {
   		animation: {
   			float: 'float 3s ease-in-out infinite',
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			slide: "slide 0.5s ease-out",
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

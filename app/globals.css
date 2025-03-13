@@ -70,3 +70,38 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .animate-slide-scroll {
+    animation: slide linear;
+    animation-timeline: scroll();
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-slide {
+    animation: slide linear;
+    animation-timeline: view();
+  }
+}
+
+@layer utilities {
+  .scroll-hidden {
+    scrollbar-width: none;  /* Para Firefox */
+    -ms-overflow-style: none;  /* Para Internet Explorer 10+ */
+  }
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;  /* Para Chrome, Safari y Edge */
+  }
+}

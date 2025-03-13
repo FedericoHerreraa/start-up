@@ -4,7 +4,7 @@ import { useLenguage } from "@/app/context/LenguageContext";
 import { useNightMode } from "@/app/context/NightModeContext";
 import { TitleSection } from "@/app/components/reusable/titleSection";
 import { BsArrowReturnRight } from "react-icons/bs";
-import { useState, useEffect, useRef  } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import {
   AlertDialog,
@@ -19,31 +19,29 @@ import {
 export const OurWay = () => {
   const { nightMode } = useNightMode();
   const { spanish } = useLenguage();
-  const sectionRef = useRef(null);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
-      
-      const section = sectionRef.current;
-      const { top, bottom, height } = section.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      if (top <= windowHeight && bottom >= 0) {
-        const progress = Math.min(1, Math.max(0, (windowHeight - top) / height));
-        setScrollProgress(progress);
-      }
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      container.scrollBy({ left: e.deltaY, behavior: "smooth" });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    container.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      container.removeEventListener("wheel", handleWheel);
+    };
   }, []);
+
 
   return (
     <div
-      className={`${nightMode ? "bg-black" : ""} md:min-h-[100vh] min-h-[70vh]`}
-      ref={sectionRef}
+      className={`${nightMode ? "bg-black" : ""} md:min-h-[60vh] min-h-[50vh]`}
+      
     >
       <TitleSection
         firstTitleEnglish="Our Way Of "
@@ -57,8 +55,8 @@ export const OurWay = () => {
         nightMode={nightMode}
       />
 
-      <div className="mt-20" style={{ transform: `translateX(-${scrollProgress * 10}vw)` }}>
-        <section>
+      <div className="flex overflow-x-auto snap-x snap-mandatory w-full scroll-smooth scroll-hidden " ref={containerRef}>
+        <section className="snap-center min-w-full px-10 flex flex-col items-center justify-center min-h-[50vh] animate-slide-scroll" >
           <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
             <p
               className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
@@ -77,7 +75,7 @@ export const OurWay = () => {
                 : "Mobile and Web Development."}
             </h2>
           </div>
-          <div className="flex flex-col gap-10 mt-10 items-center text-white">
+          <div className="flex  gap-10 mt-10 items-center text-white">
             {arrowsInfo.map((arrow, index) => (
               <div
                 key={index}
@@ -100,8 +98,7 @@ export const OurWay = () => {
             ))}
           </div>
         </section>
-
-        <section className="mt-20">
+        <section className="snap-center min-w-full px-10 flex flex-col  justify-center min-h-[50vh] animate-slide-scroll">
           <div className="flex items-center gap-5 md:w-[40%] w-[90%] mx-auto">
             <p
               className={`border border-green-700 rounded-full md:px-4 px-3 md:py-2 py-1 ${
