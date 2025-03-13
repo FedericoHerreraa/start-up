@@ -38,7 +38,7 @@ export const TitleSection = ({
                     }
                 </p>
                     
-                <h1 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-700'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
+                <h1 className={`${nightMode ? 'text-zinc-300' : 'text-zinc-900'} text-center md:text-6xl text-4xl md:w-[50%] w-[90%] mx-auto  font-semibold`}>
                     {spanish ? firstTitleSpanish : firstTitleEnglish}{" "}
                     <span className={`bg-gradient-to-r ${color} bg-clip-text text-transparent`}>
                         {spanish ? secondTitleSpanish : secondTitleEnglish}

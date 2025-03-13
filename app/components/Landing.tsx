@@ -38,8 +38,8 @@ export const LandingInfo = () => {
             <div className="md:pt-32 pt-16 md:h-[75vh] h-[70vh]">
                 <div className="w-[80%] mx-auto flex justify-between gap-10">
                     <div className="flex flex-col md:gap-10 gap-16 md:w-1/2 md:items-start items-center">
-                        <h1 className={`md:text-6xl text-4xl md:text-left text-center font-semibold ${nightMode ? '' : 'text-zinc-700'}`}>{spanish ? 'Comenzá tu' : 'Start Your Own'} {' '}
-                            <span className="bg-gradient-to-r from-blue-700 to-blue-900 bg-clip-text text-transparent">
+                        <h1 className={`md:text-6xl text-4xl md:text-left text-center font-semibold ${nightMode ? '' : 'text-zinc-900'}`}>{spanish ? 'Comenzá tu' : 'Start Your Own'} {' '}
+                            <span className="bg-gradient-to-r from-blue-700 to-violet-700 bg-clip-text text-transparent">
                                 {spanish ? 'Negocio' : 'Digital'} {' '}
                             </span>
                             <span ref={typedRef}></span>

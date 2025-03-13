@@ -25,7 +25,7 @@ export const FAQs = () => {
                 secondTitleSpanish="Frecuentes."
                 subTitleEnglish="FAQs."
                 subTitleSpanish="FAQs."
-                color="from-blue-600 to-blue-800"
+                color="from-blue-600 to-violet-700"
                 spanish={spanish}
                 nightMode={nightMode}
             />

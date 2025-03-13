@@ -8,6 +8,7 @@ import { TrustedByCompanies } from "@/app/components/TrustedByCompanies";
 import { WhyUs } from "@/app/components/WhyUs";
 import { UsersOpinions } from "@/app/components/UsersOpinions";
 import { FAQs } from "@/app/components/FAQs";
+import { OurResults } from "@/app/components/OurResults";
 
 export const metadata: Metadata = {
     title: "Grow Your Business | AsNeeed",
@@ -22,6 +23,8 @@ export default function HomePage() {
             <OurWay />
             <LineSeparator />
             <WhyUs />
+            <LineSeparator />
+            <OurResults />
             <CustomSeparator />
             <TrustedByCompanies />
             <LineSeparator />
