@@ -7,12 +7,10 @@ import { useMobileView } from "@/app/context/MobileViewContext"
 import desktopPinasco from '@/app/img/projects/desktopPinasco.png'
 import desktopNonnomingo from '@/app/img/projects/desktopNonnoMingo.png'
 import desktopBuffalo from '@/app/img/projects/desktopBuffalo.png'
-import mobile1Nonnomingo from '@/app/img/projects/mobile1NonnoMingo.jpeg'
-import mobile2Nonnomingo from '@/app/img/projects/mobile2NonnoMingo.jpeg'
-import mobile1Pinasco from '@/app/img/projects/mobile1Pinasco.png'
-import mobile2Pinasco from '@/app/img/projects/mobile2Pinasco.jpeg'
-import mobile1Buffalo from '@/app/img/projects/mobile1Buffalo.png'
-import mobile2Buffalo from '@/app/img/projects/mobile2Buffalo.png'
+
+import newMobileBuffalo from '@/app/img/projects/mobileBuffalo.png'
+import newMobilePinasco from '@/app/img/projects/mobilePinasco.png'
+import newMobileNonnomingo from '@/app/img/projects/mobileNonnomingo.png'
 
 import { ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -58,35 +56,24 @@ export const Projects = () => {
                                         </div>
                                     </div>
                                     {!isMobile ? (
-                                        <div className={`md:border-2 h-fit border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } rounded-3xl`}>
+                                        <div className='h-full w-full'>
                                             <Image
                                                 src={item.desktop}
                                                 alt="vista computadora"
                                                 width={800}
                                                 height={600}
-                                                className="md:rounded-[22px] rounded-[25px] md:border-[10px] border-[6px] border-black"
+                                                className="w-full h-full"
                                             />
                                         </div>
                                     ) : (
-                                        <div className="flex items-center md:gap-20 gap-10">
-                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl`}>
-                                                <Image
-                                                    src={item.mobile1}
-                                                    alt="foto de movil 1"
-                                                    width={300}
-                                                    height={600}
-                                                    className="md:rounded-[22px] rounded-[15px] md:border-[10px] border-[4px] border-black"
-                                                />
-                                            </div>
-                                            <div className={`md:border-2 border ${nightMode ? 'border-zinc-400' : 'border-zinc-300' } md:rounded-3xl rounded-2xl`}>
-                                                <Image
-                                                    src={item.mobile2}
-                                                    alt="foto de movile 2"
-                                                    width={300}
-                                                    height={600}
-                                                    className="md:rounded-[22px] rounded-[15px] md:border-[10px] border-[4px] border-black"
-                                                />
-                                            </div>
+                                        <div className='w-full'>
+                                            <Image
+                                                src={item.mobile}
+                                                alt="foto de movil 1"
+                                                width={300}
+                                                height={600}
+                                                className="w-full h-full"
+                                            />
                                         </div>
                                     )}
                                 </div>
@@ -108,8 +95,7 @@ const info = [
         desafioSpanish: 'El desafío fue implementar una experiencia de compra completa, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito, realizar compras y gestionar sus pedidos. También se trabajó en la autentificación y roles de usuario para garantizar la seguridad de la información.',
         desafioEnglish: 'The challenge was to implement a complete shopping experience, ensuring that users could navigate through sections, add products to the cart, make purchases, and manage their orders. Authentication and user roles were also key focuses to ensure information security.',
         desktop: desktopBuffalo,
-        mobile1: mobile1Buffalo,
-        mobile2: mobile2Buffalo,
+        mobile: newMobileBuffalo,
         url: 'https://www.sbmusic.ar'
     },
     {
@@ -121,8 +107,7 @@ const info = [
         desafioSpanish: 'El desafío principal fue lograr que el diseño transmita confianza y profesionalismo, asegurando que los pacientes se sientan cómodos al navegar por el sitio. Además, se trabajó en destacar los servicios clave de la clínica y proporcionar una experiencia amigable en dispositivos móviles.',
         desafioEnglish: 'The main challenge was to ensure that the design conveys trust and professionalism, while making patients feel comfortable browsing the site. Additionally, the focus was on highlighting the clinic\'s key services and providing a mobile-friendly experience.',
         desktop: desktopPinasco,
-        mobile1: mobile1Pinasco,
-        mobile2: mobile2Pinasco,
+        mobile: newMobilePinasco,
         url: 'https://www.odontologiapinasco.com'
     },
     {
@@ -134,8 +119,7 @@ const info = [
         desafioSpanish: 'El desafío fue implementar una experiencia de compra sencilla e intuitiva, asegurando que los usuarios pudieran navegar por las secciones, agregar productos al carrito y enviar sus pedidos con facilidad. También se trabajó en integrar WhatsApp para simplificar el proceso de confirmación.',
         desafioEnglish: 'The challenge was to implement a simple and intuitive shopping experience, ensuring that users could navigate through sections, add products to the cart, and easily send their orders. Integration with WhatsApp was also a key focus to streamline the confirmation process.',
         desktop: desktopNonnomingo,
-        mobile1: mobile1Nonnomingo,
-        mobile2: mobile2Nonnomingo,
+        mobile: newMobileNonnomingo,
         url: 'https://www.nonnomingo.com.ar'
     },
 ];
