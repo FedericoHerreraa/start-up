@@ -57,7 +57,7 @@ const companies = [
     {
         name: 'Buffalo Strong',
         img: buffaloStrongDark,
-        className: 'md:w-[100px] md:h-[90px] w-[130px] h-[70px] md:mx-20 mx-7'
+        className: 'md:w-[100px] md:h-[90px] w-[70px] h-[60px] md:mx-20 mx-7'
     },
     {
         name: 'Pinasco',
