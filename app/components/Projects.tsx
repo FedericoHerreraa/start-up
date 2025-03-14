@@ -62,7 +62,7 @@ export const Projects = () => {
                                                 alt="vista computadora"
                                                 width={800}
                                                 height={600}
-                                                className="w-full h-full"
+                                                className="w-full h-full drop-shadow-[0px_0px_10px_rgba(255,255,255,0.6)]"
                                             />
                                         </div>
                                     ) : (
@@ -72,7 +72,7 @@ export const Projects = () => {
                                                 alt="foto de movil 1"
                                                 width={300}
                                                 height={600}
-                                                className="w-full h-full"
+                                                className="w-full h-full drop-shadow-[0px_0px_10px_rgba(255,255,255,0.6)]"
                                             />
                                         </div>
                                     )}

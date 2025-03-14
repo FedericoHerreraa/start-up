@@ -53,8 +53,8 @@ export const OurResults = () => {
             />
 
             <section className="md:w-[80%] w-[95%] mx-auto mt-20">
-                <div className={`flex justify-around items-center w-full min-h-60 border ${nightMode ? 'border-zinc-700 bg-zinc-900' : 'border-zinc-200 bg-zinc-50 shadow-lg'} rounded-xl md:p-10 p-3`}>
-                    <div className="flex w-full justify-center gap-10 text-center">
+                <div className={`flex justify-around items-center w-full h-60 ${nightMode ? ' bg-gradient-to-br from-orange-800 to-violet-600' : 'border-zinc-200 bg-zinc-50 shadow-lg'} rounded-xl p-[2px]`}>
+                    <div className="flex w-full h-full justify-center items-center gap-10 text-center bg-zinc-900 md:p-10 p-3 rounded-xl">
                         <div className="w-1/3 flex flex-col items-center gap-2">
                             <Counter to={50} plus={false}/>
                             <p className="md:text-lg text-zinc-500 flex md:flex-row flex-col items-center gap-2">
