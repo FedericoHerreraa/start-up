@@ -98,10 +98,10 @@ body {
 
 @layer utilities {
   .scroll-hidden {
-    scrollbar-width: none;  /* Para Firefox */
-    -ms-overflow-style: none;  /* Para Internet Explorer 10+ */
+    scrollbar-width: none;  
+    -ms-overflow-style: none; 
   }
   .scroll-hidden::-webkit-scrollbar {
-    display: none;  /* Para Chrome, Safari y Edge */
+    display: none;  
   }
 }

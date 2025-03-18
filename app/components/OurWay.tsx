@@ -24,18 +24,20 @@ export const OurWay = () => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      e.preventDefault();
-      container.scrollBy({ left: e.deltaY, behavior: "smooth" });
+  
+    const handleScroll = () => {
+      // Podés jugar con la multiplicación si querés acelerar o desacelerar el scroll
+      const scrollHorizontal = window.scrollY; 
+      container.scrollLeft = scrollHorizontal;
     };
-
-    container.addEventListener("wheel", handleWheel, { passive: false });
-
+  
+    window.addEventListener('scroll', handleScroll);
+  
     return () => {
-      container.removeEventListener("wheel", handleWheel);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+  
 
 
   return (
