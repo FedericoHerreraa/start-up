@@ -32,7 +32,7 @@ export const TrustedByCompanies = () => {
             />
 
             <section className={`w-full ${nightMode ? 'bg-[#101011]' : 'bg-zinc-800'} mt-20 md:min-h-40 min-h-32 flex items-center justify-center gap-20 flex-wrap`}>
-                <Marquee speed={50}>
+                <Marquee speed={250}>
                     {companies.map((company, index) => (
                         <Image
                             key={index}
