@@ -6,8 +6,8 @@ import { CustomSeparator } from "@/app/components/CustomSeparator";
 import { FAQs } from "@/app/components/FAQs";
 
 export const metadata: Metadata = {
-    title: "Our Best Projects | AsNeeed",
-    description: "At AsNeeed, we showcase cutting-edge UI and technology solutions. Explore our best projects and discover how our expertise can bring your ideas to life.",
+    title: "Our Best Projects | AsNeed",
+    description: "At AsNeed, we showcase cutting-edge UI and technology solutions. Explore our best projects and discover how our expertise can bring your ideas to life.",
 };
 
 

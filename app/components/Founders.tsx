@@ -77,7 +77,7 @@ export const Founders = () => {
                 </span>{" "}
                 y soy desarrolladora Front-end. Actualmente, me dedico a crear
                 soluciones visuales innovadoras, aportando creatividad y diseño
-                a cada proyecto. Hoy trabajo en "AsNeeed" como{" "}
+                a cada proyecto. Hoy trabajo en "AsNeed" como{" "}
                 <span className="font-bold">Co-Fundadora</span>, desarrollando
                 ideas que conectan con las necesidades de nuestros clientes.
               </p>
@@ -95,7 +95,7 @@ export const Founders = () => {
                 </span>
                 , and I am a Front-end Developer. I specialize in creating
                 innovative visual solutions, bringing creativity and design to
-                every project. Currently, I work at "AsNeeed" as a{" "}
+                every project. Currently, I work at "AsNeed" as a{" "}
                 <span className="font-bold">Co-Founder</span>, developing ideas
                 that align with the needs of our clients.
               </p>
@@ -124,7 +124,7 @@ export const Founders = () => {
                 y soy programador Full Stack. Con conocimientos profesionales
                 adquiridos de la Licenciatura en Sistemas en la "Universidad
                 Argentina de la Empresa" y trabajando en proyectos de software
-                en "AsNeeed" como{" "}
+                en "AsNeed" como{" "}
                 <span className="font-bold">Co-Fundador.</span>
               </p>
             ) : (
@@ -142,7 +142,7 @@ export const Founders = () => {
                 , and I am a Full Stack Developer. Currently, I&#39;m pursuing a
                 Bachelor&#39;s degree in Computer Science at the "Argentine
                 University of Enterprise" and working on software projects at
-                "AsNeeed" as a <span className="font-bold">Co-Founder.</span>
+                "AsNeed" as a <span className="font-bold">Co-Founder.</span>
               </p>
             )}
           </div>

@@ -110,8 +110,8 @@ const testimonials = [
         id: 2,
         name: { es: "Buffalo Café", en: "Buffalo Café" },
         review: {
-            es: "Desde que implementamos nuestra plataforma web desarrollada por AsNeeed, nuestras reservas han aumentado un 40%. La interfaz es intuitiva, rápida y completamente adaptada a nuestras necesidades. Su equipo siempre estuvo disponible para cualquier ajuste que necesitamos. ¡100% recomendados!",
-            en: "Since implementing our web platform developed by AsNeeed, our bookings have increased by 40%. The interface is intuitive, fast, and fully adapted to our needs. Their team was always available for any adjustments we needed. 100% recommended!"
+            es: "Desde que implementamos nuestra plataforma web desarrollada por AsNeed, nuestras reservas han aumentado un 40%. La interfaz es intuitiva, rápida y completamente adaptada a nuestras necesidades. Su equipo siempre estuvo disponible para cualquier ajuste que necesitamos. ¡100% recomendados!",
+            en: "Since implementing our web platform developed by AsNeed, our bookings have increased by 40%. The interface is intuitive, fast, and fully adapted to our needs. Their team was always available for any adjustments we needed. 100% recommended!"
         },
         img: buffaloLogo,
         className: 'h-10 w-9'
@@ -130,8 +130,8 @@ const testimonials = [
         id: 4,
         name: { es: "Pizzería NonnoMingo", en: "NonnoMingo Pizzeria" },
         review: {
-            es: "Gracias a AsNeeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
-            en: "Thanks to AsNeeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
+            es: "Gracias a AsNeed, ahora tenemos una plataforma donde nuestros clientes pueden hacer pedidos en línea de manera fácil y rápida. La experiencia del usuario es impecable, y la velocidad del sitio ha mejorado significativamente. ¡Una inversión que valió la pena!",
+            en: "Thanks to AsNeed, we now have a platform where our customers can place online orders easily and quickly. The user experience is flawless, and the website speed has improved significantly. A worthwhile investment!"
         },
         img: nonnomingoLogo,
         className: 'rounded-xl h-10 w-10'

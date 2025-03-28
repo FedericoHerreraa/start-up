@@ -6,8 +6,8 @@ import { UsersOpinions } from "@/app/components/UsersOpinions";
 import { LineSeparator } from "@/app/components/LineSeparator";
 
 export const metadata: Metadata = {
-    title: "Choose Your Plan | AsNeeed",
-    description: "At AsNeeed, we offer flexible plans tailored to your needs. Explore our Basic, Premium, and Gold plans to find the perfect solution for you.",
+    title: "Choose Your Plan | AsNeed",
+    description: "At AsNeed, we offer flexible plans tailored to your needs. Explore our Basic, Premium, and Gold plans to find the perfect solution for you.",
 };
 
 export default function Plans() {

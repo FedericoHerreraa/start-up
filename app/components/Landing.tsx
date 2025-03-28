@@ -46,8 +46,8 @@ export const LandingInfo = () => {
                         </h1>
                         <p className={`md:text-xl text-md md:text-left text-center ${nightMode ? 'text-zinc-400' : 'text-zinc-700'} `}>
                             {spanish 
-                                ? 'En "AsNeeed", transformamos tus ideas en realidad digital. Diseñamos y desarrollamos aplicaciones móviles, plataformas web y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
-                                : 'At "AsNeeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms, and social media, fully customized to meet your business needs.'
+                                ? 'En "AsNeed", transformamos tus ideas en realidad digital. Diseñamos y desarrollamos aplicaciones móviles, plataformas web y redes sociales, completamente personalizadas para cubrir las necesidades de tu negocio.'
+                                : 'At "AsNeed", we turn your ideas into digital reality. We design and develop mobile applications, web platforms, and social media, fully customized to meet your business needs.'
                             }
                         </p>
                         <div className="flex items-center gap-3">

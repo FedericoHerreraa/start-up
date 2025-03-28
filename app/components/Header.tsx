@@ -64,7 +64,7 @@ export const Header = () => {
                         className="md:w-[85px] w-16" 
                     />
                     <div className="flex flex-col">    
-                        <h1 className='md:text-2xl text-lg'>AsNeeed</h1>
+                        <h1 className='md:text-2xl text-lg'>AsNeed</h1>
                         <h4 className="text-zinc-500 md:text-sm text-xs">{spanish ? 'Tu Propio Negocio' : 'Own Your Business'}</h4>
                     </div>
                 </Link>
@@ -182,7 +182,7 @@ const tabsMobileView = ({
                         >
                             {nightMode ? '❌' : '✖️'}
                         </button>
-                        AsNeeed
+                        AsNeed
                     </SheetTitle>
                     <SheetDescription className="flex flex-col items-start gap-5">
                         {tabs.map((tab) => (

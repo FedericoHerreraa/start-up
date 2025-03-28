@@ -36,9 +36,9 @@ export const WhyUs = () => {
         <div className={`${nightMode ? 'bg-black text-white' : ''} min-h-[70vh]`}>
             <TitleSection
                 firstTitleEnglish="Why choosing"
-                secondTitleEnglish="AsNeeed."
+                secondTitleEnglish="AsNeed."
                 firstTitleSpanish="Por que elegir"
-                secondTitleSpanish="AsNeeed."
+                secondTitleSpanish="AsNeed."
                 subTitleEnglish="The strategic partner you need."
                 subTitleSpanish="El socio estratégico que necesitas."
                 color="from-blue-600 to-violet-700"
